@@ -24,12 +24,13 @@
 </a>
 </section>
 
-
 <section class="articles">
  <div class="contain">
  <div class="row">
 
-<?php foreach($data as $d) { ?>
+<?php
+if ($data->num_rows > 0) {
+foreach($data as $d) { ?>
  <div class="c4 mb25">
  <a href="<?=root?><?=$d['title_slug']?>">
   <img src="https://phptravels.com/blog/<?=$d['image_big']?>" alt="" />
@@ -43,8 +44,7 @@
     </div>
  </a>
  </div>
- <?php } ?>
-
+ <?php } } else { echo 0; } ?>
 
  </div>
  </div>

@@ -1,5 +1,6 @@
-<?php foreach($data as $d) { ?>
-
+<?php
+if ($data->num_rows > 0) {
+foreach($data as $d) { ?>
 
 <div class="post">
 <p class="tag">Category name goes here</p>
@@ -19,4 +20,4 @@
 
 </div>
 
-<?php } ?>
+<?php } } else { echo "No Founds Found"; } ?>
