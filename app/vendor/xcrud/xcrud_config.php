@@ -1,12 +1,13 @@
-<?php /** Configuration file; f0ska xCRUD v.1.6.26; 03/2015 */
+<?php
+
 class Xcrud_config
 {
     // default connection
-    public static $dbname = dbname; // Your database name
-    public static $dbuser = username; // Your database username
-    public static $dbpass = password; // // Your database password
-    public static $dbhost = server; // Your database host, 'localhost' is default.
-    
+    public static $dbname = "blog"; // Your database name
+    public static $dbuser = "root"; // Your database username
+    public static $dbpass = ""; // // Your database password
+    public static $dbhost = "localhost"; // Your database host, 'localhost' is default.
+
     
     // theme and language
     public static $theme = 'default'; // can be 'default', 'bootstrap', 'minimal' or your custom. Theme of xCRUD visual presentation. For using bootstrap you need to load it on your page.
@@ -37,7 +38,7 @@ class Xcrud_config
     
     // scripts
     public static $load_bootstrap = false; // turn on, if you want to load bootstrap via xCRUD
-    public static $load_googlemap = true; // loads google map api for 'POINT' type. Turn off, if your site already uses it.
+    public static $load_googlemap = false; // loads google map api for 'POINT' type. Turn off, if your site already uses it.
     public static $load_jquery = true; // loads jQuery, turn it off if you already have jQuery on your page. jQuery version must be at least 1.7. If your jQuery loads in the bottom of page, you must activate $manual_load and use  Xcrud::load_css() & Xcrud::load_js() on your page.
     public static $load_jquery_ui = true; // jQueryUI, turn it on if you already have jQueryUI on your page (datepicker and slider widgets are mandatory).
     public static $load_jcrop = true; // disable, if your page already uses jCrop
@@ -60,7 +61,7 @@ class Xcrud_config
     public static $start_minimized = false; // Start all xCRUD instances minimized.
     public static $remove_confirm = true; // Show confirmation dialog on remove action.
     public static $column_cut = 50; // Sets the maximum number of characters in the column.
-    public static $limit = 10; // default limit of rows per page
+    public static $limit = 25; // default limit of rows per page
     public static $limit_list = array('25', '50', '100', 'all'); // default limits list
     public static $clickable_list_links = true; // make all links, emails clikable in list view
     public static $clickable_filenames = true; // makes filenames clikable in list view
@@ -100,15 +101,15 @@ class Xcrud_config
     public static $enable_numbers = true; // show row numbers in grid
     public static $enable_limitlist = true; // show row numbers in grid
     public static $enable_sorting = true; // alows to sort by column
-    public static $benchmark = false; // Displays information about the performance in the lower right corner.
+    public static $benchmark = true; // Displays information about the performance in the lower right corner.
     public static $nested_readonly_on_view = true; // turn of editing nested tables when viewing parent (can edit only when editing parent)
     public static $default_tab = false; // Sets name of tab for fields which not assigned with any tab. This tab will be created automatically. Tab will not be created when is FALSE.
     public static $nested_in_tab = true; // Nested will be displayed in tab if tabs are active
     
        
     // alert settings
-    public static $email_from = 'mailer@example.com'; // email from address
-    public static $email_from_name = 'xCRUD Data Management System'; // email from name
+    public static $email_from = 'info@blog.com'; // email from address
+    public static $email_from_name = 'Crud'; // email from name
     public static $email_enable_html = true; // enables html in email letters
 
     

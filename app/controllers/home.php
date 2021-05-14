@@ -1,6 +1,7 @@
 <?php
 
 // main homepage
+
 $router->get('/', function() {
 
 $mysqli = new mysqli(server, username, password, dbname);
@@ -22,8 +23,43 @@ $mysqli -> close();
 
 });
 
+
+
+
+
+// newsletters page
+$router->post('newsletters', function() {
+
+// sql connection
+$mysqli = new mysqli(server, username, password, dbname); if ($mysqli -> connect_errno) { echo "Failed to connect to MySQL: " . $mysqli -> connect_error; exit(); }  else { }
+
+// sql query
+$query = "INSERT INTO `newsletters` (`id`, `name`, `email`, `created_at`) VALUES (NULL, '".$_POST['name']."', '".$_POST['email']."', current_timestamp())";
+$data = $mysqli->query($query);
+
+// print_r($mysqli);
+
+header('Location: '.root.'newsletters/success');
+$mysqli -> close();
+
+});
+
 // post page
-$router->get('/(.*)', function() {
+$router->get('newsletters/success', function() {
+
+$title ="Newsletters";
+$body = views."newsletters.php";
+include template;
+
+});
+
+
+
+
+
+
+// post page
+$router->get('(.*)', function() {
 
 $mysqli = new mysqli(server, username, password, dbname);
 

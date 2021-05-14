@@ -15,7 +15,6 @@ include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
 $xcrud->table('posts');
 $xcrud->order_by('id','desc');
-$xcrud->limit(25);
 $xcrud->columns('id');
 $xcrud->columns('title');
 $xcrud->columns('status');
@@ -23,13 +22,50 @@ $xcrud->columns('hits');
 $xcrud->columns('created_at');
 $xcrud->unset_title();
 
-
-$title ="Posts";
-$body = admin_views."posts.php";
+$title ="Blog Posts";
+$body = admin_views."xcrud.php";
 $posts_nav = "active";
 include admin_template;
 
 });
+
+
+// pages
+$router->get(admin.'pages', function() {
+include('app/vendor/xcrud/xcrud.php');
+$xcrud = Xcrud::get_instance();
+$xcrud->table('pages');
+$xcrud->order_by('id','desc');
+$xcrud->columns('id');
+$xcrud->columns('title');
+$xcrud->columns('status');
+$xcrud->columns('created_at');
+$xcrud->unset_title();
+
+$title ="Pages";
+$body = admin_views."xcrud.php";
+$pages_nav = "active";
+include admin_template;
+});
+
+// newsletter
+$router->get(admin.'newsletters', function() {
+include('app/vendor/xcrud/xcrud.php');
+$xcrud = Xcrud::get_instance();
+$xcrud->table('newsletters');
+$xcrud->order_by('id','desc');
+$xcrud->columns('id');
+$xcrud->columns('name');
+$xcrud->columns('email');
+$xcrud->columns('created_at');
+$xcrud->unset_title();
+
+$title ="Pages";
+$body = admin_views."xcrud.php";
+$newsletters_nav = "active";
+include admin_template;
+});
+
 
 // buttons page
 $router->get(admin.'buttons', function() {
@@ -40,10 +76,10 @@ include admin_template;
 });
 
 // inputs page
-$router->get(admin.'inputs', function() {
-$title ="Inputs";
-$body = admin_views."inputs.php";
-$inputs_nav = "active";
+$router->get(admin.'settings', function() {
+$title ="Settings";
+$body = admin_views."settings.php";
+$settings_nav = "active";
 include admin_template;
 });
 
