@@ -1,7 +1,7 @@
 <section class="hero">
 <div class="">
 <h1>Hero Section</h1>
-<p>some params about he blog</p>
+<p>some params about the blog</p>
 </div>
 </section>
 
@@ -29,45 +29,22 @@
  <div class="contain">
  <div class="row">
 
-<?php
-
-// Create connection
-$conn = new mysqli(server, username, password, dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM posts ORDER BY id DESC LIMIT 27";
-$result = $conn->query($sql);
-
-
-if ($result->num_rows > 0) {
-
-
-    // output data of each row
-    while($row = $result->fetch_assoc()) {   ?>
-
+<?php foreach($data as $d) { ?>
  <div class="c4 mb25">
- <a href="<?=root?><?=$row['title_slug']?>">
-  <img src="https://phptravels.com/blog/<?=$row['image_big']?>" alt="" />
-   <p class="tag"><?=$row['id']?></p>
-   <h2><?=$row['title']?></h2>
-   <p><?=strip_tags($row['content'])?></p>
+ <a href="<?=root?><?=$d['title_slug']?>">
+  <img src="https://phptravels.com/blog/<?=$d['image_big']?>" alt="" />
+   <p class="tag"><?=$d['id']?></p>
+   <h2><?=$d['title']?></h2>
+   <p><?=strip_tags($d['content'])?></p>
     <div class="author">
     <img src="https://technewspakistan.com/content/images/size/w100/2021/05/22.jpg" alt="" />
     <p>Qasim Hussain</p>
-    <p class="date_time"><?=$row['created_at']?></p>
+    <p class="date_time"><?=$d['created_at']?></p>
     </div>
  </a>
  </div>
+ <?php } ?>
 
-<?php } } else {
-echo "0 results";
-}
-$conn->close();
-
-?>
 
  </div>
  </div>
