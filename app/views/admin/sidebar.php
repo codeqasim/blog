@@ -2,7 +2,7 @@
 <div class="brand">
 <a href="<?=root?>">
 <img src="https://phptravels.com/assets/img/pages/media/icon-primary.png" alt="" />
-Admin Panel
+Admin Panel <a class="fr" href="<?=root?>" target="_blank"> <strong class="pr5">Web</strong> <i class="mdi mdi-open-in-new"></i></a>
 </a>
 </div>
 <ul>
