@@ -38,7 +38,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, title, image_big, title_slug, content FROM posts ORDER BY id DESC";
+$sql = "SELECT * FROM posts ORDER BY id DESC LIMIT 27";
 $result = $conn->query($sql);
 
 
@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
     <div class="author">
     <img src="https://technewspakistan.com/content/images/size/w100/2021/05/22.jpg" alt="" />
     <p>Qasim Hussain</p>
-    <p class="date_time">May 13, 2021 - 1 min read</p>
+    <p class="date_time"><?=$row['created_at']?></p>
     </div>
  </a>
  </div>

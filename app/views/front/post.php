@@ -29,7 +29,7 @@ while($row = $result->fetch_assoc()) {   ?>
 <div class="author">
 <img src="https://technewspakistan.com/content/images/size/w100/2021/05/22.jpg" alt="" />
 <p>Qasim Hussain</p>
-<p class="date_time">May 13, 2021 - 1 min read</p>
+<p class="date_time"><?=$row['created_at']?></p>
 </div>
 
 <img src="https://phptravels.com/blog/<?=$row['image_big']?>" class="img" alt="" />
