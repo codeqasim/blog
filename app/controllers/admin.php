@@ -19,7 +19,7 @@ $xcrud->limit(25);
 $xcrud->columns('id');
 $xcrud->columns('title');
 $xcrud->columns('status');
-$xcrud->columns('hit');
+$xcrud->columns('hits');
 $xcrud->columns('created_at');
 $xcrud->unset_title();
 

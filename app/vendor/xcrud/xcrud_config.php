@@ -2,10 +2,10 @@
 class Xcrud_config
 {
     // default connection
-    public static $dbname = 'phptrave_blog'; // Your database name
-    public static $dbuser = 'root'; // Your database username
-    public static $dbpass = ''; // // Your database password
-    public static $dbhost = 'localhost'; // Your database host, 'localhost' is default.
+    public static $dbname = dbname; // Your database name
+    public static $dbuser = username; // Your database username
+    public static $dbpass = password; // // Your database password
+    public static $dbhost = server; // Your database host, 'localhost' is default.
     
     
     // theme and language

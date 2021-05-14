@@ -37,7 +37,7 @@ $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri_segments = explode('/', $uri_path);
 $uri = $uri_segments[2];
 
-$query = "SELECT * FROM `posts` WHERE `title_slug` LIKE '".$uri."' ORDER BY `video_embed_code` ASC";
+$query = "SELECT * FROM `posts` WHERE `slug` LIKE '".$uri."'";
 $data = $mysqli->query($query);
 
 $title ="Post";
