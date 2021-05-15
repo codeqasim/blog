@@ -1,7 +1,7 @@
 <section class="hero">
 <div class="">
-<h1>Hero Section</h1>
-<p>some params about the blog</p>
+<h1><?=$app->app_name;?></h1>
+<p><?=$app->description;?></p>
 </div>
 </section>
 

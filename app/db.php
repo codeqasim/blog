@@ -1,0 +1,10 @@
+<?php
+
+// server credentials to setup call
+$mysqli = new mysqli(server, username, password, dbname);
+
+// database connection condition
+if ($mysqli -> connect_errno) { echo "Failed to connect to MySQL: " . $mysqli -> connect_error; exit(); }  else { }
+
+// main app credentials, can be called by $app->FIELD_NAME
+$app = $mysqli->query("SELECT * FROM settings WHERE id = 1")->fetch_object();
