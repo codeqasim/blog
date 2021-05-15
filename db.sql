@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 06:01 PM
+-- Generation Time: May 15, 2021 at 06:04 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -930,8 +930,8 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `description`, `keywords`, `slug`, `is_custom`, `content`, `parent_id`, `created_at`, `status`) VALUES
-(1, 'Contact', 'Contact Page', 'contact, infinite', 'contact', 0, 'contact', 0, '2019-03-08 21:59:53', '1'),
-(2, 'About', 'About', 'about', 'about-us', 0, 'about', 0, '2019-03-08 22:01:38', '1');
+(1, 'About', 'about', 'about', 'about-us', 0, 'about', 0, '2019-03-08 21:59:53', '1'),
+(2, 'Contact', 'contact', 'contact', 'contact-us', 0, 'contact', 0, '2019-03-08 22:01:38', '1');
 
 -- --------------------------------------------------------
 
@@ -1183,7 +1183,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `app_name`, `home_title`, `description`, `keywords`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `about_footer`, `contact_address`, `contact_email`, `contact_phone`, `copyright`, `cookies_warning`, `created_at`) VALUES
-(1, 'PHP Blog Script', 'PHP Blog Script', 'PHP blog script helping you to build your blog super fast with no minimum installation and configuration. SEO optimized with backend admin panel ', 'php blog script, opensource blog script, php blog system, how to blog', '', '', '', '', '', '', '', '', '', '', 0, '2019-03-08 22:05:14');
+(1, 'PHP Blog Script', 'PHP Blog Script', 'PHP blog script helping you to build your blog super fast within 5 minutes of installation and configuration. SEO optimized with backend admin panel ', 'php blog script, opensource blog script, php blog system, how to blog', '', '', '', '', '', '', '', '', '', '', 0, '2019-03-08 22:05:14');
 
 -- --------------------------------------------------------
 
