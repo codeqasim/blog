@@ -20,9 +20,9 @@ define('template','app/views/front/template.php'); // admin layout template
 
 // database configuration
 define('server','localhost'); // mention your database server name normally its localhost
-define('dbname','blog'); // mention your database name
-define('username','root'); // mention your database username name normally its root
-define('password',''); // mention your database password
+define('dbname','booknow_blog'); // mention your database name
+define('username','booknow_blog'); // mention your database username name normally its root
+define('password','booknow_blog'); // mention your database password
 
 // error page 404
 $router = new Router(function ($method, $path, $statusCode, $exception) { http_response_code($statusCode);
@@ -39,8 +39,8 @@ foreach ($indir as $key=>$value){
 include $controllers.'/'.$value; }
 
 // ending routing
-$router->get('/page/(.*)', ['PageController', 'viewPage']);
-$router->route(['OPTION', 'PUT'], '/test', 'PageController::test');
+/*$router->get('/page/(.*)', ['PageController', 'viewPage']);
+$router->route(['OPTION', 'PUT'], '/test', 'PageController::test');*/
 $router->dispatchGlobal();
 
 ?>
