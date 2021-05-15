@@ -45,11 +45,18 @@ $body = views."newsletters.php";
 include template;
 });
 
-// post page
+// main sitemap page
 $router->get('sitemap.xml', function() {
 header("Content-type: text/xml");
+include "app/views/sitemap/sitemap.php";
+});
+
+// posts sitemap page
+$router->get('sitemap-posts.xml', function() {
+header("Content-type: text/xml");
 include "app/db.php";
-include "app/views/sitemap.php";
+$posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC");
+include "app/views/sitemap/sitemap_posts.php";
 });
 
 // main homepage
