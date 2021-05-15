@@ -19,4 +19,4 @@ foreach($data as $d) { ?>
 
 </div>
 
-<?php } } else { echo "No Founds Found"; } ?>
+<?php } } else { include "404.php"; } ?>

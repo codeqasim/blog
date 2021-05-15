@@ -19,7 +19,7 @@
 <div class="container-f">
     <ul class="fl">
       <li class="brand"><a href="<?=root?>"> <img src="<?=root;?>uploads/global/logo.png" alt="logo" /></a></li>
-      <li><a href="#">Home</a></li>
+      <li><a href="<?=root?>">Home</a></li>
       <?php if ($pages->num_rows > 0) { foreach($pages as $nav) { ?>
       <li><a href="<?=$nav['slug']?>"><?=$nav['title']?></a></li>
       <?php } } ?>

@@ -132,7 +132,7 @@ footer .foot { padding: 24px 0; border-top: 1px solid #4c4c4c; margin-top: 30px;
 
 /* buttons 
 ---------------------------------------------------  */
-.btn { font-weight: 500; float:left;border:0px; cursor: pointer; display: block; overflow: hidden; padding: 0 14px; height: 38px; font-size: 14px; line-height: 34px; text-align: center; letter-spacing: .2px; border-radius: 3px; white-space: nowrap; text-overflow: ellipsis; transition: all .2s ease; transition-property: color,border-color,background,width,height,box-shadow; -webkit-font-smoothing: subpixel-antialiased; }
+.btn { font-weight: 500; float:left;border:0px; cursor: pointer; display: block; overflow: hidden; padding: 0 14px; height: 38px; font-size: 14px; line-height: 38px; text-align: center; letter-spacing: .2px; border-radius: 3px; white-space: nowrap; text-overflow: ellipsis; transition: all .2s ease; transition-property: color,border-color,background,width,height,box-shadow; -webkit-font-smoothing: subpixel-antialiased; }
 .btn.k,.btn.g,.btn.b,.btn.y,.btn.r {color: #fff}
 .btn.k { background-color: #15171a }
 .btn.g { background-color: #57cc99 }
@@ -173,3 +173,6 @@ select:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0
 .select i { position: absolute; padding: 11px 13px; font-size: 16px; }
 /* inputs 
 ---------------------------------------------------  */
+
+._404{background: #f0f1f2; display: flex; justify-content: center; align-items: center; height: 430px; margin-top: -4px;}
+.newsletters_success{background: #f0f1f2; display: flex; justify-content: center; align-items: center; height: 430px; margin-top: -4px;}

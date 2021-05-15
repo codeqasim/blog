@@ -19,6 +19,7 @@ header('Location: '.root.'newsletters/success');
 
 // post page
 $router->get('newsletters/success', function() {
+include "app/db.php"; 
 $title ="Newsletters";
 $body = views."newsletters.php";
 include template;
@@ -67,10 +68,8 @@ $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri_segments = explode('/', $uri_path);
 $uri = $uri_segments[2];
 $data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$uri."'");
-
 $title ="Post";
 $body = views."post.php";
 include template;
 $mysqli -> close();
-
 });

@@ -27,7 +27,7 @@ define('password','booknow_blog'); // mention your database password
 // error page 404
 $router = new Router(function ($method, $path, $statusCode, $exception) { http_response_code($statusCode);
 include "app/views/front/header.php";
-include "app/views/front/404.php";
+echo 1;
 include "app/views/front/footer.php";
 });
 

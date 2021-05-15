@@ -8,11 +8,11 @@
 <section class="contain ptb25 featured">
 <a href="<?=root?>post">
 <div class="row">
-<div class="c8"><img src="<?=root?>assets/front/img/item.jpg" alt="" /></div>
+<div class="c8"><img src="<?=root?>uploads/posts/news.jpg" alt="" /></div>
 <div class="c4">
-<p class="tag">Tag or Category</p>
-<h2>How to Install Gitea on Ubuntu 20.04</h2>
-<p>Pakistan stands at 4th place in the world for providing freelancing services according to the Online Labor Index published for the year 2017 by Oxford Internet Institute. Since the IT sector in Pakistan is emerging with every passing day, it is estimated that by the end of 2022, Pakistan will</p>
+<p class="tag">Version Release</p>
+<h2>PHP Blog Script Lauched Production v1.0</h2>
+<p>PHP blog script helping you to build your blog super fast within 5 minutes of installation and configuration. SEO optimized with backend admin panel and much more to explore.</p>
 
 <div class="author">
 <img src="https://technewspakistan.com/content/images/size/w100/2021/05/22.jpg" alt="" />
@@ -28,8 +28,7 @@
  <div class="contain">
  <div class="row">
 
-<?php if ($data->num_rows > 0) {
-foreach($data as $d) { ?>
+<?php if ($data->num_rows > 0) { foreach($data as $d) { ?>
  <div class="c4 mb25">
  <a href="<?=root?><?=$d['slug']?>">
   <img src="<?=root?>uploads/posts/<?=$d['img']?>" alt="<?=$d['title']?>" />
