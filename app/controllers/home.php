@@ -45,6 +45,12 @@ $body = views."newsletters.php";
 include template;
 });
 
+// post page
+$router->get('sitemap.xml', function() {
+header("Content-type: text/xml");
+include "app/views/sitemap.php";
+});
+
 // main homepage
 $router->get('install', function() {
 
@@ -92,13 +98,16 @@ $data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$url_end."'")
 if ($data->num_rows > 0) { foreach($data as $post) {
 // meta information
 $post_title = substr(strip_tags($post['content']), 0, 160);
+$date=date_create($post['created_at']); $post_date = date_format($date,"Y-m-d")."T".date_format($date,"H:i:s");
+
 $meta_title = $post['title'];
 $meta_desc = $post_title;
 $meta_keywords = $post['keywords'];
 $meta_url = root.$post['slug'];
 $meta_img = root."uploads/posts/".$post['img'];
-$meta_time = "2021-05-09T16:46:15.000Z";
+$meta_time = $post_date.".000Z";
 $meta_writer = "Qasim Hussain";
+
 $title =$post['title'];
 }}
 
