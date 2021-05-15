@@ -4,7 +4,17 @@
 $router->get('/', function() {
 include "app/db.php";
 $data = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 27");
-$title = $app->home_title;;
+
+// meta information
+$meta_title = $app->home_title;
+$meta_desc = $app->description;
+$meta_keywords = $app->keywords;
+$meta_url = root;
+$meta_img = root."uploads/global/media.jpg";
+$meta_time = "2021-05-09T16:46:15.000Z";
+$meta_writer = "Qasim Hussain";
+
+$title = $app->home_title;
 $body = views."home.php";
 include template;
 });

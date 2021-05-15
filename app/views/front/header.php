@@ -9,9 +9,91 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
 <link rel="stylesheet" href="<?=root?>assets/front/css/style.css" />
-<link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-</head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
+<!-- meta open graph -->
+<meta property="og:site_name" content="<?=$app->app_name?>" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="<?=$meta_title?>" />
+<meta property="og:description" content="<?=$meta_desc?>" />
+<meta property="og:url" content="<?=$meta_url?>" />
+<meta property="og:image" content="<?=$meta_img?>" />
+
+<!-- meta article -->
+<meta property="article:published_time" content="<?=$meta_time?>" />
+<meta property="article:modified_time" content="<?=$meta_time?>" />
+<meta property="article:tag" content="Payoneer" />
+<meta property="article:tag" content="accept payments" />
+<meta property="article:tag" content="transactions" />
+<meta property="article:tag" content="payment gateways" />
+<meta property="article:tag" content="make money online" />
+<meta property="article:publisher" content="<?=$app->facebook_url;?>" />
+<meta property="article:author" content="<?=root?>" />
+
+<!-- meta twitter media card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="<?=$meta_title?>" />
+<meta name="twitter:description" content="<?=$meta_desc?>" />
+<meta name="twitter:url" content="<?=$meta_url?>" />
+<meta name="twitter:image" content="<?=$meta_img?>" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="<?=$meta_writer?>" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="<?=$meta_keywords?>" />
+<meta name="twitter:site" content="@phpblogscript" />
+<meta property="og:image:width" content="1640" />
+<meta property="og:image:height" content="924" />
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "<?=$app->app_name?>",
+        "url": "<?=root?>",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "<?=root?>uploads/global/favicon.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "image": {
+            "@type": "ImageObject",
+            "url": "<?=$meta_img?>",
+            "width": 708,
+            "height": 888
+        },
+        "url": "",
+        "sameAs": [
+            "",
+            ""
+        ]
+    },
+    "headline": "<?=$meta_title?>",
+    "url": "<?=$meta_url?>",
+    "datePublished": "<?=$meta_time?>",
+    "dateModified": "<?=$meta_time?>",
+    "image": {
+        "@type": "ImageObject",
+        "url": "<?=$meta_img?>",
+        "width": 1640,
+        "height": 924
+    },
+    "keywords": "<?=$meta_keywords?>",
+    "description": "<?=$meta_title?>",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<?=root?>"
+    }
+}
+</script>
+
+</head>
 <body>
 
 <header>
