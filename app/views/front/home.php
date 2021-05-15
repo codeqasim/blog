@@ -30,8 +30,10 @@
 
 <?php if ($data->num_rows > 0) { foreach($data as $d) { ?>
  <div class="c4 mb25">
+ <div class="card">
  <a href="<?=root?><?=$d['slug']?>">
   <img src="<?=root?>uploads/posts/<?=$d['img']?>" alt="<?=$d['title']?>" />
+  <div class="content">
    <p class="tag"><?=$d['id']?></p>
    <h2><?=$d['title']?></h2>
    <p><?=strip_tags($d['content'])?></p>
@@ -40,7 +42,9 @@
     <p>Qasim Hussain</p>
     <p class="date_time"><?=$d['created_at']?></p>
     </div>
+    </div>
  </a>
+ </div>
  </div>
  <?php } } else { echo 0; } ?>
 

@@ -102,7 +102,7 @@ ul { list-style: none; padding: 0px; margin: 0px }
 /* homepage articles */
 .articles img { position: relative; display: block; overflow: hidden; border-radius: 3px; width: 100%; height: 200px; background: #c5d2d9; -o-object-fit: cover; object-fit: cover; }
 .articles .tag { text-transform: uppercase; color: var(--theme_color);margin: 0; font-size: 0.8rem; font-weight: 500; padding-top: 24px; }
-.articles h2 { margin-top: 6px; color: #15171a; }
+.articles h2 { margin-top: 6px; color: #15171a; height: 42px; display: flex; justify-content: flex-start; align-items: center; }
 .articles p { margin-bottom: 1em; display: -webkit-box; overflow-y: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: break-word; line-height: 24px; font-size: 1.2em; color: #60757e; }
 .articles .author img { width:40px; height: 40px; display: block; background: #e4eaed; border-radius: 100%; -o-object-fit: cover; object-fit: cover; float: left; }
 .articles .author p { float: left; margin: 0px 10px; font-size: 1em; font-weight: 500; color: #000; }
@@ -176,3 +176,6 @@ select:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0
 
 ._404{background: #f0f1f2; display: flex; justify-content: center; align-items: center; height: 430px; margin-top: -4px;}
 .newsletters_success{background: #f0f1f2; display: flex; justify-content: center; align-items: center; height: 430px; margin-top: -4px;}
+
+.card { -webkit-appearance: none; transition: all .5s ease; transition-property: color,border-color,background,width,height,box-shadow; -webkit-font-smoothing: subpixel-antialiased; display: flex; }
+.card:hover { opacity: 0.9 }

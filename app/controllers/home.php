@@ -19,7 +19,7 @@ header('Location: '.root.'newsletters/success');
 
 // post page
 $router->get('newsletters/success', function() {
-include "app/db.php"; 
+include "app/db.php";
 $title ="Newsletters";
 $body = views."newsletters.php";
 include template;
@@ -64,10 +64,9 @@ $router->get('install', function() {
 // post page
 $router->get('(.*)', function() {
 include "app/db.php";
-$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$uri_segments = explode('/', $uri_path);
-$uri = $uri_segments[2];
-$data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$uri."'");
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$url_end = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
+$data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$url_end."'");
 $title ="Post";
 $body = views."post.php";
 include template;
