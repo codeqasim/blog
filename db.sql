@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 02:42 PM
+-- Generation Time: May 15, 2021 at 06:01 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -930,9 +930,8 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `description`, `keywords`, `slug`, `is_custom`, `content`, `parent_id`, `created_at`, `status`) VALUES
-(1, 'Contact', 'Contact Page', 'contact, infinite', 'contact', 0, NULL, 0, '2019-03-08 21:59:53', '1'),
-(2, 'Terms & Conditions', 'Terms & Conditions Page', 'terms, conditions, infinite', 'terms-conditions', 0, NULL, 0, '2019-03-08 22:01:38', '1'),
-(4, 'new', 'content', 'keys', 'news-wal', 1, 'contents', 0, '2021-05-14 21:45:35', '1');
+(1, 'Contact', 'Contact Page', 'contact, infinite', 'contact', 0, 'contact', 0, '2019-03-08 21:59:53', '1'),
+(2, 'About', 'About', 'about', 'about-us', 0, 'about', 0, '2019-03-08 22:01:38', '1');
 
 -- --------------------------------------------------------
 
@@ -1161,27 +1160,21 @@ INSERT INTO `posts` (`id`, `status`, `title`, `slug`, `content`, `keywords`, `us
 
 CREATE TABLE `settings` (
   `id` int(11) NOT NULL,
-  `lang_id` int(11) DEFAULT 1,
-  `application_name` varchar(255) DEFAULT 'Infinite',
-  `site_title` varchar(255) DEFAULT NULL,
+  `app_name` varchar(255) DEFAULT 'Infinite',
   `home_title` varchar(255) DEFAULT NULL,
-  `site_description` varchar(500) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
   `keywords` varchar(500) DEFAULT NULL,
   `facebook_url` varchar(500) DEFAULT NULL,
   `twitter_url` varchar(500) DEFAULT NULL,
   `instagram_url` varchar(500) DEFAULT NULL,
   `pinterest_url` varchar(500) DEFAULT NULL,
   `linkedin_url` varchar(500) DEFAULT NULL,
-  `vk_url` varchar(500) DEFAULT NULL,
-  `optional_url_button_name` varchar(500) DEFAULT 'Click Here to Visit',
   `about_footer` varchar(1000) DEFAULT NULL,
-  `contact_text` text DEFAULT NULL,
   `contact_address` varchar(500) DEFAULT NULL,
   `contact_email` varchar(255) DEFAULT NULL,
   `contact_phone` varchar(255) DEFAULT NULL,
   `copyright` varchar(500) DEFAULT 'Copyright © 2018 Infinite - All Rights Reserved.',
   `cookies_warning` int(11) DEFAULT 0,
-  `cookies_warning_text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1189,8 +1182,8 @@ CREATE TABLE `settings` (
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `lang_id`, `application_name`, `site_title`, `home_title`, `site_description`, `keywords`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `vk_url`, `optional_url_button_name`, `about_footer`, `contact_text`, `contact_address`, `contact_email`, `contact_phone`, `copyright`, `cookies_warning`, `cookies_warning_text`, `created_at`) VALUES
-(1, 1, 'PHPTRAVELS', 'PHPTRAVELS Blog', 'Blog', 'PHPTRAVELS Blog helps you to learn the new technology and travel industry revolutions', 'phptravels, travel technology partner, php booking engine, airline ticket blog, cheap travel, travel technology, online travel agency software', 'travelbusiness', 'phptravels', 'travelsphp', '', 'phptravels', '', 'Click Here To See More', 'PHPTRAVELS is a script designed for travel agencies that want to move their operations online, helping them setup a fully-working online booking business.\r\n\r\nPHPTRAVELS lets users search, check availability, book for their desired time period, and then pay for it, all via a simple interface, that not only looks good, but is also very manageable and customizable via a specially crafted administration panel.', '', '65 Cavalry Ground', 'info@phptravels.com', '+923311442244', 'Copyright © 2019 PHPTRAVELS - All Rights Reserved.', 0, '', '2019-03-08 22:05:14');
+INSERT INTO `settings` (`id`, `app_name`, `home_title`, `description`, `keywords`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `about_footer`, `contact_address`, `contact_email`, `contact_phone`, `copyright`, `cookies_warning`, `created_at`) VALUES
+(1, 'PHP Blog Script', 'PHP Blog Script', 'PHP blog script helping you to build your blog super fast with no minimum installation and configuration. SEO optimized with backend admin panel ', 'php blog script, opensource blog script, php blog system, how to blog', '', '', '', '', '', '', '', '', '', '', 0, '2019-03-08 22:05:14');
 
 -- --------------------------------------------------------
 
@@ -2159,7 +2152,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
 
 --
 -- AUTO_INCREMENT for table `settings`
