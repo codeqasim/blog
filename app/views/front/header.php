@@ -85,7 +85,7 @@
         "height": 924
     },
     "keywords": "<?=$meta_keywords?>",
-    "description": "<?=$meta_title?>",
+    "description": "<?=$meta_desc?>",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "<?=root?>"

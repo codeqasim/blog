@@ -29,6 +29,16 @@ header('Location: '.root.'newsletters/success');
 
 // post page
 $router->get('newsletters/success', function() {
+
+// meta information
+$meta_title = $app->home_title;
+$meta_desc = $app->description;
+$meta_keywords = $app->keywords;
+$meta_url = root;
+$meta_img = root."uploads/global/media.jpg";
+$meta_time = "2021-05-09T16:46:15.000Z";
+$meta_writer = "Qasim Hussain";
+
 include "app/db.php";
 $title ="Newsletters";
 $body = views."newsletters.php";
@@ -73,11 +83,25 @@ $router->get('install', function() {
 
 // post page
 $router->get('(.*)', function() {
+
 include "app/db.php";
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url_end = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
 $data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$url_end."'");
-$title ="Post";
+
+if ($data->num_rows > 0) { foreach($data as $post) {
+// meta information
+$post_title = substr(strip_tags($post['content']), 0, 160);
+$meta_title = $post['title'];
+$meta_desc = $post_title;
+$meta_keywords = $post['keywords'];
+$meta_url = root;
+$meta_img = root."uploads/posts/".$post['title'];
+$meta_time = "2021-05-09T16:46:15.000Z";
+$meta_writer = "Qasim Hussain";
+$title =$post['title'];
+}}
+
 $body = views."post.php";
 include template;
 $mysqli -> close();
