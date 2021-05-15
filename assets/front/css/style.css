@@ -123,7 +123,7 @@ ul { list-style: none; padding: 0px; margin: 0px }
 .post .content>* { grid-column: main-start/main-end; }
 
 /* footer */
-footer { background-color: rgba(0, 0, 0, 0.9); padding: 40px 0; }
+footer { background-color: rgba(0, 0, 0, 0.9); padding: 40px 0; margin-top: 50px; }
 footer a.brand { color: #fff; font-weight: 500; font-size: 1.5em; }
 footer a { color: #fff }
 footer ul { margin: 0px; display: flex; align-items: flex-end; justify-content: flex-end; }
