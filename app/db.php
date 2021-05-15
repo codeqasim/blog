@@ -8,3 +8,9 @@ if ($mysqli -> connect_errno) { echo "Failed to connect to MySQL: " . $mysqli ->
 
 // main app credentials, can be called by $app->FIELD_NAME
 $app = $mysqli->query("SELECT * FROM settings WHERE id = 1")->fetch_object();
+
+// sql query for navigation of pages
+$pages = $mysqli->query("SELECT * FROM pages ORDER BY id DESC");
+
+// sql query for categories
+$categories = $mysqli->query("SELECT * FROM categories ORDER BY id DESC");

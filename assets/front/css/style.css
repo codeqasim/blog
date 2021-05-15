@@ -126,7 +126,7 @@ ul { list-style: none; padding: 0px; margin: 0px }
 footer { background-color: rgba(0, 0, 0, 0.9); padding: 40px 0; }
 footer a.brand { color: #fff; font-weight: 500; font-size: 1.5em; }
 footer a { color: #fff }
-footer ul { margin: 0px; display: flex; align-items: center; }
+footer ul { margin: 0px; display: flex; align-items: flex-end; justify-content: flex-end; }
 footer li { float: right; padding: 0 10px; font-size: 1.1em; }
 footer .foot { padding: 24px 0; border-top: 1px solid #4c4c4c; margin-top: 30px; }
 
