@@ -47,10 +47,8 @@ include template;
 
 // post page
 $router->get('sitemap.xml', function() {
-ini_set('short_open_tag', "off");
-
-
 header("Content-type: text/xml");
+include "app/db.php";
 include "app/views/sitemap.php";
 });
 
