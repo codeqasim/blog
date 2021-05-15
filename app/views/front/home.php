@@ -32,7 +32,7 @@
 foreach($data as $d) { ?>
  <div class="c4 mb25">
  <a href="<?=root?><?=$d['slug']?>">
-  <img src="https://phptravels.com/blog/<?=$d['image_big']?>" alt="<?=$d['title']?>" />
+  <img src="<?=root?>uploads/posts/<?=$d['img']?>" alt="<?=$d['title']?>" />
    <p class="tag"><?=$d['id']?></p>
    <h2><?=$d['title']?></h2>
    <p><?=strip_tags($d['content'])?></p>

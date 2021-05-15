@@ -11,7 +11,7 @@ foreach($data as $d) { ?>
 <p class="date_time"><?=$d['created_at']?></p>
 </div>
 
-<img src="https://phptravels.com/blog/<?=$d['image_big']?>" class="img" alt="<?=$d['title']?>" />
+<img src="<?=root?>uploads/posts/<?=$d['img']?>" class="img" alt="<?=$d['title']?>" />
 
 <div class="content">
 <?=$d['content']?>
