@@ -47,7 +47,6 @@ include template;
 
 // post page
 $router->get('sitemap.xml', function() {
-header("Content-type: text/xml");
 include "app/views/sitemap.php";
 });
 
