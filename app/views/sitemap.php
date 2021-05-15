@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="<?=root?>app/views/sitemap.xsl"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap>
+﻿<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap>
 <loc>https://technewspakistan.com/sitemap-pages.xml</loc>
 <lastmod>2021-05-08T20:00:00.086Z</lastmod>
 </sitemap>
