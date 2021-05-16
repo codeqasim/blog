@@ -5,14 +5,15 @@
 </div>
 </section>
 
+<?php if ($featured->num_rows > 0) { foreach($featured as $f) { ?>
 <section class="contain ptb25 featured">
 <a href="<?=root?>post">
 <div class="row">
-<div class="c8"><img src="<?=root?>uploads/posts/news.jpg" alt="" /></div>
+<div class="c8"><img src="<?=root?>uploads/posts/<?=$f['img']?>" alt="<?=$f['title']?>" /></div>
 <div class="c4">
-<p class="tag">Version Release</p>
-<h2>PHP Blog Script Lauched Production v1.0</h2>
-<p>PHP blog script helping you to build your blog super fast within 5 minutes of installation and configuration. SEO optimized with backend admin panel and much more to explore.</p>
+<p class="tag"><?=$f['category_id']?></p>
+<h2><?=$f['title']?></h2>
+<p><?=substr(strip_tags($f['content']), 0, 160)?></p>
 
 <div class="author">
 <img src="https://technewspakistan.com/content/images/size/w100/2021/05/22.jpg" alt="" />
@@ -23,6 +24,7 @@
 </div>
 </a>
 </section>
+ <?php } } ?>
 
 <section class="articles">
  <div class="contain">
@@ -46,7 +48,7 @@
  </a>
  </div>
  </div>
- <?php } } else { echo 0; } ?>
+ <?php } } else { echo "No Published Articles Yet!"; } ?>
 
  </div>
  </div>
