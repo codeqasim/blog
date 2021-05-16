@@ -3,7 +3,7 @@
 // main homepage
 $router->get('/', function() {
 include "app/db.php";
-$data = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 27");
+$data = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 1, 27");
 $featured = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 1");
 
 // meta information

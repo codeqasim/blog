@@ -11,7 +11,10 @@
 <div class="row">
 <div class="c8"><img src="<?=root?>uploads/posts/<?=$f['img']?>" alt="<?=$f['title']?>" /></div>
 <div class="c4">
-<p class="tag"><?=$f['category_id']?></p>
+<p class="tag">
+<?php $catetory = $f['category_id'];
+echo $mysqli->query("SELECT * FROM categories WHERE id = ".$catetory."")->fetch_object()->title; ?>
+</p>
 <h2><?=$f['title']?></h2>
 <p><?=substr(strip_tags($f['content']), 0, 160)?></p>
 
@@ -30,13 +33,19 @@
  <div class="contain">
  <div class="row">
 
-<?php if ($data->num_rows > 0) { foreach($data as $d) { ?>
+<?php
+
+if ($data->num_rows > 0)
+{foreach($data as $d) { ?>
  <div class="c4 mb25">
  <div class="card">
  <a href="<?=root?><?=$d['slug']?>">
   <img src="<?=root?>uploads/posts/<?=$d['img']?>" alt="<?=$d['title']?>" />
   <div class="content">
-   <p class="tag"><?=$d['id']?></p>
+   <p class="tag">
+   <?php $catetory = $d['category_id'];
+   echo  $mysqli->query("SELECT * FROM categories WHERE id = ".$catetory."")->fetch_object()->title; ?>
+   </p>
    <h2><?=$d['title']?></h2>
    <p><?=strip_tags($d['content'])?></p>
     <div class="author">
