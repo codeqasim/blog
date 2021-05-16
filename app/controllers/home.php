@@ -134,6 +134,9 @@ $meta_time = $category['created_at'];
 $meta_writer = "";
 }
 
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$url_end = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
+
 $page_title = "head";
 $content = "content";
 $body = views."categories.php";
