@@ -13,6 +13,7 @@ Simplest PHP based blog fully optimized for search engines 100% opensource code 
 - Auto Sitemap generation 
 - Beutify URLs
 - Social links and shares 
+- Page hits views counter
 - Lightweight total 3MB script  
 
 #### Why PHP Blog Script
