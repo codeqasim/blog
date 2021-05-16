@@ -15,9 +15,10 @@ Simplest PHP based blog fully optimized for search engines 100% opensource code 
 - Social links and shares 
 - Lightweight total 3MB script  
 
-#### What's the difference between Patreon and OpenCollective?
+#### Why PHP Blog Script
+Starting your own niche based blog is very challeging specially when it comes to selecting any of your CMS or blog script. speed, performance, optimization, SEO and user-friendly are the options you need to be very handy. fancy cms and blog scripts are no more easy to handle configure or install on your shared or dedicated servers anymore. PHP Blog Script makes life much easier to just add your db credentials and install the entire platform within 2 minutes. 
 
-Funds donated via Patreon go directly to support Evan You's full-time work on Vue.js. Funds donated via OpenCollective are managed with transparent expenses and will be used for compensating work and expenses for core team members or sponsoring community events. Your name/logo will receive proper recognition and exposure by donating on either platform.
+No plugins no libraries and fancy themes to customize and waste your time simple elegant and usefull blog platform is ready for you to install for free and start blogging without wasting your time on search other blogging scripts. 
 
 <h3 align="center">Special Sponsors</h3>
 <!--special start-->
