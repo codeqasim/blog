@@ -205,6 +205,9 @@ $meta_time = $post_date.".000Z";
 $meta_writer = "Qasim Hussain";
 
 $title =$post['title'];
+
+$mysqli->query("UPDATE posts SET hits = hits+1 WHERE id=".$post['id']."");
+
 }}
 
 $body = views."post.php";

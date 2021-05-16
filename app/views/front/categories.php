@@ -27,10 +27,21 @@ $posts = $mysqli->query("SELECT * FROM posts WHERE `category_id` LIKE '".$cat_id
 </div>
 <h2 class="mt60"><?=$post['title'];?></h2>
 <p><?=substr(strip_tags($post['content']), 0, 260)?></p>
+
+ <div class="catnviews mt15">
+<p class="tag">
+<?php $catetory = $post['category_id'];
+echo $mysqli->query("SELECT * FROM categories WHERE id = ".$catetory."")->fetch_object()->title; ?>
+&nbsp;
+</p>
+<span class="viewsp">
+<img src="<?=root?>assets/front/img/views.svg" alt="<?=$post['title']?>" class="views_svg" />
+<strong>&nbsp;<?=$post['hits']?></strong>
+</span>
+</div>
+
 </div>
 <?php } ?>
-
-
 
 </div>
 </div>
