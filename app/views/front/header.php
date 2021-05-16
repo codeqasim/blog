@@ -115,10 +115,13 @@
       <li><a href="<?=$cat['slug']?>"><?=$cat['title']?></a></li>
       <?php } } ?>
     </ul>
-
-    <ul class="fr">
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Signup</a></li>
+    <ul class="fr social">
+      <?php if (!empty($app->whatsapp_url)){?><li><a target="_blank" href="<?=$app->whatsapp_url?>" class="wa"><span>Wa</span></a></li><?php } ?>
+      <?php if (!empty($app->facebook_url)){?><li><a target="_blank" href="<?=$app->facebook_url?>" class="fb"><span>Fb</span></a></li><?php } ?>
+      <?php if (!empty($app->twitter_url)){?><li><a target="_blank" href="<?=$app->twitter_url?>" class="tw"><span>Tw</span></a></li><?php } ?>
+      <?php if (!empty($app->linkedin_url)){?><li><a target="_blank" href="<?=$app->linkedin_url?>" class="li"><span>Li</span></a></li><?php } ?>
+      <?php if (!empty($app->instagram_url)){?><li><a target="_blank" href="<?=$app->instagram_url?>" class="ig"><span>Ig</span></a></li><?php } ?>
+      <?php if (!empty($app->pinterest_url)){?><li><a target="_blank" href="<?=$app->pinterest_url?>" class="pr"><span>Pr</span></a></li><?php } ?>
     </ul>
   </div>
 </nav>

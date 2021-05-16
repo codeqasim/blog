@@ -1,6 +1,5 @@
-<div class="post">
 <?php if ($data->num_rows > 0) { foreach($data as $d) { ?>
-
+<div class="post">
 <p class="tag">Category name goes here</p>
 <h1 class="title"><?=$d['title']?></h1>
 <?php include "app/views/front/partcials/author.php"?>
@@ -9,9 +8,8 @@
 <div class="content">
 <?=$d['content']?>
 </div>
-
-<?php } } else { include "404.php"; } ?>
 </div>
+<?php } } else { include "404.php"; } ?>
 
 <section class="post_articles">
 <div class="articles contain">

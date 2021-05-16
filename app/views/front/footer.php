@@ -25,9 +25,10 @@
  <div class="c6"><a href="<?=root?>" class="brand"> <?=$app->app_name?></a></div>
  <div class="c6 fr">
   <ul>
-   <li><a href="<?=root?>about">About</a></li>
-   <li><a href="<?=root?>contact">Contact</a></li>
-   <li><a href="<?=root?>policy">Policy</a></li>
+   <li><a href="<?=root?>">Home</a></li>
+   <?php if ($pages->num_rows > 0) { foreach($pages as $nav) { ?>
+   <li><a href="<?=$nav['slug']?>"><?=$nav['title']?></a></li>
+   <?php } } ?>
    <li><a href="<?=root?>sitemap.xml" target="_blank">Sitemap</a></li>
   </ul>
  </div>

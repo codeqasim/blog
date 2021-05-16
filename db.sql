@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2021 at 02:50 AM
+-- Generation Time: May 16, 2021 at 05:50 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -96,16 +96,17 @@ CREATE TABLE `pages` (
   `content` text DEFAULT NULL,
   `parent_id` int(11) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `status` enum('1','0') NOT NULL DEFAULT '1'
+  `status` enum('1','0') NOT NULL DEFAULT '1',
+  `img` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `pages`
 --
 
-INSERT INTO `pages` (`id`, `title`, `description`, `keywords`, `slug`, `is_custom`, `content`, `parent_id`, `created_at`, `status`) VALUES
-(1, 'About', 'about', 'about', 'about-us', 0, 'about', 0, '2019-03-08 21:59:53', '1'),
-(2, 'Contact', 'contact', 'contact', 'contact-us', 0, 'contact', 0, '2019-03-08 22:01:38', '1');
+INSERT INTO `pages` (`id`, `title`, `description`, `keywords`, `slug`, `is_custom`, `content`, `parent_id`, `created_at`, `status`, `img`) VALUES
+(1, 'About', 'about', 'about', 'about-us', 0, 'about', 0, '2019-03-08 21:59:53', '1', NULL),
+(2, 'Contact', 'contact', 'contact', 'contact-us', 0, 'contact', 0, '2019-03-08 22:01:38', '1', NULL);
 
 -- --------------------------------------------------------
 
@@ -338,6 +339,7 @@ CREATE TABLE `settings` (
   `home_title` varchar(255) DEFAULT NULL,
   `description` varchar(500) DEFAULT NULL,
   `keywords` varchar(500) DEFAULT NULL,
+  `whatsapp_url` varchar(500) DEFAULT NULL,
   `facebook_url` varchar(500) DEFAULT NULL,
   `twitter_url` varchar(500) DEFAULT NULL,
   `instagram_url` varchar(500) DEFAULT NULL,
@@ -356,8 +358,8 @@ CREATE TABLE `settings` (
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `app_name`, `home_title`, `description`, `keywords`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `about_footer`, `contact_address`, `contact_email`, `contact_phone`, `copyright`, `cookies_warning`, `created_at`) VALUES
-(1, 'PHP Blog Script', 'PHP Blog Script', 'PHP blog script helping you to build your blog super fast within 5 minutes of installation and configuration. SEO optimized with backend admin panel\r\n\r\n', 'keyword', '', '', '', '', '', '', '', '', '', '', 0, '2019-03-08 22:05:14');
+INSERT INTO `settings` (`id`, `app_name`, `home_title`, `description`, `keywords`, `whatsapp_url`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `about_footer`, `contact_address`, `contact_email`, `contact_phone`, `copyright`, `cookies_warning`, `created_at`) VALUES
+(1, 'PHP Blog Script', 'PHP Blog Script', 'PHP blog script helping you to build your blog super fast within 5 minutes of installation and configuration. SEO optimized with backend admin panel\r\n\r\n', 'keyword', 'w', 'f', 't', 'i', 'p', 'l', '', '', '', '', '', 0, '2019-03-08 22:05:14');
 
 -- --------------------------------------------------------
 

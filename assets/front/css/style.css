@@ -18,6 +18,15 @@ header nav { display: inline-block; width: 100%; box-shadow: 0 2px 2px -2px rgb(
 header nav li { float: left; padding: 20px 8px; font-size: .875rem; line-height: 1.25rem; font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;}
 header nav li a { padding-bottom: 1.5rem; padding-top: 1.5rem; font-weight: 500 }
 header nav li.brand { max-width: 150px; }
+header nav .social li { padding: 20px 4px; }
+header nav .social li a { background: #eee; border-radius: 100%; padding: 8px 10px; color: #fff; }
+header nav .social li a:hover { opacity: 0.8 }
+header nav .social li .wa { background: #00da00; padding: 8px; }
+header nav .social li .fb { background: #0056ff; padding: 8px 9px; }
+header nav .social li .tw { background: #4ac2ff; padding: 8px; }
+header nav .social li .li { background: #008dd5; padding: 8px 11px; }
+header nav .social li .ig { background: #ff8500; padding: 8px 11px; }
+header nav .social li .pr { background: #ff3f00; padding: 8px 10px; }
 
 ul { list-style: none; padding: 0px; margin: 0px }
 
