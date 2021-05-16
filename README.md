@@ -4,9 +4,9 @@
 
 Simplest PHP based blog fully optimized for search engines 100% opensource code and ready to extend the features. logically inspired by wordpress, medium, gitbook & ghost cms. 
 
-❤️ Build with technologies : PHP MYSQL HTML CSS JS
+❤️ #### Build with technologies : PHP MYSQL HTML CSS JS
 
-🔥 Features 
+🔥 #### Features 
 - 100% opensource code 
 - Categories module 
 - Newsletter & subsribers 
