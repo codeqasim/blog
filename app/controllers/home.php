@@ -1,9 +1,11 @@
 <?php
 
+include "app/db.php";
+
 // main homepage
 $router->get('/', function() {
 include "app/db.php";
-$data = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 1, 27");
+$posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 1, 27");
 $featured = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 1");
 
 // meta information
@@ -92,6 +94,30 @@ $tags = $mysqli->query("SELECT * FROM posts ORDER BY id DESC");
 include "app/views/sitemap/sitemap_tags.php";
 });
 
+foreach ($pages as $page ) {
+$router->get($page['slug'], function() {
+include "app/db.php";
+
+foreach ($pages as $page ) {
+// meta information
+$title = $page['title'];
+$meta_title = $app->home_title;
+$meta_desc = $page['content'];
+$meta_keywords = $page['keywords'];
+$meta_url = root.$page['slug'];
+$meta_img = root."uploads/".$page['img'];
+$meta_time = $page['created_at'];
+$meta_writer = "Qasim Hussain";
+}
+
+$page_title = "head";
+$content = "content";
+$body = views."pages.php";
+include template;
+
+});
+}
+
 // main homepage
 $router->get('install', function() {
 
@@ -135,6 +161,8 @@ include "app/db.php";
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url_end = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
 $data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$url_end."'");
+$posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 3");
+
 
 if ($data->num_rows > 0) { foreach($data as $post) {
 // meta information
