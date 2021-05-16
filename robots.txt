@@ -1,0 +1,4 @@
+user-agent: *
+disallow: /app/
+disallow: /assets/
+disallow: /uploads/
