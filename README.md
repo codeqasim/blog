@@ -4,9 +4,17 @@
 
 Simplest PHP based blog fully optimized for search engines 100% opensource code and ready to extend the features. logically inspired by wordpress, medium, gitbook & ghost cms. 
 
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/evanyou).
-- [Become a backer or sponsor on Open Collective](https://opencollective.com/vuejs).
-- [One-time donation via PayPal or crypto-currencies](https://vuejs.org/support-vuejs/#One-time-Donations).
+❤️ Build with technologies : PHP MYSQL HTML CSS JS
+
+🔥 Features 
+- 100% opensource code 
+- Categories module 
+- Newsletter & subsribers 
+- SEO optimized 
+- Auto generation 
+- Beutify URLs
+- Social links and shares 
+- Lightweight total 3MB script  
 
 #### What's the difference between Patreon and OpenCollective?
 
