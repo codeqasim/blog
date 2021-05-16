@@ -12,6 +12,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
+<meta name="description" content="<?=$meta_desc?>">
+<meta name="keywords" content="<?=$meta_keywords?>">
+
 <link rel="canonical" href="<?=$meta_url?>" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
