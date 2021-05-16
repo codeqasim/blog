@@ -10,7 +10,7 @@ Simplest PHP based blog fully optimized for search engines 100% opensource code 
 - Categories module 
 - Newsletter & subsribers 
 - SEO optimized 
-- Auto generation 
+- Auto Sitemap generation 
 - Beutify URLs
 - Social links and shares 
 - Lightweight total 3MB script  
