@@ -1,12 +1,52 @@
 <?php
 
-// main homepage
+// admin login
+$router->get('admin', function() {
+include "app/db.php";
+
+$title ="Login";
+include admin_views."login.php";
+});
+
+// admin login
+$router->post('admin_login', function() {
+include "app/db.php";
+
+if(isset($_POST["emaill"], $_POST["password"]))
+    {
+
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $result1 = mysql_query("SELECT email, password FROM Users WHERE email = '".$email."' AND  password = '".$password."'");
+
+    if(mysql_num_rows($result1) > 0 )
+    {
+        $_SESSION["admin_login"] = true;
+        $_SESSION["email"] = $email;
+        header("Location: ".root."admin/dashboard");
+    }
+    else
+    {
+        echo 'The username or password are incorrect!';
+    }
+}
+
+});
+
+
+
+
+
+
+if (isset($_SESSION['admin_login']) == 1 ) {
+// admin dashboard
 $router->get(admin.'dashboard', function() {
 $title ="Homepage";
 $body = admin_views."home.php";
 $home_nav = "active";
 include admin_template;
-});
+}); }
 
 // buttons page
 $router->get(admin.'posts', function() {
