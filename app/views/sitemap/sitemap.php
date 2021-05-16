@@ -15,6 +15,10 @@ $date_time = $date .' '. $time;
 <lastmod>'.$date_time.'</lastmod>
 </sitemap>
 <sitemap>
+<loc>'.root.'sitemap-categories.xml</loc>
+<lastmod>'.$date_time.'</lastmod>
+</sitemap>
+<sitemap>
 <loc>'.root.'sitemap-tags.xml</loc>
 <lastmod>'.$date_time.'</lastmod>
 </sitemap>

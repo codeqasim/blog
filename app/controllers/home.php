@@ -51,12 +51,44 @@ header("Content-type: text/xml");
 include "app/views/sitemap/sitemap.php";
 });
 
+// pages sitemap page
+$router->get('sitemap-pages.xml', function() {
+header("Content-type: text/xml");
+include "app/db.php";
+$pages = $mysqli->query("SELECT * FROM pages ORDER BY id DESC");
+include "app/views/sitemap/sitemap_pages.php";
+});
+
 // posts sitemap page
 $router->get('sitemap-posts.xml', function() {
 header("Content-type: text/xml");
 include "app/db.php";
 $posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC");
 include "app/views/sitemap/sitemap_posts.php";
+});
+
+// author sitemap page
+$router->get('sitemap-authors.xml', function() {
+header("Content-type: text/xml");
+include "app/db.php";
+$users = $mysqli->query("SELECT * FROM users ORDER BY id DESC");
+include "app/views/sitemap/sitemap_authors.php";
+});
+
+// categories sitemap page
+$router->get('sitemap-categories.xml', function() {
+header("Content-type: text/xml");
+include "app/db.php";
+$categories = $mysqli->query("SELECT * FROM categories ORDER BY id DESC");
+include "app/views/sitemap/sitemap_categories.php";
+});
+
+// categories sitemap page
+$router->get('sitemap-tags.xml', function() {
+header("Content-type: text/xml");
+include "app/db.php";
+$tags = $mysqli->query("SELECT * FROM posts ORDER BY id DESC");
+include "app/views/sitemap/sitemap_tags.php";
 });
 
 // main homepage
