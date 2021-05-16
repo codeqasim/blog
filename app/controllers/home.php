@@ -94,6 +94,7 @@ $tags = $mysqli->query("SELECT * FROM posts ORDER BY id DESC");
 include "app/views/sitemap/sitemap_tags.php";
 });
 
+// pages dynamic controllers with content generation
 foreach ($pages as $page ) {
 $router->get($page['slug'], function() {
 include "app/db.php";
@@ -107,12 +108,35 @@ $meta_keywords = $page['keywords'];
 $meta_url = root.$page['slug'];
 $meta_img = root."uploads/".$page['img'];
 $meta_time = $page['created_at'];
-$meta_writer = "Qasim Hussain";
+$meta_writer = "";
 }
 
 $page_title = "head";
 $content = "content";
 $body = views."pages.php";
+include template;
+}); }
+
+// categories based posts
+foreach ($categories as $category ) {
+$router->get($category['slug'], function() {
+include "app/db.php";
+
+foreach ($categories as $category ) {
+// meta information
+$title = $category['title'];
+$meta_title = $app->home_title;
+$meta_desc = $category['description'];
+$meta_keywords = $category['keywords'];
+$meta_url = root.$category['slug'];
+$meta_img = root."uploads/global/media.jpg";
+$meta_time = $category['created_at'];
+$meta_writer = "";
+}
+
+$page_title = "head";
+$content = "content";
+$body = views."categories.php";
 include template;
 
 });
