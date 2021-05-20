@@ -11,7 +11,10 @@ ini_set('display_errors', 'On'); // error showing (debug)
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST']; $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']); define('root', $root);
 
 // ini router
-use AppRouter\Router;
+use AppRouter\Router;                  
+
+// include config file
+include "config.php";
 
 // admin routes configurations
 define('admin','admin/'); // admin URI name
@@ -22,16 +25,10 @@ define('admin_template','app/views/admin/template.php'); // admin layout templat
 define('views','app/views/front/'); // admin views path
 define('template','app/views/front/template.php'); // admin layout template
 
-// database configuration
-define('server','localhost'); // mention your database server name normally its localhost
-define('dbname','booknow_blog'); // mention your database name
-define('username','booknow_blog'); // mention your database username name normally its root
-define('password','booknow_blog'); // mention your database password
-
 // error page 404
 $router = new Router(function ($method, $path, $statusCode, $exception) { http_response_code($statusCode);
 include "app/views/front/header.php";
-echo 1;
+include "app/views/front/404.php";
 include "app/views/front/footer.php";
 });
 
