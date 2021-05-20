@@ -1,4 +1,4 @@
-<p align="center"><a href="http://phpblogscript.com" target="_blank" rel="noopener noreferrer"><img width="200" src="http://phpblogscript.com/uploads/global/logo.png" alt="php blogscript"></a></p>
+<p align="center"><a href="http://phpblogscript.com" target="_blank" rel="noopener noreferrer"><img width="200" src="http://phpblogscript.com/blog/uploads/global/logo.png" alt="php blogscript"></a></p>
 
 <br>
 
