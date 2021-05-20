@@ -1,0 +1,14 @@
+Options +FollowSymLinks -MultiViews +Indexes
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|tpl)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteOptions MaxRedirects=1
+RewriteCond %{REQUEST_FILENAME} -f [NC,OR]
+RewriteCond %{REQUEST_FILENAME} -d [NC]
+RewriteRule .* - [L]
+
+# Installer
+RewriteRule ^install/?$ install.php [L]
