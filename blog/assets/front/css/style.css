@@ -204,3 +204,4 @@ select:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0
 .catnviews { display: flex; align-items: center; justify-content: space-between; }
 .catnviews .tag { padding: 0px  }
 .viewsp { display: flex; justify-content: center; align-items: inherit; }
+
