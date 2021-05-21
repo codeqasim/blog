@@ -111,11 +111,23 @@ include admin_template;
 $router->post('admin/settings', function() {
 include "app/db.php";
 
-
-$sql = "UPDATE settings SET  keywords = 'a' = 2 WHERE id = 1";
+$sql = "
+UPDATE settings SET
+site_url = '".$_POST['site_url']."',
+app_name = '".$_POST['app_name']."',
+description = '".$_POST['description']."',
+keywords = '".$_POST['keywords']."',
+facebook_url = '".$_POST['facebook_url']."',
+twitter_url = '".$_POST['twitter_url']."',
+whatsapp_url = '".$_POST['whatsapp_url']."',
+pinterest_url = '".$_POST['pinterest_url']."',
+linkedin_url = '".$_POST['linkedin_url']."',
+instagram_url = '".$_POST['instagram_url']."'
+WHERE id = 1";
 
 if ($mysqli->query($sql) === TRUE) {
-    echo "Record updated successfully";
+    header("Location: ".root."admin/settings");
+
 } else {
     echo "Error updating record: " . $mysqli->error;
 }
