@@ -9,7 +9,14 @@
 <section class="contain ptb25 featured">
 <a href="<?=root.$post['slug']?>">
 <div class="row">
-<div class="c8"><img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" /></div>
+<div class="c8">
+<?php if (getimagesize(root."uploads/posts/".$post['img']) !== false) {?>
+<img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
+<?php } else { ?>
+<img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
+<img src="" alt="" />
+<?php } ?>
+</div>
 <div class="c4">
 
 <div class="catnviews mt15">
