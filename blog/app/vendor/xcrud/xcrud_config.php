@@ -3,9 +3,9 @@
 class Xcrud_config
 {
     // default connection
-    public static $dbname = "booknow_blog"; // Your database name
-    public static $dbuser = "booknow_blog"; // Your database username
-    public static $dbpass = "booknow_blog"; // // Your database password
+    public static $dbname = "blog"; // Your database name
+    public static $dbuser = "root"; // Your database username
+    public static $dbpass = ""; // // Your database password
     public static $dbhost = "localhost"; // Your database host, 'localhost' is default.
 
     

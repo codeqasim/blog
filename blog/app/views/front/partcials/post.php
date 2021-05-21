@@ -2,8 +2,15 @@
  <div class="c4 mb25">
  <div class="card">
  <a href="<?=root?><?=$post['slug']?>">
-  <img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
-  <div class="content">
+
+<?php if (getimagesize(root."uploads/posts/".$post['img']) !== false) {?>
+<img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
+<?php } else { ?>
+<img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
+<img src="" alt="" />
+<?php } ?>
+
+ <div class="content">
 
  <div class="catnviews mt15">
 <p class="tag">

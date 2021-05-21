@@ -108,9 +108,11 @@ $settings_nav = "active";
 include admin_template;
 });
 
+// settings update
 $router->post('admin/settings', function() {
 include "app/db.php";
 
+// sql query to update columns
 $sql = "
 UPDATE settings SET
 site_url = '".$_POST['site_url']."',
@@ -125,26 +127,41 @@ linkedin_url = '".$_POST['linkedin_url']."',
 instagram_url = '".$_POST['instagram_url']."'
 WHERE id = 1";
 
-if ($mysqli->query($sql) === TRUE) {
-    header("Location: ".root."admin/settings");
-
-} else {
-    echo "Error updating record: " . $mysqli->error;
-}
-
-
-// $mysqli->query("UPDATE * FROM settings WHERE id = 1 site_url=1")->fetch_object();
-
-
-$_POST['site_url'];
-
+if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/settings");
+} else { echo "Error updating record: " . $mysqli->error; }
 
 });
 
-// tables page
-$router->get(admin.'tables', function() {
-$title ="Tables";
-$body = admin_views."tables.php";
-$tables_nav = "active";
+// inputs page
+$router->get(admin.'post/add', function() {
+include "app/db.php";
+$title ="Add Post";
+$body = admin_views."post_add.php";
+$posts_nav = "active";
 include admin_template;
+});
+
+// inputs page
+$router->post(admin.'post/add', function() {
+include "app/db.php";
+include "app/post_img.php";
+
+// img veriable name for db
+$img = $_FILES["file"]["name"];
+
+// sql query to update columns
+$sql = "
+INSERT INTO posts
+(category_id, title, slug, img, content)
+VALUES (
+'".$_POST['category_id']."',
+'".$_POST['title']."',
+'".$_POST['slug']."',
+'".$img."',
+'".$_POST['content']."')
+";
+
+if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/posts");
+} else { echo "Error updating record: " . $mysqli->error; }
+
 });
