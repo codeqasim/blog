@@ -3,7 +3,6 @@
   error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
   // set base path
   define('BASEPATH',dirname($_SERVER['PHP_SELF']));
-  define('APPPATH', __DIR__.'/../application/');
   // get functions
   require('includes/functions.php');
   // check requirements
@@ -32,12 +31,9 @@
       $db->multi_query($sqlquery) or _error("Error", $db->error);
       $count = 0;
       // flush multi_queries
-      do{
-         require_once("progress.php");
-        } while(mysqli_more_results($db) && mysqli_next_result($db));
-      // [4] update system settings
-      $db->query(sprintf("UPDATE pt_accounts SET ai_first_name = 'Super Admin', accounts_email = %s, accounts_password = %s WHERE accounts_type='webadmin'", secure($_POST['admin_email']), secure(sha1($_POST['admin_password'])))) or _error("Error #101", $db->error);
-      $db->query(sprintf("UPDATE pt_app_settings SET site_url = %s,site_title = %s, date_f = 'd/m/Y', date_f_js = 'dd/mm/yyyy' WHERE user='webadmin'", secure($_POST['domain']), secure($_POST['siteTitle']))) or _error("Error #101", $db->error);
+      do { require_once("progress.php"); } while(mysqli_more_results($db) && mysqli_next_result($db));
+      $db->query(sprintf("UPDATE users SET full_name = 'Super Admin', email = %s, password = %s WHERE type='admin'", secure($_POST['admin_email']), secure(md5($_POST['admin_password'])))) or _error("Error #101", $db->error);
+      $db->query(sprintf("UPDATE settings SET site_url = %s, app_name = %s", secure($_POST['domain']), secure($_POST['siteTitle']))) or _error("Error #101", $db->error);
       write_config($_POST);
       sendEmail($_POST);
       _redirect($_POST['domain']."admin");
@@ -49,7 +45,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../assets/img/favicon.png">
+    <link rel="shortcut icon" href="../uploads/global/favicon.png">
     <title>Installer</title>
     <link rel="stylesheet" type="text/css" href="includes/assets/css/installer.min.css" />
     <script src="includes/assets/js/modernizr.custom.js"></script>
