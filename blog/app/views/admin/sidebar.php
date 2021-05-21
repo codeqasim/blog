@@ -10,8 +10,8 @@ Admin Panel <a class="fr" href="<?=root?>" target="_blank"> <strong class="pr5">
  <li><a href="<?=root.admin?>posts" class="<?php if (isset($posts_nav)){ echo $posts_nav; }?>">Posts</a></li>
  <li><a href="<?=root.admin?>pages" class="<?php if (isset($pages_nav)){ echo $pages_nav; }?>">Pages</a></li>
  <li><a href="<?=root.admin?>newsletters" class="<?php if (isset($newsletters_nav)){ echo $newsletters_nav; }?>">Newsletters</a></li>
- <li><a href="<?=root.admin?>buttons" class="<?php if (isset($buttons_nav)){ echo $buttons_nav; }?>">Buttons</a></li>
  <li><a href="<?=root.admin?>settings" class="<?php if (isset($settings_nav)){ echo $settings_nav; }?>">Settings</a></li>
- <li><a href="<?=root.admin?>tables" class="<?php if (isset($tables_nav)){ echo $tables_nav; }?>">Table</a></li>
+ <li><a href="<?=root?>logout">Logout</a></li>
+<!-- <li><a href="<?=root.admin?>tables" class="<?php if (isset($tables_nav)){ echo $tables_nav; }?>">Table</a></li>-->
 </ul>
 </aside>

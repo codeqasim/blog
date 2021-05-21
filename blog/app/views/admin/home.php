@@ -1,5 +1,5 @@
 <h2 class="content_head">Elements <i class="fas fa-chevron-right"></i> Home
-<button class="k fr c1">Save</button>
+<button class="btn k fr c1">Save</button>
 </h2>
 <hr>
 

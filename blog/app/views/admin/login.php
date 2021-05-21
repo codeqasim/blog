@@ -13,11 +13,11 @@
 
 <body>
 <div class="contain">
-<form class="group" action="<?=root?>admin_login" method="post" style="width: 400px; margin: 0 auto; padding-top: 200px;">
+<form class="group" action="<?=root?>admin" method="post" style="width: 400px; margin: 0 auto; padding-top: 200px;">
 <p><strong>Administrator Login</strong></p>
-<input type="email" placeholder="Admin email" />
-<input type="password" placeholder="Admin password" />
-<button type="submit" class="btn b">login</button>
+<input name="email" type="email" placeholder="Admin email" />
+<input name="password" type="password" placeholder="Admin password" />
+<button type="submit" class="btn b w100">Login</button>
 </form>
 </div>
 </body>

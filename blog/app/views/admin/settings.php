@@ -1,33 +1,45 @@
-<h2 class="content_head">Elements <i class="fas fa-chevron-right"></i> Inputs
-<button class="k fr c1">Save</button>
+<form method="post" action="<?=root?>admin/settings">
+<h2 class="content_head">Settings
+<button class="btn k fr c1" type="submit">Save</button>
 </h2>
 <hr>
 
-<div class="header_panel">All Input Examples</div>
+<div class="header_panel">General settings</div>
 
 <div class="panel">
-<h2 class="head">Inputs box</h2>
-<p class="helper">Inputs examples with and without icon</p>
+<h2 class="head">Configurations</h2>
+<p class="helper">Blog main credentials</p>
 
 <div class="group">
-<input type="text" placeholder="Text goes here" />
+<div class="row"><div class="c1"><label>Domain</label></div><div class="c4"><input name="site_url" type="text" placeholder="Domain" value="<?=$app->site_url?>" /></div></div>
+<div class="row"><div class="c1"><label>Blog Name</label></div><div class="c4"><input name="app_name" type="text" placeholder="Blog name" value="<?=$app->app_name?>" /></div></div>
+<div class="row"><div class="c1"><label>Home Title</label></div><div class="c4"><input name="home_title" type="text" placeholder="Home title" value="<?=$app->home_title?>" /></div></div>
+<div class="row"><div class="c1"><label>Description</label></div><div class="c11"><input name="description" type="text" placeholder="Description" value="<?=$app->description?>" /></div></div>
+<div class="row"><div class="c1"><label>Keywords</label></div><div class="c11"><input name="keywords" type="text" placeholder="keywords" value="<?=$app->keywords?>" /></div></div>
 
-<input type="text" placeholder="" value="With Value" />
-
+<!--<input type="text" placeholder="" value="With Value" />
 <div class="input">
 <i class="far fa-question-circle"></i>
 <input type="text" placeholder="" value="With Icon" />
 </div>
-</div>
+</div>-->
 
+</div>
 </div>
 
 <div class="panel">
-<h2 class="head">Select box</h2>
-<p class="helper">select examples with and without icon</p>
+<h2 class="head">Social Links</h2>
+<p class="helper">Social media links</p>
 
 <div class="group">
-<select name="" id="">
+
+<div class="row"><div class="c1"><label>Facebook</label></div><div class="c4"><div class="input"><i class="fab fa-facebook"></i><input name="facebook_url" type="text" placeholder="Facebook link" value="<?=$app->facebook_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Twitter</label></div><div class="c4"><div class="input"><i class="fab fa-twitter"></i><input name="twitter_url" type="text" placeholder="Twitter link" value="<?=$app->twitter_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Instagram</label></div><div class="c4"><div class="input"><i class="fab fa-instagram"></i><input name="instagram_url" type="text" placeholder="Instagram link" value="<?=$app->instagram_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>LinkedIn</label></div><div class="c4"><div class="input"><i class="fab fa-linkedin"></i><input name="linkedin_url" type="text" placeholder="LinkedIn link" value="<?=$app->linkedin_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Pinterest</label></div><div class="c4"><div class="input"><i class="fab fa-pinterest"></i><input name="pinterest" type="text" placeholder="Pinterest link" value="<?=$app->pinterest_url?>" /></div></div></div>
+
+<!--<select name="" id="">
     <option>Select</option>
     <option>Value 1</option>
     <option>Value 2</option>
@@ -42,12 +54,12 @@
     <option>Value 2</option>
     <option>Value 3</option>
 </select>
-</div>
+</div>-->
 
 </div>
 </div>
 
-<div class="panel">
+<!--<div class="panel">
 <h2 class="head">Input select</h2>
 <p class="helper">Choose your browser from the list</p>
 
@@ -76,6 +88,5 @@
 </div>
 
 </div>
-</div>
-
-<hr>
+</div>-->
+</form>

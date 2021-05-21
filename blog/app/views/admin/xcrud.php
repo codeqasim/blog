@@ -1,3 +1,1 @@
-<?php
-    echo $xcrud->render();
-?>
+<?php echo $xcrud->render(); ?>

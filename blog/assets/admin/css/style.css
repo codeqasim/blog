@@ -78,6 +78,8 @@ ul { list-style: none; padding: 0px; }
 .g>[class*=c]{ padding-right: 0; padding-left: 0; }
 .overflow-hidden {overflow: hidden;}
 
+.w100{width: 100%}
+
 /* grid system 
 ---------------------------------------------------  */
 
@@ -150,8 +152,9 @@ select:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0
 .clear { display: block; position: relative;width: 100%; }
 .br-1 { display: block; position: relative;width: 100%; margin: 10px 0; }
 .group input,.group select  { display: block; margin: 10px 0; }
+.group label  { padding: 10px 0; display: block; margin: 10px 0; font-weight: 500; }
 
-.content_head { color: #15171a; font-size: 26px; margin-bottom: 18px; }
+.content_head { color: #15171a; font-size: 26px; margin-bottom: 18px; height: 30px; }
 .content_head i { font-size: 20px; color: #b4b4b4; }
 
 .header_panel { letter-spacing: -0.2px; font-size: 12px; text-transform: uppercase; letter-spacing: .2px; font-weight: 500; padding: 12px 0; }

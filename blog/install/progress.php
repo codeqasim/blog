@@ -8,7 +8,7 @@
     body{font-family:calibri }
    .admin { display: flex; }
     img {width: 60px; height: 60px; border-radius: 5px; margin-right:10px}
-    button { cursor:pointer; width: 100%; border: transparent; background: #4f00ff; color: #fff; border-radius: 4px; height: 60px; }
+    button { margin-top:26px; cursor:pointer; width: 100%; border: transparent; background: #4f00ff; color: #fff; border-radius: 4px; height: 60px; }
     button:hover {background: #4100CC; }
     form{ margin-bottom: 0; }
     hr{margin: 20px 0; border: 1px solid #e6e6e6;}
@@ -56,7 +56,6 @@
   <h2><strong>Installation Completed</strong></h2>
   <div class="panel-body">
   <p>Your blog has been installed successfully and ready to get started.</p>
-  <hr>
   <form action="<?php echo @$_POST['domain']; ?>" target="_blank" method="get">
      <button class="btn btn-default btn-lg btn-block">
       <h4 class="text-center"><strong>Homepage</strong></h4>

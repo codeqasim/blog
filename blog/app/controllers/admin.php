@@ -1,6 +1,11 @@
 <?php
 
 // admin login
+$router->get('logout', function() {
+session_destroy();
+header("Location: ".root."");
+});
+
 $router->get('admin', function() {
 include "app/db.php";
 
@@ -9,35 +14,29 @@ include admin_views."login.php";
 });
 
 // admin login
-$router->post('admin_login', function() {
+$router->post('admin', function() {
 include "app/db.php";
 
-if(isset($_POST["emaill"], $_POST["password"]))
-    {
+//Username and Password sent from Form
+$email = mysqli_real_escape_string($mysqli, $_POST['email']);
+$password = mysqli_real_escape_string($mysqli, $_POST['password']);
+$password = md5($password);
+$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+$query = mysqli_query($mysqli, $sql);
+$res=mysqli_num_rows($query);
 
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+if($res == 1) {
+$_SESSION['admin_login'] = true;
+$_SESSION['admin_email'] = $_POST['email'];
+header("Location: ".root."admin/dashboard");
+} else {
 
-    $result1 = mysql_query("SELECT email, password FROM Users WHERE email = '".$email."' AND  password = '".$password."'");
-
-    if(mysql_num_rows($result1) > 0 )
-    {
-        $_SESSION["admin_login"] = true;
-        $_SESSION["email"] = $email;
-        header("Location: ".root."admin/dashboard");
-    }
-    else
-    {
-        echo 'The username or password are incorrect!';
-    }
+$title ="Login";
+include admin_views."login.php";
+echo "<script>alert('Email or password incorrect')</script>";
 }
 
 });
-
-
-
-
-
 
 if (isset($_SESSION['admin_login']) == 1 ) {
 // admin dashboard
@@ -48,7 +47,7 @@ $home_nav = "active";
 include admin_template;
 }); }
 
-// buttons page
+// posts page
 $router->get(admin.'posts', function() {
 include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
@@ -61,7 +60,7 @@ $xcrud->columns('hits');
 $xcrud->columns('created_at');
 $xcrud->unset_title();
 $title ="Blog Posts";
-$body = admin_views."xcrud.php";
+$body = admin_views."post.php";
 $posts_nav = "active";
 include admin_template;
 });
@@ -100,20 +99,34 @@ $newsletters_nav = "active";
 include admin_template;
 });
 
-// buttons page
-$router->get(admin.'buttons', function() {
-$title ="Buttons";
-$body = admin_views."buttons.php";
-$buttons_nav = "active";
-include admin_template;
-});
-
 // inputs page
 $router->get(admin.'settings', function() {
+include "app/db.php";
 $title ="Settings";
 $body = admin_views."settings.php";
 $settings_nav = "active";
 include admin_template;
+});
+
+$router->post('admin/settings', function() {
+include "app/db.php";
+
+
+$sql = "UPDATE settings SET  keywords = 'a' = 2 WHERE id = 1";
+
+if ($mysqli->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $mysqli->error;
+}
+
+
+// $mysqli->query("UPDATE * FROM settings WHERE id = 1 site_url=1")->fetch_object();
+
+
+$_POST['site_url'];
+
+
 });
 
 // tables page
