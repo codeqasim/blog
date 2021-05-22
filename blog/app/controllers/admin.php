@@ -165,13 +165,29 @@ $router->post(admin.'post/add', function() {
 include "app/db.php";
 include "app/post_img.php";
 
-if (isset($_POST['keywords'])) {
 // array to sting for keywords
-$keywords = implode (", ", $_POST['keywords']);
-} else { $keywords = ""; }
+if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']); } else { $keywords = ""; }
 
 // img veriable name for db
 $img = $_FILES["file"]["name"];
+
+if ($_POST['post_type'] == "update") {
+// sql query to update columns
+
+$sql = "
+UPDATE posts SET
+user_id = '".$_SESSION['user_id']."',
+category_id = '".$_POST['category_id']."',
+title = '".$_POST['title']."',
+slug = '".$_POST['slug']."',
+img = '".$img."',
+content = '".$_POST['content']."',
+created_at = '".$_POST['date_time']."',
+keywords = '".$keywords."'
+
+WHERE id = '".$_POST['post_id']."'";
+
+} else {
 
 // sql query to update columns
 $sql = "
@@ -194,6 +210,7 @@ VALUES (
 '".$_POST['date_time']."',
 '".$keywords."')
 ";
+}
 
 if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/posts");
 } else { echo "Error updating record: " . $mysqli->error; }

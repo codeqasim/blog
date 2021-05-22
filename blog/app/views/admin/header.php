@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
 <link rel="stylesheet" href="<?=root?>assets/admin/css/style.css" />
+<style> :root { --theme_color: <?=$app->theme_color?>; } </style>
 </head>
 
 <body>

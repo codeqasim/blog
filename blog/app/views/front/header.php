@@ -9,9 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
 <link rel="stylesheet" href="<?=root?>assets/front/css/style.css" />
-<style>
-:root { --theme_color: <?=$app->theme_color?>; }
-</style>
+<style> :root { --theme_color: <?=$app->theme_color?>; } </style>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 

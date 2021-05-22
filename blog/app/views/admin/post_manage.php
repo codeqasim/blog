@@ -4,6 +4,7 @@ if (isset($data)) {
 if ($data->num_rows > 0) {
 foreach($data as $d) {
 
+// get values for edit post
 $titles = $d['title'];
 $slug = $d['slug'];
 $hits = $d['hits'];
@@ -17,7 +18,10 @@ $date = $d['created_at'];
 
 }}};
 
+// get endpoint of url
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); $post_id = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
 ?>
+
 
 <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
 <link rel="stylesheet" href="<?=root?>assets/admin/css/medium-editor.css" />
@@ -27,8 +31,11 @@ $date = $d['created_at'];
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <form autocomplete="off" method="POST" action="<?=root?>admin/post/add" enctype="multipart/form-data">
-<h2 class="content_head">Add Post <button class="btn k fr c1" type="submit">Submit</button> </h2>
+<h2 class="content_head ttc"><?php if ($post_id == "add"){echo "Add Post";}else {echo "Edit Post"." <span class='f400'>".$titles."</span>";}?> <button class="btn k fr c1" type="submit">Submit</button> </h2>
 <hr>
+
+<input type="hidden" name="post_type" value="<?php if ($post_id == "add"){}else {echo "update";}?>" />
+<input type="hidden" name="post_id" value="<?=$post_id?>" />
 
 <div class="post">
 <div class="catnviews">
@@ -69,20 +76,16 @@ document.getElementById("display").value = title;
 <input type="hidden" name="date_time" value="<?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?>" />
 
 <div class="img-gradient">
-<?php
-
-if (isset($img)) {
-if (getimagesize(root."uploads/posts/".$img) !== false) { ?>
+<?php if (isset($img)) { if (getimagesize(root."uploads/posts/".$img) !== false) { ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
 <input style="visibility:hidden" name="file" type='file' value="<?=root?>uploads/posts/<?=$img?>" id="imgInp" class="file" value="Add Image" />
-<?php } }  else { ?>
+<?php } } else { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
 <input style="visibility:hidden" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
 <?php } ?>
 
 <div class="file-upload-btn" onclick="document.getElementById('imgInp').click()">
-<i class="fa fa-plus-circle"></i> &nbsp; Upload Image
-</div>
+<i class="fa fa-plus-circle"></i> &nbsp; Upload Image </div>
 
 </div>
 
@@ -95,8 +98,7 @@ foreach ( $array as $key ){ echo '<option selected="selected" value="'.$key.'">'
 </select>
 <?php } else { ?>
 
-<select name="keywords[]" class="tags" multiple="multiple">
-</select>
+<select name="keywords[]" class="tags" multiple="multiple"></select>
 <?php } ?>
 
 <script>
@@ -111,7 +113,6 @@ if (file) { show.src = URL.createObjectURL(file) }
 <textarea name="content" id="" cols="30" rows="10" class="editable">
 <?php if (isset($content)){ echo $content; }?>
 </textarea>
-
 </div>
 </div>
 
@@ -141,7 +142,7 @@ targetBlank: true
 $(".tags").select2({
 tags: true,
 tokenSeparators: [',', ''],
-placeholder: "Type tags and press enter",
+placeholder: "Write tag and press enter",
 })
 
 <?php if (isset($category_id)){ ?>
@@ -150,4 +151,3 @@ $('.category option[value=<?=$category_id?>]').attr('selected','selected');
 <?php } ?>
 
 </script>
-
