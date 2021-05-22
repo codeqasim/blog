@@ -109,10 +109,10 @@ echo '<meta property="article:tag" content="'.$key.'" />';
       <li class="brand"><a href="<?=root?>"> <img src="<?=root;?>uploads/global/logo.png" alt="logo" /></a></li>
       <li><a href="<?=root?>">Home</a></li>
       <?php if ($pages->num_rows > 0) { foreach($pages as $nav) { ?>
-      <li><a href="<?=$nav['slug']?>"><?=$nav['title']?></a></li>
+      <li><a href="<?=root?><?=$nav['slug']?>"><?=$nav['title']?></a></li>
       <?php } } ?>
       <?php if ($categories->num_rows > 0) { foreach($categories as $cat) { ?>
-      <li><a href="<?=$cat['slug']?>"><?=$cat['title']?></a></li>
+      <li><a href="<?=root?><?=$cat['slug']?>"><?=$cat['title']?></a></li>
       <?php } } ?>
     </ul>
     <ul class="fr">

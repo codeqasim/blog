@@ -29,7 +29,7 @@ echo '<h4 class="tags">'.$key.'</h4>';
 } } ?>
 </div>
 
-<div class="content">
+<div class="content" id="target">
 <?=$d['content']?>
 </div>
 </div>
@@ -42,3 +42,9 @@ echo '<h4 class="tags">'.$key.'</h4>';
 </div>
 </div>
 </section>
+
+<script>
+// open all links in new tab
+var linkList = document.querySelectorAll('#target a');
+for(var i in linkList){ linkList[i].setAttribute('target', '_blank'); }
+</script>

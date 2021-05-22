@@ -156,8 +156,10 @@ $router->post(admin.'post/add', function() {
 include "app/db.php";
 include "app/post_img.php";
 
-echo $_POST['keywords'];
-die;
+if (isset($_POST['keywords'])) {
+// array to sting for keywords
+$keywords = implode (", ", $_POST['keywords']);
+} else { $keywords = ""; }
 
 // img veriable name for db
 $img = $_FILES["file"]["name"];
@@ -176,10 +178,10 @@ VALUES (
 '".$_SESSION['user_id']."',
 '".$_POST['category_id']."',
 '".$_POST['title']."',
-'".$_POST['slug']."',
+'".strtolower($_POST['slug'])."',
 '".$img."',
-'".$_POST['content']."'),
-'".$_POST['keywords']."')
+'".$_POST['content']."',
+'".$keywords."')
 ";
 
 if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/posts");

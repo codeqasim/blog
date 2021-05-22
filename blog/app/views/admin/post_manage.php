@@ -4,7 +4,7 @@ if (isset($data)) {
 if ($data->num_rows > 0) {
 foreach($data as $d) {
 
-$title = $d['title'];
+$titles = $d['title'];
 $slug = $d['slug'];
 $hits = $d['hits'];
 $category_id = $d['category_id'];
@@ -47,14 +47,14 @@ Page views &nbsp;
 </p>
 </div>
 
-<input id="title" type="text" name="title" class="title" placeholder="Post Title" autofocus value="<?php if (isset($title)){ echo $title; }?>" />
+<input id="title" type="text" name="title" class="title" placeholder="Post Title" autofocus value="<?php if (isset($titles)){ echo $titles; }?>" />
 <p class="slug_link"> <?=root?><input id="display" type="text" name="slug" class="slug" placeholder="Post-slug" autofocus value="<?php if (isset($slug)){ echo $slug; }?>" /></p>
 
 <hr class="slug_hr">
 
 <script>
 $('#title').keyup(function () {
-title = $(this).val().split(',').slice(0, 1).join(' ').split(' ').join('-').replace('%40', '@');
+title = $(this).val().split(',').slice(0, 1).join(' ').split(' ').join('-').replace('%40', '@').toLowerCase();
 document.getElementById("display").value = title;
 });
 </script>
@@ -66,23 +66,35 @@ document.getElementById("display").value = title;
 </div>
 
 <div class="img-gradient">
-<?php if (isset($img)){ ?>
+
+<?php
+
+if (isset($img)) {
+if (getimagesize(root."uploads/posts/".$img) !== false) { ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
-<input name="file" type='file' value="<?=root?>uploads/posts/<?=$img?>" id="imgInp" class="center-block" />
-<?php } else { ?>
+<input style="visibility:hidden" name="file" type='file' value="<?=root?>uploads/posts/<?=$img?>" id="imgInp" class="file" value="Add Image" />
+<?php } }  else { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
-<input name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
+<input style="visibility:hidden" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
 <?php } ?>
+
+
+<div class="file-upload-btn" onclick="document.getElementById('imgInp').click()">
+<i class="fa fa-plus-circle"></i> &nbsp; Upload Image
+</div>
 
 </div>
 
 <?php if (!empty($keywords)){ ?>
-<select name="keywords[]" class="form-control tags" multiple="multiple">
+<select name="keywords[]" class="tags" multiple="multiple">
 <?php
 $array = explode(', ',$keywords);
-print_r($array);
 foreach ( $array as $key ){ echo '<option selected="selected" value="'.$key.'">'.$key.'</option>'; }
 ?>
+</select>
+<?php } else { ?>
+
+<select name="keywords[]" class="tags" multiple="multiple">
 </select>
 <?php } ?>
 
@@ -92,9 +104,6 @@ imgInp.onchange = evt => {
 const [file] = imgInp.files
 if (file) { show.src = URL.createObjectURL(file) }
 }
-
-//$(function()
-// { $('input[type=file]').on('change',function () { var filePath = $(this).val(); console.log(filePath); }); });
 </script>
 
 <div class="content">
@@ -105,36 +114,38 @@ if (file) { show.src = URL.createObjectURL(file) }
 </div>
 </div>
 
-<button class="btn k fl c1" type="submit">Submit</button>
+<button class="btn k fr c1" type="submit">Submit</button>
 </form>
 
 <script>
 var editor = new MediumEditor('.editable', {
-    /* These are the default options for the editor, if nothing is passed this is what is used */
-    activeButtonClass: 'medium-editor-button-active',
-    allowMultiParagraphSelection: true,
-    buttonLabels: false,
-    contentWindow: window,
-    delay: 0,
-    disableReturn: false,
-    disableDoubleReturn: false,
-    disableExtraSpaces: false,
-    disableEditing: false,
-    elementsContainer: false,
-    extensions: {},
-    ownerDocument: document,
-    spellcheck: true,
-    targetBlank: true
+/* These are the default options for the editor, if nothing is passed this is what is used */
+activeButtonClass: 'medium-editor-button-active',
+allowMultiParagraphSelection: true,
+buttonLabels: false,
+contentWindow: window,
+delay: 0,
+disableReturn: false,
+disableDoubleReturn: false,
+disableExtraSpaces: false,
+disableEditing: false,
+elementsContainer: false,
+extensions: {},
+ownerDocument: document,
+spellcheck: true,
+targetBlank: true
 });
 
 // select 2 multi select
 $(".tags").select2({
-    tags: true,
-    tokenSeparators: [',', ' '],
-    placeholder: "Type tags and press enter for each",
+tags: true,
+tokenSeparators: [',', ''],
+placeholder: "Type tags and press enter",
 })
-</script>
 
-<script>
+<?php if (empty($categories)){ ?>
+// select category from db
 $('.category option[value=<?=$category_id?>]').attr('selected','selected');
+<?php } ?>
+
 </script>
