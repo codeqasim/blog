@@ -21,6 +21,14 @@ Page views &nbsp;
 <img src="" alt="" />
 <?php } ?>
 
+<div>
+<?php if (!empty($meta_keywords)){
+$array = explode(', ',$meta_keywords);
+foreach ( $array as $key ){
+echo '<h4 class="tags">'.$key.'</h4>';
+} } ?>
+</div>
+
 <div class="content">
 <?=$d['content']?>
 </div>

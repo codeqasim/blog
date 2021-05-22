@@ -29,11 +29,11 @@
 <!-- meta article -->
 <meta property="article:published_time" content="<?=$meta_time?>" />
 <meta property="article:modified_time" content="<?=$meta_time?>" />
-<meta property="article:tag" content="Payoneer" />
-<meta property="article:tag" content="accept payments" />
-<meta property="article:tag" content="transactions" />
-<meta property="article:tag" content="payment gateways" />
-<meta property="article:tag" content="make money online" />
+<?php if (!empty($meta_keywords)){
+$array = explode(', ',$meta_keywords);
+foreach ( $array as $key ){
+echo '<meta property="article:tag" content="'.$key.'" />';
+} } ?>
 <meta property="article:publisher" content="<?=$app->facebook_url;?>" />
 <meta property="article:author" content="<?=root?>" />
 

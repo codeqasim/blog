@@ -39,8 +39,8 @@
     color: #B3E6FF;
 }*/
 .xcrud-list .xcrud-row:hover td .xcrud-button{
-    background: #eee;
-    color: #555;
+    background: #545454;
+ /*   color: #555;*/
 }
 .xcrud-button.xcrud-red:hover,.xcrud-list .xcrud-row:hover .xcrud-button.xcrud-red{
     background: #BD3333;

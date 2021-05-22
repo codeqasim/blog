@@ -1,3 +1,23 @@
+<?php
+
+if (isset($data)) {
+if ($data->num_rows > 0) {
+foreach($data as $d) {
+
+$title = $d['title'];
+$slug = $d['slug'];
+$hits = $d['hits'];
+$category_id = $d['category_id'];
+$img = $d['img'];
+$content = $d['content'];
+$keywords = $d['keywords'];
+$status = $d['status'];
+$user_id = $d['user_id'];
+
+}}};
+
+?>
+
 <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
 <link rel="stylesheet" href="<?=root?>assets/admin/css/medium-editor.css" />
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -13,7 +33,7 @@
 <div class="catnviews">
 <p class="tag">
 <span>Category </span>
-<select name="category_id" id="" require>
+<select class="category" name="category_id" id="" require>
  <!--<option>Select category</option>-->
 <?php if ($categories->num_rows > 0) { foreach($categories as $cat) { ?>
  <option value="<?=$cat['id']?>"><?=$cat['title']?></option>
@@ -23,12 +43,12 @@
 <p class="viewsp">
 Page views &nbsp;
 <img src="http://localhost/blog/blog/assets/front/img/views.svg" alt="" class="views_svg">
-<strong>&nbsp;0</strong>
+<strong>&nbsp; <?php if (isset($hits)){ echo $hits; }?></strong>
 </p>
 </div>
 
-<input id="title" type="text" name="title" class="title" placeholder="Post Title" autofocus value="" />
-<p class="slug_link"> <?=root?><input id="display" type="text" name="slug" class="slug" placeholder="Post-slug" autofocus value="" /></p>
+<input id="title" type="text" name="title" class="title" placeholder="Post Title" autofocus value="<?php if (isset($title)){ echo $title; }?>" />
+<p class="slug_link"> <?=root?><input id="display" type="text" name="slug" class="slug" placeholder="Post-slug" autofocus value="<?php if (isset($slug)){ echo $slug; }?>" /></p>
 
 <hr class="slug_hr">
 
@@ -46,11 +66,25 @@ document.getElementById("display").value = title;
 </div>
 
 <div class="img-gradient">
+<?php if (isset($img)){ ?>
+<img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
+<input name="file" type='file' value="<?=root?>uploads/posts/<?=$img?>" id="imgInp" class="center-block" />
+<?php } else { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
 <input name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
+<?php } ?>
+
 </div>
 
-<select class="form-control tags" multiple="multiple"></select>
+<?php if (!empty($keywords)){ ?>
+<select name="keywords[]" class="form-control tags" multiple="multiple">
+<?php
+$array = explode(', ',$keywords);
+print_r($array);
+foreach ( $array as $key ){ echo '<option selected="selected" value="'.$key.'">'.$key.'</option>'; }
+?>
+</select>
+<?php } ?>
 
 <script>
 // show image to view
@@ -65,7 +99,7 @@ if (file) { show.src = URL.createObjectURL(file) }
 
 <div class="content">
 <textarea name="content" id="" cols="30" rows="10" class="editable">
-
+<?php if (isset($content)){ echo $content; }?>
 </textarea>
 
 </div>
@@ -99,4 +133,8 @@ $(".tags").select2({
     tokenSeparators: [',', ' '],
     placeholder: "Type tags and press enter for each",
 })
+</script>
+
+<script>
+$('.category option[value=<?=$category_id?>]').attr('selected','selected');
 </script>
