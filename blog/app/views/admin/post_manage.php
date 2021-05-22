@@ -13,6 +13,7 @@ $content = $d['content'];
 $keywords = $d['keywords'];
 $status = $d['status'];
 $user_id = $d['user_id'];
+$date = $d['created_at'];
 
 }}};
 
@@ -60,13 +61,14 @@ document.getElementById("display").value = title;
 </script>
 
 <div class="author">
-<img src="https://technewspakistan.com/content/images/size/w100/2021/05/22.jpg" alt="">
-<p>Qasim Hussain</p>
-<p class="date_time">2021-04-27 09:44:51</p>
+<img src="<?=root?>uploads/users/<?=$_SESSION['user_id']?>.png" alt="">
+<p><?php $user = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['user_id'].'"')->fetch_object(); echo $user->full_name ?></p>
+<p class="date_time"> <?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?></p>
 </div>
 
-<div class="img-gradient">
+<input type="hidden" name="date_time" value="<?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?>" />
 
+<div class="img-gradient">
 <?php
 
 if (isset($img)) {
@@ -77,7 +79,6 @@ if (getimagesize(root."uploads/posts/".$img) !== false) { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
 <input style="visibility:hidden" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
 <?php } ?>
-
 
 <div class="file-upload-btn" onclick="document.getElementById('imgInp').click()">
 <i class="fa fa-plus-circle"></i> &nbsp; Upload Image
@@ -143,9 +144,10 @@ tokenSeparators: [',', ''],
 placeholder: "Type tags and press enter",
 })
 
-<?php if (empty($categories)){ ?>
+<?php if (isset($category_id)){ ?>
 // select category from db
 $('.category option[value=<?=$category_id?>]').attr('selected','selected');
 <?php } ?>
 
 </script>
+

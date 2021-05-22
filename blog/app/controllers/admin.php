@@ -121,6 +121,10 @@ include admin_template;
 // settings update
 $router->post('admin/settings', function() {
 include "app/db.php";
+include "app/logo_img.php";
+include "app/fav_img.php";
+
+// move_uploaded_file($_FILES["logo"]["name"], "upload/global/" . "logo.png");
 
 // sql query to update columns
 $sql = "
@@ -134,10 +138,15 @@ twitter_url = '".$_POST['twitter_url']."',
 whatsapp_url = '".$_POST['whatsapp_url']."',
 pinterest_url = '".$_POST['pinterest_url']."',
 linkedin_url = '".$_POST['linkedin_url']."',
-instagram_url = '".$_POST['instagram_url']."'
+instagram_url = '".$_POST['instagram_url']."',
+theme_color = '".$_POST['theme_color']."'
 WHERE id = 1";
 
-if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/settings");
+if ($mysqli->query($sql) === TRUE) {
+header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+header('Pragma: no-cache');
+header("Refresh:2; ".root."admin/settings");
 } else { echo "Error updating record: " . $mysqli->error; }
 
 });
@@ -173,6 +182,7 @@ title,
 slug,
 img,
 content,
+created_at,
 keywords)
 VALUES (
 '".$_SESSION['user_id']."',
@@ -181,16 +191,16 @@ VALUES (
 '".strtolower($_POST['slug'])."',
 '".$img."',
 '".$_POST['content']."',
+'".$_POST['date_time']."',
 '".$keywords."')
 ";
 
 if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/posts");
 } else { echo "Error updating record: " . $mysqli->error; }
-
 });
 
+// view to modify post
 $router->get('admin/post/(.*)', function() {
-
 include "app/db.php";
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url_end = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
@@ -205,7 +215,6 @@ $title ="Post Manage";
 $body = admin_views."post_manage.php";
 $posts_nav = "active";
 include admin_template;
-
 
 }}
 

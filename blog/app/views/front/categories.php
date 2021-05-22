@@ -18,7 +18,11 @@ $posts = $mysqli->query("SELECT * FROM posts WHERE `category_id` LIKE '".$cat_id
 <?php foreach ($posts as $post) { ?>
 <div class="c4 mb15">
 <a href="<?=root?><?=$post['slug'];?>">
-<img class="img" src="<?=root."uploads/posts/".$post['img'];?>" alt="<?=$post['title'];?>" />
+<?php if (getimagesize(root."uploads/posts/".$post['img']) !== false) {?>
+<img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
+<?php } else { ?>
+<img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
+<?php } ?>
 </a>
 </div>
 <div class="c8">

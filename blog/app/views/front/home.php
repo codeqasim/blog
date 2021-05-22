@@ -14,7 +14,6 @@
 <img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
 <?php } else { ?>
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
-<img src="" alt="" />
 <?php } ?>
 </div>
 <div class="c4">

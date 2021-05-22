@@ -1,5 +1,5 @@
 <div class="author">
-<img src="https://technewspakistan.com/content/images/size/w100/2021/05/22.jpg" alt="" />
-<p>Qasim Hussain</p>
+<img src="<?=root?>uploads/users/1.png" alt="" />
+<p><?php $user = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['user_id'].'"')->fetch_object(); echo $user->full_name ?></p>
 <p class="date_time"><?=$post['created_at']?></p>
 </div>
