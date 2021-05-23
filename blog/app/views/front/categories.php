@@ -29,7 +29,9 @@ $posts = $mysqli->query("SELECT * FROM posts WHERE `category_id` LIKE '".$cat_id
 <div class="articles">
 <?php include "app/views/front/partcials/author.php"?>
 </div>
+<a href="<?=root?><?=$post['slug'];?>">
 <h2 class="mt60"><?=$post['title'];?></h2>
+</a>
 <p><?=substr(strip_tags($post['content']), 0, 260)?></p>
 
  <div class="catnviews mt15">

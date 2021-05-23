@@ -51,6 +51,7 @@ include admin_template;
 
 // posts page
 $router->get(admin.'posts', function() {
+include "app/db.php";
 include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
 $xcrud->table('posts');
@@ -60,7 +61,7 @@ $xcrud->unset_edit();
 $xcrud->unset_add();
 
 $xcrud->column_class('img', 'zoom_img');
-$xcrud->column_class('img', 'zoom_img');
+$xcrud->column_class('button', 'button');
 
 $xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
 $xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'_blank'));
@@ -78,6 +79,7 @@ include admin_template;
 
 // pages
 $router->get(admin.'categories', function() {
+include "app/db.php";
 include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
 $xcrud->table('categories');
@@ -92,6 +94,7 @@ include admin_template;
 
 // pages
 $router->get(admin.'pages', function() {
+include "app/db.php";
 include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
 $xcrud->table('pages');
@@ -109,6 +112,7 @@ include admin_template;
 
 // newsletter
 $router->get(admin.'newsletters', function() {
+include "app/db.php";
 include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
 $xcrud->table('newsletters');

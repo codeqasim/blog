@@ -109,7 +109,7 @@ class Xcrud_config
        
     // alert settings
     public static $email_from = 'info@blog.com'; // email from address
-    public static $email_from_name = 'Crud'; // email from name
+    public static $email_from_name = 'Blog'; // email from name
     public static $email_enable_html = true; // enables html in email letters
 
     

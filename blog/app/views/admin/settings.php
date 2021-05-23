@@ -73,12 +73,12 @@ if (file) { shows.src = URL.createObjectURL(file) }
 <div class="group">
 
 <div class="row"><div class="c1"><label>Header</label></div><div class="c4"><div class="input">
-<textarea name="header_code" id="" cols="30" rows="10"><?=$app->header_code?></textarea>
+<textarea class="textarea" name="header_code" id="" cols="30" rows="10"><?=$app->header_code?></textarea>
 </div></div>
 </div>
 
 <div class="row"><div class="c1"><label>Footer</label></div><div class="c4"><div class="input">
-<textarea name="footer_code" id="" cols="30" rows="10"><?=$app->footer_code?></textarea>
+<textarea class="textarea" name="footer_code" id="" cols="30" rows="10"><?=$app->footer_code?></textarea>
 </div></div>
 </div>
 

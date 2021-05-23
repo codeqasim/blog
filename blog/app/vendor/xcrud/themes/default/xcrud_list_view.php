@@ -1,15 +1,11 @@
 <?php echo $this->render_table_name(); ?>
 
-<div class="xcrud-nav">
-<?php echo $this->add_button('xcrud-button xcrud-green','icon-plus');
+<div class="xcrud-rightside">
+<?php
 echo $this->csv_button('xcrud-button xcrud-purple','icon-file');
 echo $this->print_button('xcrud-button xcrud-pink','icon-print');
-echo $this->render_search(); ?>
-<div class="xcrud-rightside">
-<?php echo $this->render_benchmark(); ?>
-<?php echo $this->render_limitlist(true); ?>
-<?php echo $this->render_pagination(); ?>
-</div>
+echo $this->add_button('xcrud-button xcrud-green','icon-plus');
+?>
 </div>
 
 <div class="xcrud-list-container">
@@ -27,10 +23,7 @@ echo $this->render_search(); ?>
 </div>
 
 <div class="xcrud-nav">
-<?php echo $this->add_button('xcrud-button xcrud-green','icon-plus');
-echo $this->csv_button('xcrud-button xcrud-purple','icon-file');
-echo $this->print_button('xcrud-button xcrud-pink','icon-print');
-echo $this->render_search(); ?>
+<span class="xcrud-search"><?php echo $this->render_search(); ?></span>
 <div class="xcrud-rightside">
 <?php echo $this->render_benchmark(); ?>
 <?php echo $this->render_limitlist(true); ?>

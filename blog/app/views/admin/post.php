@@ -68,7 +68,7 @@ document.getElementById("display").value = title;
 </script>
 
 <div class="author">
-<img src="<?=root?>uploads/users/<?=$_SESSION['user_id']?>.png" alt="">
+<img src="<?=root?>uploads/users/<?=$_SESSION['user_id']?>.jpg" alt="">
 <p><?php $user = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['user_id'].'"')->fetch_object(); echo $user->full_name ?></p>
 <p class="date_time"> <?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?></p>
 </div>

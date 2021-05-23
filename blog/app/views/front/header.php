@@ -106,17 +106,23 @@ echo '<meta property="article:tag" content="'.$key.'" />';
 
 <header>
 <nav>
-<div class="container-f">
+<div class="contain">
     <ul class="fl">
-      <li class="brand"><a href="<?=root?>"> <img src="<?=root;?>uploads/global/logo.png" alt="logo" /></a></li>
-      <li><a href="<?=root?>">Home</a></li>
+      <li class="brand"><a href="<?=root?>"><img src="<?=root;?>uploads/global/logo.png" alt="logo" /></a></li>
+      <li class="x-hide"><a href="<?=root?>">Home</a></li>
       <?php if ($pages->num_rows > 0) { foreach($pages as $nav) { ?>
-      <li><a href="<?=root?><?=$nav['slug']?>"><?=$nav['title']?></a></li>
+      <li class="x-hide"><a href="<?=root?><?=$nav['slug']?>"><?=$nav['title']?></a></li>
       <?php } } ?>
+    </ul>
+
+    <div tabindex="0" class="menu">
+    <ul class="menu-content">
       <?php if ($categories->num_rows > 0) { foreach($categories as $cat) { ?>
       <li><a href="<?=root?><?=$cat['slug']?>"><?=$cat['title']?></a></li>
       <?php } } ?>
     </ul>
+    </div>
+
     <ul class="fr">
     <li><a href="<?=root?>admin">Login</a></li>
     </ul>

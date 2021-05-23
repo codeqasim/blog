@@ -91,19 +91,17 @@
 .xcrud-top-actions{
     margin-bottom: 5px;
 }
-.xcrud-button, a.xcrud-button{
-    display: inline-block;
-    margin: 1px 1px 0 0;
-    height: 28px;
-    line-height: 28px;
-    background: #8D8D8D;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    padding: 0 10px;
-    cursor: pointer;
-    vertical-align: top;
+.xcrud-button, a.xcrud-button{ 
+    margin-left: 6px;
+    height: 34px;
+    line-height: 16px;
+    background: #000; color: #fff; font-weight: 500; border: 0px; cursor: pointer; overflow: hidden; padding: 8px 14px; font-size: 14px; text-align: center; letter-spacing: .2px; border-radius: 3px; white-space: nowrap; text-overflow: ellipsis; transition: all .2s ease; transition-property: color,border-color,background,width,height,box-shadow; -webkit-font-smoothing: subpixel-antialiased; 
 }
+
+.xcrud-button:hover { 
+background: #000 !important;
+} 
+
 .xcrud-button:hover{
     background: #9D9D9D;
 }
@@ -189,7 +187,10 @@ td.xcrud-actions{
     padding: 0;
     display: inline-block;
     vertical-align: top;
+    margin-left: 10px;
+
 }
+.xcrud-search input, .xcrud-search select { float: left }
 .xcrud-pagination > li{
     display: inline-block;
     margin: 0;
@@ -198,7 +199,7 @@ td.xcrud-actions{
 .xcrud-pagination li a,.xcrud-pagination li span{
     display: inline-block;
     vertical-align: top;
-    height: 28px;
+    height: 34px;
     line-height: 29px;
     font-size: 13px;
     padding: 0 10px;
@@ -222,6 +223,7 @@ td.xcrud-actions{
 .xcrud-pagination li.active span{
     background: #3F49A3;
     color: #fff;
+    border-radius: 3px;
 }
 .xcrud-limit-buttons{
     display: inline-block;
@@ -334,7 +336,7 @@ input.xcrud-upload{
     max-width: inherit;
 }
 .xcrud-search{
-    margin-top: 1px;
+    float: left; display: flex; justify-content: center; align-items: center;
 }
 .xcrud-search input,.xcrud-search select{
     width: 10%;
@@ -499,8 +501,9 @@ input.xcrud-inline{
     cursor: not-allowed;
 }
 .xcrud input.xcrud-input-small,.xcrud select.xcrud-input-small{
-    width: 130px;
-    min-width: 130px;
+    width: 200px;
+    min-width: 200px;
+    height: 34px;
 }
 .xcrud img{
     border: 1px solid #fff;

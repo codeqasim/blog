@@ -1,4 +1,4 @@
-<p style="display: flex; justify-content: center; margin-bottom: -34px; position: absolute; width: 100%; text-align: center;">Powered by &nbsp;<a target="_blank" href="http://phpblogscript.com"> <strong> PHP Blog Script</strong></a></p>
+<p style="margin-bottom: -34px; width: 100%; text-align: center;">Powered by &nbsp;<a target="_blank" href="http://phpblogscript.com"> <strong> PHP Blog Script</strong></a></p>
 
 <footer>
 <?=$app->footer_code?>
