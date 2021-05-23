@@ -94,6 +94,10 @@ $tags = $mysqli->query("SELECT * FROM posts ORDER BY id DESC");
 include "app/views/sitemap/sitemap_tags.php";
 });
 
+$router->get('(.*)/amp', function() {
+include "app/views/front/amp.php";
+});
+
 // pages dynamic controllers with content generation
 foreach ($pages as $page ) {
 $router->get($page['slug'], function() {
