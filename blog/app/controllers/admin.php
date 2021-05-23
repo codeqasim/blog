@@ -103,7 +103,7 @@ $xcrud->columns('name');
 $xcrud->columns('email');
 $xcrud->columns('created_at');
 $xcrud->unset_title();
-$title ="Pages";
+$title ="Newsletter";
 $body = admin_views."xcrud.php";
 $newsletters_nav = "active";
 include admin_template;
@@ -121,10 +121,22 @@ include admin_template;
 // settings update
 $router->post('admin/settings', function() {
 include "app/db.php";
-include "app/logo_img.php";
-include "app/fav_img.php";
 
-// move_uploaded_file($_FILES["logo"]["name"], "upload/global/" . "logo.png");
+// logo upload function
+if (!empty($_FILES["logo"]["name"])) {
+$logo_temp_name = $_FILES["logo"]["tmp_name"];
+$img            = "logo.png";
+$target_path    = "uploads/global/".$img;
+if(move_uploaded_file($logo_temp_name, $target_path)) {};
+};
+
+// favicon upload function
+if (!empty($_FILES["favicon"]["name"])) {
+$favicon_name   = $_FILES["favicon"]["tmp_name"];
+$img            = "favicon.png";
+$ftarget_path   = "uploads/global/".$img;
+if(move_uploaded_file($favicon_name, $ftarget_path)) {};
+};
 
 // sql query to update columns
 $sql = "
@@ -163,17 +175,28 @@ include admin_template;
 // add post page
 $router->post(admin.'post/add', function() {
 include "app/db.php";
-include "app/post_img.php";
+
+// image upload function
+if (!empty($_FILES["file"]["name"])) {
+$file_name      = $_FILES["file"]["name"];
+$temp_name      = $_FILES["file"]["tmp_name"];
+$imgtype        = $_FILES["file"]["type"];
+$ext            = pathinfo($file_name, PATHINFO_EXTENSION);
+$img            = date("d-m-Y") . "-" . time() . "." . $ext;
+$target_path    = "uploads/posts/".$img;
+
+// move file with rename to di
+if(move_uploaded_file($temp_name, $target_path)) {
+//
+}else{ exit("Error While uploading image on the server"); } }
 
 // array to sting for keywords
 if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']); } else { $keywords = ""; }
 
-// img veriable name for db
-$img = $_FILES["file"]["name"];
-
+// check type of post to run mysql query
 if ($_POST['post_type'] == "update") {
-// sql query to update columns
 
+// sql query to update post
 $sql = "
 UPDATE posts SET
 user_id = '".$_SESSION['user_id']."',
@@ -184,12 +207,11 @@ img = '".$img."',
 content = '".$_POST['content']."',
 created_at = '".$_POST['date_time']."',
 keywords = '".$keywords."'
-
 WHERE id = '".$_POST['post_id']."'";
 
 } else {
 
-// sql query to update columns
+// sql query to insert new post
 $sql = "
 INSERT INTO posts
 (user_id,
@@ -212,9 +234,7 @@ VALUES (
 ";
 }
 
-if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/posts");
-} else { echo "Error updating record: " . $mysqli->error; }
-});
+if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/posts"); } else { echo "Error updating record: " . $mysqli->error; }  });
 
 // view to modify post
 $router->get('admin/post/(.*)', function() {

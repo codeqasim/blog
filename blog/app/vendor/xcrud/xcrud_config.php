@@ -93,7 +93,7 @@ class Xcrud_config
     public static $not_null_is_required = false; // makes not null fields required
     
     // features
-    public static $enable_printout = true; // show print button
+    public static $enable_printout = false; // show print button
     public static $enable_search = true; // show searck block
     public static $enable_pagination = true; // show pagination
     public static $enable_csv_export = true; // show csv export button

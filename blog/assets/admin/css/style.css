@@ -185,7 +185,7 @@ table thead .action { width: 280px }
 .post .author img { width:40px; height: 40px; display: block; background: #e4eaed; border-radius: 100%; -o-object-fit: cover; object-fit: cover; float: left; }
 .post .author p { float: left; margin: 0px 10px; font-size: 1em; font-weight: 500; color: #000; }
 .post .author .date_time { display: block; width: 100%; padding-left: 40px; margin-top: -20px; font-size: 0.8em; color: #90a2aa; }
-.post .img { background: #fff; height: 340px; border-radius: 6px; grid-column: main-start/main-end; width: 100%; display: flex; justify-content: center; align-items: center; }
+.post .img { background: #fff; height: 380px; border-radius: 6px; grid-column: main-start/main-end; width: 100%; display: flex; justify-content: center; align-items: center; }
 .post .content, .post .content span  { padding: 20px 0; font-family: fell, Georgia, Cambria, "Times New Roman", Times, serif;  font-weight: 400; font-size: 1.5rem !important; line-height: 1.6em; }
 .post .content>* { grid-column: main-start/main-end; }
 .views_svg { max-width: 20px; }
@@ -215,7 +215,7 @@ table thead .action { width: 280px }
 
 /* file uplaod style*/
 .file-upload { background-color: #ffffff; width: 100%; margin: 0 auto; } 
-.file-upload-btn { text-align: center; margin: 0; color: #fff; background: var(--theme_color); border: none; padding: 10px; border-radius: 2px; border-bottom: 4px solid color: var(--theme_color); transition: all .2s ease; outline: none; text-transform: uppercase; font-weight: 500; margin-top: -52px; margin-left: 16px; position: absolute; } 
+.file-upload-btn { text-align: center; margin: 0; color: #fff; background: var(--theme_color); border: none; padding: 10px; border-radius: 2px; border-bottom: 4px solid color: var(--theme_color); transition: all .2s ease; outline: none; text-transform: uppercase; font-weight: 500; margin-top: 200px; } 
 .file-upload-btn:hover { background: #000; color: #ffffff; transition: all .2s ease; cursor: pointer; } 
 .file-upload-btn:active { border: 0; transition: all .2s ease; } 
 
@@ -223,3 +223,6 @@ table thead .action { width: 280px }
 .group img.favicon {  display: block; width: 100%; padding: 6px 12px; border: 1px solid #dddedf; background: #fff; max-width: 75px; margin-top: 10px; }
 .ttc { text-transform: capitalize; }
 .f400{font-weight: 400}
+
+.thumb { position: relative; }
+.upload { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); }

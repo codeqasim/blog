@@ -75,17 +75,22 @@ document.getElementById("display").value = title;
 
 <input type="hidden" name="date_time" value="<?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?>" />
 
-<div class="img-gradient">
+<div class="thumb" style="height:400px">
 <?php if (isset($img)) { if (getimagesize(root."uploads/posts/".$img) !== false) { ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
-<input style="visibility:hidden" name="file" type='file' value="<?=root?>uploads/posts/<?=$img?>" id="imgInp" class="file" value="Add Image" />
-<?php } } else { ?>
+<input style="display:none" name="file" type='file' value="<?=root?>uploads/posts/<?=$img?>" id="imgInp" class="file" value="Add Image" />
+<?php } } ?>
+
+<?php if (empty($img)) { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
-<input style="visibility:hidden" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
+<input style="display:none" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
 <?php } ?>
 
+<div class="upload">
 <div class="file-upload-btn" onclick="document.getElementById('imgInp').click()">
-<i class="fa fa-plus-circle"></i> &nbsp; Upload Image </div>
+<i class="fa fa-plus-circle"></i> &nbsp; Upload Image
+</div>
+</div>
 
 </div>
 
