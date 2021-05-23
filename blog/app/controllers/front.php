@@ -94,10 +94,6 @@ $tags = $mysqli->query("SELECT * FROM posts ORDER BY id DESC");
 include "app/views/sitemap/sitemap_tags.php";
 });
 
-$router->get('(.*)/amp', function() {
-include "app/views/front/amp.php";
-});
-
 // pages dynamic controllers with content generation
 foreach ($pages as $page ) {
 $router->get($page['slug'], function() {
@@ -185,15 +181,17 @@ $router->get('install', function() {
       echo "<p>Installation Completed</p>";
 });
 
-// post page
-$router->get('(.*)', function() {
-
+// amp
+$router->get('(.*)/amp', function() {
 include "app/db.php";
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$url_end = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
-$data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$url_end."'");
-$posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 3");
 
+// get the first url to pass to db
+$url = explode('/', $_GET['url']);
+$count = count($url);
+
+// find data based on url from db and return to amp view
+$data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$url[0]."'");
+$posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 3");
 
 if ($data->num_rows > 0) { foreach($data as $post) {
 // meta information
@@ -212,6 +210,39 @@ $mysqli->query("UPDATE posts SET hits = hits+1 WHERE id=".$post['id']."");
 
 }}
 
+include views."amp.php";
+
+});
+
+// post page
+$router->get('(.*)', function() {
+include "app/db.php";
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$url_end = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
+$data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$url_end."'");
+$posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 3");
+
+if ($data->num_rows > 0) { foreach($data as $post) {
+// meta information
+$post_title = substr(strip_tags($post['content']), 0, 160);
+$date=date_create($post['created_at']); $post_date = date_format($date,"Y-m-d")."T".date_format($date,"H:i:s");
+
+$meta_title = $post['title'];
+$meta_desc = $post_title;
+$meta_keywords = $post['keywords'];
+$meta_url = root.$post['slug'];
+$meta_img = root."uploads/posts/".$post['img'];
+$meta_time = $post_date.".000Z";
+$meta_writer = "Qasim Hussain";
+$title =$post['title'];
+$mysqli->query("UPDATE posts SET hits = hits+1 WHERE id=".$post['id']."");
+}}
+
+// check for post url if exist pass to amp uri
+if (isset($meta_url)){$a_url=$meta_url;}else{$a_url="";}
+
+$amphome = 1;
+$amp_url = $a_url."/amp";
 $body = views."post.php";
 include template;
 $mysqli -> close();

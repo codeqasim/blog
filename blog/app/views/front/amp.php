@@ -86,7 +86,7 @@
     </script>
 
     <meta name="generator" content="Ghost 4.4" />
-    <link rel="alternate" type="application/rss+xml" title="Tech News Pakistan" href="https://technewspakistan.com/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="Tech News Pakistan" href="<?=root?>sitemap.xml" />
 
     <style amp-custom>
     *,
@@ -658,39 +658,41 @@
 
 <body class="amp-template">
     <header class="page-header">
-        <a href="https://technewspakistan.com">
-                <amp-img class="site-icon" src="https://technewspakistan.com/content/images/2021/05/favicon.png" width="50" height="50" layout="fixed"></amp-img>
+        <a href="<?=root?>">
+          <amp-img class="site-icon" src="<?=root?>uploads/global/favicon.png" width="50" height="50" layout="fixed"></amp-img>
         </a>
     </header>
-
+    <?php if ($data->num_rows > 0) { foreach($data as $d) { ?>
     <main class="content" role="main">
         <article class="post">
-
             <header class="post-header">
-                <h1 class="post-title">Eid has been confirmed in pakistan 13 may 2021</h1>
+                <h1 class="post-title"><?=$d['title']?></h1>
                 <section class="post-meta">
-                    Qasim Hussain -
-                    <time class="post-date" datetime="2021-05-13">13 May 2021</time>
+                    <?php $user = $mysqli->query('SELECT * FROM users WHERE id = "'.$d['user_id'].'"')->fetch_object(); echo $user->full_name ?> -
+                    <time class="post-date" datetime=" <?=$d['created_at']?>"> <?=$d['created_at']?></time>
                 </section>
             </header>
             <figure class="post-image">
-                <amp-img src="https://technewspakistan.com/content/images/2021/05/15.png" width="600" height="340" layout="responsive"></amp-img>
+            <?php if (getimagesize(root."uploads/posts/".$d['img']) !== false) {?>
+            <amp-img src="<?=root?>uploads/posts/<?=$d['img']?>" width="600" height="340" layout="responsive"></amp-img>
+            <?php } else { ?>
+            <amp-img src="<?=root?>assets/admin/img/no_img.png" width="600" height="340" layout="responsive"></amp-img>
+            <?php } ?>
+
             </figure>
             <section class="post-content">
-
-                <p>IT has been confirmed and announced today at 13 may 2021 Eid has been officially declared by the government of Pakistan. <br /><br />Therefore we wish you and your family happy and blessed Eid. please stay at home and celebrate with your family. </p><p>Team <br />Tech News Pakistan</p>
-
+             <?=$d['content']?>
             </section>
 
         </article>
     </main>
+    <?php } } else { include "404.php"; } ?>
     <footer class="page-footer">
-            <amp-img class="site-icon" src="https://technewspakistan.com/content/images/2021/05/favicon.png" width="50" height="50" layout="fixed"></amp-img>
-        <h3>Tech News Pakistan</h3>
-            <p>Tech insights specially for pakistan</p>
-        <p><a href="https://technewspakistan.com">Read more posts ?</a></p>
-        <a class="powered" href="https://ghost.org" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 156"><g fill="none" fill-rule="evenodd"><rect fill="#15212B" width="156" height="156" rx="27"/><g transform="translate(36 36)" fill="#F6F8FA"><path d="M0 71.007A4.004 4.004 0 014 67h26a4 4 0 014 4.007v8.986A4.004 4.004 0 0130 84H4a4 4 0 01-4-4.007v-8.986zM50 71.007A4.004 4.004 0 0154 67h26a4 4 0 014 4.007v8.986A4.004 4.004 0 0180 84H54a4 4 0 01-4-4.007v-8.986z"/><rect y="34" width="84" height="17" rx="4"/><path d="M0 4.007A4.007 4.007 0 014.007 0h41.986A4.003 4.003 0 0150 4.007v8.986A4.007 4.007 0 0145.993 17H4.007A4.003 4.003 0 010 12.993V4.007z"/><rect x="67" width="17" height="17" rx="4"/></g></g></svg> Published with Ghost</a>
+         <amp-img class="site-icon" src="<?=root?>uploads/global/favicon.png" width="50" height="50" layout="fixed"></amp-img>
+        <h3><?=$app->app_name?></h3>
+            <p><?=$app->description?></p>
+        <p><a href="<?=root?>">Read more posts ?</a></p>
+        <a class="powered" href="https://phpblogscript.com" target="_blank" rel="noopener"> Published with PHP Blog Script</a>
     </footer>
-
 </body>
 </html>

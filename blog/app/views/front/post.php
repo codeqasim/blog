@@ -18,7 +18,6 @@ Page views &nbsp;
 <img src="<?=root?>uploads/posts/<?=$d['img']?>" class="img" alt="<?=$d['title']?>" />
 <?php } else { ?>
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
-<img src="" alt="" />
 <?php } ?>
 
 <div>

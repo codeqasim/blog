@@ -3,13 +3,14 @@
 
 <head>
 <title><?=$title?> - <?=$app->app_name;?></title>
+<style> :root { --theme_color:<?=$app->theme_color?>; }</style>
+<meta name="theme-color" content="<?=$app->theme_color?>" />
 <link rel="shortcut icon" href="<?=root;?>uploads/global/favicon.png">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
 <link rel="stylesheet" href="<?=root?>assets/front/css/style.css" />
-<style> :root { --theme_color: <?=$app->theme_color?>; } </style>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
@@ -18,6 +19,7 @@
 
 <link rel="canonical" href="<?=$meta_url?>" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
+<?php if (isset($amphome) == 1){?><link rel="amphtml" href="<?=$amp_url;?>" /><?php } ?>
 
 <!-- meta open graph -->
 <meta property="og:site_name" content="<?=$app->app_name?>" />
@@ -75,10 +77,9 @@ echo '<meta property="article:tag" content="'.$key.'" />';
             "width": 708,
             "height": 888
         },
-        "url": "",
+        "url": "https://phpblogscript.com",
         "sameAs": [
-            "",
-            ""
+            "PHP Blog Script"
         ]
     },
     "headline": "<?=$meta_title?>",
@@ -99,7 +100,6 @@ echo '<meta property="article:tag" content="'.$key.'" />';
     }
 }
 </script>
-
 </head>
 <body>
 

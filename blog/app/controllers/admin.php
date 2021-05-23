@@ -76,6 +76,20 @@ include admin_template;
 });
 
 // pages
+$router->get(admin.'categories', function() {
+include('app/vendor/xcrud/xcrud.php');
+$xcrud = Xcrud::get_instance();
+$xcrud->table('categories');
+$xcrud->order_by('id','desc');
+$xcrud->columns('id');
+$xcrud->unset_title();
+$title ="Categories";
+$body = admin_views."xcrud.php";
+$categories_nav = "active";
+include admin_template;
+});
+
+// pages
 $router->get(admin.'pages', function() {
 include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
@@ -159,9 +173,52 @@ header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
 header('Pragma: no-cache');
 header("Refresh:2; ".root."admin/settings");
+echo "<style>body{font-family:calibri}</style>Updating...";
 } else { echo "Error updating record: " . $mysqli->error; }
 
 });
+
+// profile page
+$router->get(admin.'profile', function() {
+include "app/db.php";
+$title ="Profile";
+$body = admin_views."profile.php";
+$profile_nav = "active";
+include admin_template;
+});
+
+// settings update
+$router->post('admin/users', function() {
+include "app/db.php";
+
+// logo upload function
+if (!empty($_FILES["user_img"]["name"])) {
+$logo_temp_name = $_FILES["user_img"]["tmp_name"];
+$img            = $_SESSION['user_id'].".jpg";
+$target_path    = "uploads/users/".$img;
+if(move_uploaded_file($logo_temp_name, $target_path)) {};
+};
+
+// conver password to md5
+if (isset($_POST['password'])){ $password = md5($_POST['password']); }
+
+// sql query to update columns
+$sql = "
+UPDATE users SET
+full_name = '".$_POST['full_name']."',
+email = '".$_POST['email']."',
+password = '".$password."'
+WHERE id = ".$_SESSION['user_id']."";
+
+if ($mysqli->query($sql) === TRUE) {
+header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+header('Pragma: no-cache');
+header("Refresh:2; ".root."admin/profile");
+echo "<style>body{font-family:calibri}</style>Updating...";
+} else { echo "Error updating record: " . $mysqli->error; }
+});
+
 
 // add post page
 $router->get(admin.'post/add', function() {

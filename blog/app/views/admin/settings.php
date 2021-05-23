@@ -56,7 +56,7 @@ if (file) { shows.src = URL.createObjectURL(file) }
 
 <div class="group">
 
-<div class="row"><div class="c1"><label>Whatsapp</label></div><div class="c4"><div class="input"><i class="fab fa-whatsapp"></i><input name="whatsapp_url" type="text" placeholder="Facebook link" value="<?=$app->whatsapp_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Whatsapp</label></div><div class="c4"><div class="input"><i class="fab fa-whatsapp"></i><input name="whatsapp_url" type="text" placeholder="Whatsapp link" value="<?=$app->whatsapp_url?>" /></div></div></div>
 <div class="row"><div class="c1"><label>Facebook</label></div><div class="c4"><div class="input"><i class="icon-facebook"></i><input name="facebook_url" type="text" placeholder="Facebook link" value="<?=$app->facebook_url?>" /></div></div></div>
 <div class="row"><div class="c1"><label>Twitter</label></div><div class="c4"><div class="input"><i class="fab fa-twitter"></i><input name="twitter_url" type="text" placeholder="Twitter link" value="<?=$app->twitter_url?>" /></div></div></div>
 <div class="row"><div class="c1"><label>Instagram</label></div><div class="c4"><div class="input"><i class="fab fa-instagram"></i><input name="instagram_url" type="text" placeholder="Instagram link" value="<?=$app->instagram_url?>" /></div></div></div>
