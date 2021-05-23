@@ -57,6 +57,7 @@ $xcrud->table('posts');
 $xcrud->order_by('id','desc');
 $xcrud->unset_view();
 $xcrud->unset_edit();
+$xcrud->unset_add();
 
 $xcrud->column_class('img', 'zoom_img');
 $xcrud->column_class('img', 'zoom_img');
@@ -70,7 +71,7 @@ $xcrud->columns('id,title,status,hits,created_at');
 
 $xcrud->unset_title();
 $title ="Blog Posts";
-$body = admin_views."post.php";
+$body = admin_views."posts.php";
 $posts_nav = "active";
 include admin_template;
 });
@@ -81,7 +82,7 @@ include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
 $xcrud->table('categories');
 $xcrud->order_by('id','desc');
-$xcrud->columns('id');
+$xcrud->columns('id,title,slug');
 $xcrud->unset_title();
 $title ="Categories";
 $body = admin_views."xcrud.php";
@@ -224,7 +225,7 @@ echo "<style>body{font-family:calibri}</style>Updating...";
 $router->get(admin.'post/add', function() {
 include "app/db.php";
 $title ="Add Post";
-$body = admin_views."post_manage.php";
+$body = admin_views."post.php";
 $posts_nav = "active";
 include admin_template;
 });
@@ -306,7 +307,7 @@ $post_title = substr(strip_tags($post['content']), 0, 160);
 $date=date_create($post['created_at']); $post_date = date_format($date,"Y-m-d")."T".date_format($date,"H:i:s");
 
 $title ="Post Manage";
-$body = admin_views."post_manage.php";
+$body = admin_views."post.php";
 $posts_nav = "active";
 include admin_template;
 

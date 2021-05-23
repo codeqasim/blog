@@ -11,7 +11,7 @@ ini_set('display_errors', 'On'); // error showing (debug)
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST']; $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']); define('root', $root);
 
 // ini router
-use AppRouter\Router;                  
+use AppRouter\Router;
 
 // include config file
 include "config.php";
@@ -42,6 +42,8 @@ include $controllers.'/'.$value; }
 // ending routing
 /*$router->get('/page/(.*)', ['PageController', 'viewPage']);
 $router->route(['OPTION', 'PUT'], '/test', 'PageController::test');*/
+
+// include "app/vendor/benchmark.php";
 $router->dispatchGlobal();
 
 ?>
