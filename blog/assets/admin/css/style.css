@@ -121,15 +121,18 @@ ul { list-style: none; padding: 0px; }
 
 /* inputs 
 ---------------------------------------------------  */
-input { display: block; width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #dddedf; background: #fff; color: #000000; font-size: 14px; font-weight: 400; -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; border-radius: 3px; -webkit-appearance: none; transition: all .2s ease; transition-property: color,border-color,background,width,height,box-shadow; -webkit-font-smoothing: subpixel-antialiased; }
-input:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0 0 0 1px #0473fc; background: #fff; }
-input:hover { box-shadow: inset 0 0 0 1px #0473fc; background: #fff; }
-.input input { padding: 6px 40px 8px }
+input,textarea { display: block; width: 100%; height: 38px; padding: 6px 12px; border: 1px solid #dddedf; background: #fff; color: #000000; font-size: 14px; font-weight: 400; -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; border-radius: 3px; -webkit-appearance: none; transition: all .2s ease; transition-property: color,border-color,background,width,height,box-shadow; -webkit-font-smoothing: subpixel-antialiased; }
+input:focus,textarea:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0 0 0 1px #0473fc; background: #fff; }
+input:hover,textarea:hover { box-shadow: inset 0 0 0 1px #0473fc; background: #fff; }
+.input input,.input textarea { padding: 6px 40px 8px }
 .input i { position: absolute; padding: 11px 13px; font-size: 16px; }
+.input img { position: absolute; padding: 0px 12px; font-size: 16px; max-width: 44px; }
 input[type="checkbox"], [type="radio"] {height: 20px; width: 20px; -webkit-appearance: checkbox; } 
 input[type="checkbox"]:hover { border: 1px solid #0473fc; } 
 /* inputs 
 ---------------------------------------------------  */
+
+textarea{padding:10px !important; min-height: 170px;}
 
 /* select 
 ---------------------------------------------------  */
@@ -149,7 +152,7 @@ select:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0
 
 .clear { display: block; position: relative;width: 100%; }
 .br-1 { display: block; position: relative;width: 100%; margin: 10px 0; }
-.group input,.group select,.group img  { display: block; margin: 10px 0; }
+.group input,.group select,.group img,.group textarea  { display: block; margin: 10px 0; }
 .group label  { padding: 10px 0; display: block; margin: 10px 0; font-weight: 500; }
 
 .content_head { color: #15171a; font-size: 26px; margin-bottom: 18px; height: 30px; }

@@ -100,6 +100,7 @@ echo '<meta property="article:tag" content="'.$key.'" />';
     }
 }
 </script>
+<?=$app->header_code?>
 </head>
 <body>
 

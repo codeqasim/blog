@@ -166,7 +166,9 @@ whatsapp_url = '".$_POST['whatsapp_url']."',
 pinterest_url = '".$_POST['pinterest_url']."',
 linkedin_url = '".$_POST['linkedin_url']."',
 instagram_url = '".$_POST['instagram_url']."',
-theme_color = '".$_POST['theme_color']."'
+theme_color = '".$_POST['theme_color']."',
+header_code = '".$_POST['header_code']."',
+footer_code = '".$_POST['footer_code']."'
 WHERE id = 1";
 
 if ($mysqli->query($sql) === TRUE) {

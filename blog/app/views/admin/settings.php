@@ -56,12 +56,31 @@ if (file) { shows.src = URL.createObjectURL(file) }
 
 <div class="group">
 
-<div class="row"><div class="c1"><label>Whatsapp</label></div><div class="c4"><div class="input"><i class="fab fa-whatsapp"></i><input name="whatsapp_url" type="text" placeholder="Whatsapp link" value="<?=$app->whatsapp_url?>" /></div></div></div>
-<div class="row"><div class="c1"><label>Facebook</label></div><div class="c4"><div class="input"><i class="icon-facebook"></i><input name="facebook_url" type="text" placeholder="Facebook link" value="<?=$app->facebook_url?>" /></div></div></div>
-<div class="row"><div class="c1"><label>Twitter</label></div><div class="c4"><div class="input"><i class="fab fa-twitter"></i><input name="twitter_url" type="text" placeholder="Twitter link" value="<?=$app->twitter_url?>" /></div></div></div>
-<div class="row"><div class="c1"><label>Instagram</label></div><div class="c4"><div class="input"><i class="fab fa-instagram"></i><input name="instagram_url" type="text" placeholder="Instagram link" value="<?=$app->instagram_url?>" /></div></div></div>
-<div class="row"><div class="c1"><label>LinkedIn</label></div><div class="c4"><div class="input"><i class="fab fa-linkedin"></i><input name="linkedin_url" type="text" placeholder="LinkedIn link" value="<?=$app->linkedin_url?>" /></div></div></div>
-<div class="row"><div class="c1"><label>Pinterest</label></div><div class="c4"><div class="input"><i class="fab fa-pinterest"></i><input name="pinterest_url" type="text" placeholder="Pinterest link" value="<?=$app->pinterest_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Whatsapp</label></div><div class="c4"><div class="input"><img src="<?=root?>assets/front/fonts/whatsapp.svg" /><input name="whatsapp_url" type="text" placeholder="Whatsapp link" value="<?=$app->whatsapp_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Facebook</label></div><div class="c4"><div class="input"><img src="<?=root?>assets/front/fonts/facebook.svg" /><input name="facebook_url" type="text" placeholder="Facebook link" value="<?=$app->facebook_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Twitter</label></div><div class="c4"><div class="input"><img src="<?=root?>assets/front/fonts/twitter.svg" /><input name="twitter_url" type="text" placeholder="Twitter link" value="<?=$app->twitter_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Instagram</label></div><div class="c4"><div class="input"><img src="<?=root?>assets/front/fonts/instagram.svg" /><input name="instagram_url" type="text" placeholder="Instagram link" value="<?=$app->instagram_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>LinkedIn</label></div><div class="c4"><div class="input"><img src="<?=root?>assets/front/fonts/linkedin.svg" /><input name="linkedin_url" type="text" placeholder="LinkedIn link" value="<?=$app->linkedin_url?>" /></div></div></div>
+<div class="row"><div class="c1"><label>Pinterest</label></div><div class="c4"><div class="input"><img src="<?=root?>assets/front/fonts/pinterest.svg" /><input name="pinterest_url" type="text" placeholder="Pinterest link" value="<?=$app->pinterest_url?>" /></div></div></div>
+
+</div>
+</div>
+
+<div class="panel">
+<h2 class="head">Customization</h2>
+<p class="helper">Additional code</p>
+
+<div class="group">
+
+<div class="row"><div class="c1"><label>Header</label></div><div class="c4"><div class="input">
+<textarea name="header_code" id="" cols="30" rows="10"><?=$app->header_code?></textarea>
+</div></div>
+</div>
+
+<div class="row"><div class="c1"><label>Footer</label></div><div class="c4"><div class="input">
+<textarea name="footer_code" id="" cols="30" rows="10"><?=$app->footer_code?></textarea>
+</div></div>
+</div>
 
 <!--<select name="" id="">
     <option>Select</option>
@@ -83,34 +102,4 @@ if (file) { shows.src = URL.createObjectURL(file) }
 </div>
 </div>
 
-<!--<div class="panel">
-<h2 class="head">Input select</h2>
-<p class="helper">Choose your browser from the list</p>
-
-<div class="group">
-<input list="browsers" name="" placeholder="Type firefox">
-
-<datalist id="browsers">
-    <option value="Edge">
-    <option value="Firefox">
-    <option value="Chrome">
-    <option value="Opera">
-    <option value="Safari">
-</datalist>
-
-<div class="input">
-<i class="far fa-question-circle"></i>
-<input list="browsers_" name="" placeholder"Input with icon">
-
-<datalist id="browsers_">
-    <option value="Edge">
-    <option value="Firefox">
-    <option value="Chrome">
-    <option value="Opera">
-    <option value="Safari">
-</datalist>
-</div>
-
-</div>
-</div>-->
 </form>

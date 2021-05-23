@@ -1,8 +1,8 @@
 <p style="display: flex; justify-content: center; margin-bottom: -34px; position: absolute; width: 100%; text-align: center;">Powered by &nbsp;<a target="_blank" href="http://phpblogscript.com"> <strong> PHP Blog Script</strong></a></p>
 
 <footer>
+<?=$app->footer_code?>
 <div class="contain">
-
 
 <ul class="fr social">
 <?php if (!empty($app->whatsapp_url)){?><li><a target="_blank" href="<?=$app->whatsapp_url?>" class="wa"><img src="<?=root?>assets/front/fonts/whatsapp.svg" alt="whatsapp" /></a></li><?php } ?>
