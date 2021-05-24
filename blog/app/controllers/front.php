@@ -5,8 +5,8 @@ include "app/db.php";
 // main homepage
 $router->get('/', function() {
 include "app/db.php";
-$posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 1, 27");
-$featured = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 1");
+$posts = $mysqli->query("SELECT * FROM posts WHERE status = 1 ORDER BY id DESC LIMIT 1, 27");
+$featured = $mysqli->query("SELECT * FROM posts WHERE status = 1 ORDER BY id DESC LIMIT 1");
 
 // meta information
 $meta_title = $app->home_title;

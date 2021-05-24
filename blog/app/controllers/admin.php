@@ -310,6 +310,12 @@ if(move_uploaded_file($temp_name, $target_path)) {
 //
 }else{ exit("Error While uploading image on the server"); } }
 
+if (!empty($_POST['img'])) {
+$image=$_POST['img'];
+$img_emp = explode('/', $image);
+$img = end($img_emp);
+}
+
 // array to sting for keywords
 if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']); } else { $keywords = ""; }
 
@@ -325,6 +331,7 @@ title = '".$_POST['title']."',
 slug = '".$_POST['slug']."',
 img = '".$img."',
 content = '".$_POST['content']."',
+status = '".$_POST['status']."',
 created_at = '".$_POST['date_time']."',
 keywords = '".$keywords."'
 WHERE id = '".$_POST['post_id']."'";
@@ -339,6 +346,7 @@ category_id,
 title,
 slug,
 img,
+status,
 content,
 created_at,
 keywords)
@@ -348,6 +356,7 @@ VALUES (
 '".$_POST['title']."',
 '".strtolower($_POST['slug'])."',
 '".$img."',
+'".$_POST['status']."',
 '".$_POST['content']."',
 '".$_POST['date_time']."',
 '".$keywords."')

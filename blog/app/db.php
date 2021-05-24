@@ -16,4 +16,4 @@ $app = $mysqli->query("SELECT * FROM settings WHERE id = 1")->fetch_object();
 $pages = $mysqli->query("SELECT * FROM pages");
 
 // sql query for categories
-$categories = $mysqli->query("SELECT * FROM categories");
+$categories = $mysqli->query("SELECT * FROM categories WHERE status = 1");

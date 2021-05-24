@@ -12,20 +12,17 @@ $category_id = $d['category_id'];
 $img = $d['img'];
 $content = $d['content'];
 $keywords = $d['keywords'];
-$status = $d['status'];
 $user_id = $d['user_id'];
 $date = $d['created_at'];
 
+if (empty($d['status'])){$status=$d['status'];}else{$status="4343";}
 }}};
 
 // get endpoint of url
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); $post_id = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
 ?>
 
-
-<script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-<link rel="stylesheet" href="<?=root?>assets/admin/css/medium-editor.css" />
-<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -48,10 +45,12 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); $post_id = array_slice(
 <?php } } ?>
 </select>
 </p>
-<p class="viewsp">
-Page views &nbsp;
-<img src="http://localhost/blog/blog/assets/front/img/views.svg" alt="" class="views_svg">
-<strong>&nbsp; <?php if (isset($hits)){ echo $hits; }?></strong>
+<p class="viewsp tag" style="width:150px">
+<span>Status</span>
+<select class="status" name="status" style="min-width:80px">
+    <option value="1">Active</option>
+    <option value="0">Draft</option>
+</select>
 </p>
 </div>
 
@@ -67,10 +66,17 @@ document.getElementById("display").value = title;
 });
 </script>
 
+<div class="catnviews">
 <div class="author">
 <img src="<?=root?>uploads/users/<?=$_SESSION['user_id']?>.jpg" alt="">
 <p><?php $user = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['user_id'].'"')->fetch_object(); echo $user->full_name ?></p>
 <p class="date_time"> <?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?></p>
+</div>
+<p class="viewsp">
+Page views &nbsp;
+<img src="http://localhost/blog/blog/assets/front/img/views.svg" alt="" class="views_svg">
+<strong>&nbsp; <?php if (isset($hits)){ echo $hits; }?></strong>
+</p>
 </div>
 
 <input type="hidden" name="date_time" value="<?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?>" />
@@ -78,7 +84,7 @@ document.getElementById("display").value = title;
 <div class="thumb" style="height:400px">
 <?php if (isset($img)) { if (getimagesize(root."uploads/posts/".$img) !== false) { ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
-<input style="display:none" name="file" type='file' value="<?=root?>uploads/posts/<?=$img?>" id="imgInp" class="file" value="Add Image" />
+<input style="display:none" name="img" value="<?=root?>uploads/posts/<?=$img?>" id="imgInp" class="file" value="Add Image" />
 <?php } } ?>
 
 <?php if (empty($img)) { ?>
@@ -115,7 +121,7 @@ if (file) { show.src = URL.createObjectURL(file) }
 </script>
 
 <div class="content">
-<textarea name="content" id="" cols="30" rows="10" class="editable">
+<textarea name="content" class="editor" cols="30" rows="10" class="">
 <?php if (isset($content)){ echo $content; }?>
 </textarea>
 </div>
@@ -125,24 +131,6 @@ if (file) { show.src = URL.createObjectURL(file) }
 </form>
 
 <script>
-var editor = new MediumEditor('.editable', {
-/* These are the default options for the editor, if nothing is passed this is what is used */
-activeButtonClass: 'medium-editor-button-active',
-allowMultiParagraphSelection: true,
-buttonLabels: false,
-contentWindow: window,
-delay: 0,
-disableReturn: false,
-disableDoubleReturn: false,
-disableExtraSpaces: false,
-disableEditing: false,
-elementsContainer: false,
-extensions: {},
-ownerDocument: document,
-spellcheck: true,
-targetBlank: true
-});
-
 // select 2 multi select
 $(".tags").select2({
 tags: true,
@@ -155,4 +143,50 @@ placeholder: "Write tag and press enter",
 $('.category option[value=<?=$category_id?>]').attr('selected','selected');
 <?php } ?>
 
+<?php if (isset($status)){ ?>
+// select category from db
+$('.status option[value=<?=$status?>]').attr('selected','selected');
+<?php } ?>
 </script>
+
+
+<script>
+ClassicEditor.create(document.querySelector(".editor"), {
+        toolbar: {
+            items: [
+                "heading",
+                "|",
+                "bold",
+                "italic",
+                "link",
+                "bulletedList",
+                "numberedList",
+                "|",
+                "indent",
+                "outdent",
+                "|",
+                "imageUpload",
+                "blockQuote",
+                "mediaEmbed",
+                "undo",
+                "redo",
+            ],
+        },
+        language: "es",
+        image: {
+            toolbar: ["imageTextAlternative", "imageStyle:full", "imageStyle:side"],
+        },
+        licenseKey: "",
+    })
+        .then((editor) => {
+            window.editor = editor;
+        })
+        .catch((error) => {
+            console.error("Oops, something went wrong!");
+            console.error(
+                "Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:"
+            );
+            console.warn("Build id: ref2goguw78q-8ghiwfe1qu83");
+            console.error(error);
+        });
+    </script>

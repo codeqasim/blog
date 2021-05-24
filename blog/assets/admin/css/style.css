@@ -206,7 +206,7 @@ table thead .action { width: 280px }
 .post .author p { float: left; margin: 0px 10px; font-size: 1em; font-weight: 500; color: #000; }
 .post .author .date_time { display: block; width: 100%; padding-left: 40px; margin-top: -20px; font-size: 0.8em; color: #90a2aa; }
 .post .img { background: #fff; height: 380px; border-radius: 6px; grid-column: main-start/main-end; width: 100%; display: flex; justify-content: center; align-items: center; }
-.post .content, .post .content span  { padding: 20px 0; font-family: fell, Georgia, Cambria, "Times New Roman", Times, serif;  font-weight: 400; font-size: 1.5rem !important; line-height: 1.6em; }
+.post .content, .post .content  { padding: 20px 0; font-family: fell, Georgia, Cambria, "Times New Roman", Times, serif;  font-weight: 400; font-size: 1.5rem !important; line-height: 1.6em; }
 .post .content>* { grid-column: main-start/main-end; }
 .views_svg { max-width: 20px; }
 .catnviews { display: flex; align-items: center; justify-content: space-between; }
