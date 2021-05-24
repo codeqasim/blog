@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^posts\.xml$ posts.php [L]
