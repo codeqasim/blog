@@ -97,6 +97,7 @@ include "app/db.php";
 include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
 $xcrud->table('users');
+$xcrud->change_type('password', 'password', 'md5', array('maxlength'=>20,'placeholder'=>'enter password'));
 $xcrud->order_by('id','desc');
 $xcrud->columns('id,full_name,email');
 $xcrud->unset_title();
