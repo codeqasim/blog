@@ -3,11 +3,9 @@
  <div class="card">
  <a href="<?=root?><?=$post['slug']?>">
 
-
-
 <?php
-$img = root."uploads/posts/".$post['img'];
-if (file_exists($img)) {?>
+
+if (!empty(root."uploads/posts/".$post['img'])) {?>
 <img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
 <?php } else { ?>
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
