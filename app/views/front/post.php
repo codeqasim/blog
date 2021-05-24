@@ -14,7 +14,7 @@ Page views &nbsp;
 <h1 class="title"><?=$d['title']?></h1>
 <?php include "app/views/front/partcials/author.php"?>
 
-<?php if (getimagesize(root."uploads/posts/".$d['img']) !== false) {?>
+<?php if (getimagesize(root."uploads/posts/".$d['img']) ) {?>
 <img src="<?=root?>uploads/posts/<?=$d['img']?>" class="img" alt="<?=$d['title']?>" />
 <?php } else { ?>
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
