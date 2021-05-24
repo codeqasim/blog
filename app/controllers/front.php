@@ -67,7 +67,7 @@ include "app/views/sitemap/sitemap.php";
 
 // pages sitemap page
 $router->get('sitemap-pages.xml', function() {
-header("Content-type: text/xml");
+header('Content-type: application/xml; charset=utf-8');
 include "app/db.php";
 $pages = $mysqli->query("SELECT * FROM pages ORDER BY id DESC");
 include "app/views/sitemap/sitemap_pages.php";
