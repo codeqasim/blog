@@ -4,7 +4,7 @@ echo'<?xml-stylesheet type="text/xsl" href="'.root.'app/views/sitemap/sitemap.xs
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
 $d = $post['created_at'];
-$date = date('Y:m:d', strtotime($d));
+$date = date('Y-m-d', strtotime($d));
 
 if ($pages->num_rows > 0) { foreach($pages as $page) {
 echo '

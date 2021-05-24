@@ -1,5 +1,8 @@
 # ---- CASE WITHOUT HTTPS
-
+# RewriteEngine on
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 
 # ---- CASE HTTPS
 RewriteEngine On
@@ -7,7 +10,7 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
- RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 
 # secure GIT files
 RedirectMatch 404 /\.git

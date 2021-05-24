@@ -6,7 +6,7 @@ echo'<?xml-stylesheet type="text/xsl" href="'.root.'app/views/sitemap/sitemap.xs
 if ($categories->num_rows > 0) { foreach($categories as $category) {
 
 $d = $post['created_at'];
-$date = date('Y:m:d', strtotime($d));
+$date = date('Y-m-d', strtotime($d));
 
 echo '
 <sitemap>

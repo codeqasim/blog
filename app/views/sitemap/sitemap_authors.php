@@ -5,7 +5,8 @@ echo'<?xml-stylesheet type="text/xsl" href="'.root.'app/views/sitemap/sitemap.xs
 
 if ($users->num_rows > 0) { foreach($users as $user) {
 $d = $post['created_at'];
-$date = date('Y:m:d', strtotime($d));
+$date = date('Y-m-d', strtotime($d));
+
 echo '
 <sitemap>
 <loc>'.root.$user['slug'].'</loc>
