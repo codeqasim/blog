@@ -3,11 +3,8 @@
  <div class="card">
  <a href="<?=root?><?=$post['slug']?>">
 
-<?php if (getimagesize(root."uploads/posts/".$post['img']) !== false) {?>
-<img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
-<?php } else { ?>
+
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
-<?php } ?>
 
  <div class="content">
  <div class="catnviews mt15">
