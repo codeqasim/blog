@@ -26,7 +26,7 @@ Starting your own niche based blog is very challeging specially when it comes to
 No plugins no libraries and fancy themes to customize and waste your time simple elegant and usefull blog platform is ready for you to install for free and start blogging without wasting your time on search other blogging scripts. 
 
 Main [Website](http://phpblogscript.com/)
-Live [Demo](http://phpblogscript.com/demo)
+Live [Demo](http://phpblogscript.com/blog)
 
 ## License
 
