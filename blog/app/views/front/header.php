@@ -100,6 +100,17 @@ echo '<meta property="article:tag" content="'.$key.'" />';
     }
 }
 </script>
+
+<script>
+// ger users country
+var requestUrl = "http://ip-api.com/json";
+fetch(requestUrl)
+.then(function(response) { return response.json(); })
+.then(function(c) { var user_country = c['country']; console.log(user_country);
+
+// submit to db
+var req = '<?=root?>traffic?country=' + user_country; fetch(req) });
+</script>
 <?=$app->header_code?>
 </head>
 <body>
@@ -114,7 +125,6 @@ echo '<meta property="article:tag" content="'.$key.'" />';
       <li class="x-hide"><a href="<?=root?><?=$nav['slug']?>"><?=$nav['title']?></a></li>
       <?php } } ?>
     </ul>
-
     <div tabindex="0" class="menu">
     <ul class="menu-content">
       <?php if ($categories->num_rows > 0) { foreach($categories as $cat) { ?>
@@ -122,7 +132,6 @@ echo '<meta property="article:tag" content="'.$key.'" />';
       <?php } } ?>
     </ul>
     </div>
-
     <ul class="fr">
     <li><a href="<?=root?>admin">Login</a></li>
     </ul>

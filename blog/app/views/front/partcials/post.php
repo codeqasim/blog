@@ -10,7 +10,6 @@
 <?php } ?>
 
  <div class="content">
-
  <div class="catnviews mt15">
 <p class="tag">
 <?php $catetory = $post['category_id'];

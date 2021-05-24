@@ -22,6 +22,17 @@ $body = views."home.php";
 include template;
 });
 
+// add traffic to db
+$router->get('traffic', function(){
+include "app/db.php";
+// condition to check param from url
+if (isset($_GET['country'])) { $country = $_GET['country'];
+$sql = $mysqli->query('UPDATE traffic SET visits = visits+1 WHERE country="'.$country.'"');
+header("Content-Type: application/json");
+echo $country." added to traffic list";
+}
+});
+
 // newsletters subsriber page
 $router->post('newsletters', function() {
 include "app/db.php";
@@ -146,7 +157,7 @@ include template;
 }
 
 // main homepage
-$router->get('install', function() {
+$router->get('backup_restore', function() {
 
 // Do not modify anything under this line :)
     class db {
@@ -169,7 +180,7 @@ $router->get('install', function() {
     $con = new db;
     $con->connect();
    // $res = $con->db->query("SELECT * FROM pt_accounts");
-     $sql= file_get_contents('db.sql');
+     $sql= file_get_contents('backups/db.sql');
      foreach (explode(";\n", $sql) as $sql)
        {
          $sql = trim($sql);
@@ -204,14 +215,13 @@ $meta_keywords = $post['keywords'];
 $meta_url = root.$post['slug'];
 $meta_img = root."uploads/posts/".$post['img'];
 $meta_time = $post_date.".000Z";
-$meta_writer = "Qasim Hussain";
+$meta_writer = "";
 $title =$post['title'];
 $mysqli->query("UPDATE posts SET hits = hits+1 WHERE id=".$post['id']."");
 
 }}
 
 include views."amp.php";
-
 });
 
 // post page

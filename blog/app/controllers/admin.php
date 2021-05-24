@@ -6,9 +6,9 @@ session_destroy();
 header("Location: ".root."");
 });
 
+// admin login page
 $router->get('admin', function() {
 include "app/db.php";
-
 $title ="Login";
 include admin_views."login.php";
 });
@@ -40,14 +40,16 @@ include admin_views."login.php";
 echo "<script>alert('Email or password incorrect')</script>";
 } });
 
+// admin login session check starting --- >
 if (isset($_SESSION['admin_login']) == 1 ) {
 // admin dashboard
 $router->get(admin.'dashboard', function() {
-$title ="Homepage";
-$body = admin_views."home.php";
+include "app/db.php";
+$title ="Dashboard";
+$body = admin_views."dashboard.php";
 $home_nav = "active";
 include admin_template;
-}); }
+});
 
 // posts page
 $router->get(admin.'posts', function() {
@@ -59,17 +61,14 @@ $xcrud->order_by('id','desc');
 $xcrud->unset_view();
 $xcrud->unset_edit();
 $xcrud->unset_add();
-
+$xcrud->unset_csv();
 $xcrud->column_class('img', 'zoom_img');
-$xcrud->column_class('button', 'button');
-
 $xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
 $xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'_blank'));
 
 // $xcrud->change_type('img', 'image', false, array( 'path' => '../uploads/gallery' ));
 
 $xcrud->columns('id,title,status,hits,created_at');
-
 $xcrud->unset_title();
 $title ="Blog Posts";
 $body = admin_views."posts.php";
@@ -89,6 +88,62 @@ $xcrud->unset_title();
 $title ="Categories";
 $body = admin_views."xcrud.php";
 $categories_nav = "active";
+include admin_template;
+});
+
+// users pages
+$router->get(admin.'users', function() {
+include "app/db.php";
+include('app/vendor/xcrud/xcrud.php');
+$xcrud = Xcrud::get_instance();
+$xcrud->table('users');
+$xcrud->order_by('id','desc');
+$xcrud->columns('id,full_name,email');
+$xcrud->unset_title();
+$title ="Users";
+$body = admin_views."xcrud.php";
+$users_nav = "active";
+include admin_template;
+});
+
+// draft pages
+$router->get(admin.'traffic', function() {
+include "app/db.php";
+include('app/vendor/xcrud/xcrud.php');
+$xcrud = Xcrud::get_instance();
+$xcrud->table('traffic');
+// $xcrud->where('status =', 0);
+$xcrud->order_by('visits','desc');
+$xcrud->unset_view();
+$xcrud->unset_remove();
+$xcrud->unset_csv();
+$xcrud->columns('id,code,country,visits');
+$xcrud->unset_title();
+$title ="Traffic";
+$body = admin_views."xcrud.php";
+$traffic_nav = "active";
+include admin_template;
+});
+
+// draft pages
+$router->get(admin.'draft', function() {
+include "app/db.php";
+include('app/vendor/xcrud/xcrud.php');
+$xcrud = Xcrud::get_instance();
+$xcrud->table('posts');
+$xcrud->where('status =', 0);
+$xcrud->order_by('id','desc');
+$xcrud->unset_view();
+$xcrud->unset_edit();
+$xcrud->unset_add();
+$xcrud->unset_csv();
+$xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
+$xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'_blank'));
+$xcrud->columns('id,title,status,hits,created_at');
+$xcrud->unset_title();
+$title ="Draft";
+$body = admin_views."xcrud.php";
+$draft_nav = "active";
 include admin_template;
 });
 
@@ -298,7 +353,8 @@ VALUES (
 ";
 }
 
-if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/posts"); } else { echo "Error updating record: " . $mysqli->error; }  });
+if ($mysqli->query($sql) === TRUE) { header("Location: ".root."admin/posts"); } else { echo "Error updating record: " . $mysqli->error; }
+});
 
 // view to modify post
 $router->get('admin/post/(.*)', function() {
@@ -320,3 +376,5 @@ include admin_template;
 }}
 
 });
+
+}; // admin login session check ending --- >
