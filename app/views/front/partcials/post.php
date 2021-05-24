@@ -4,7 +4,14 @@
  <a href="<?=root?><?=$post['slug']?>">
 
 
+
+<?php
+$img = root."uploads/posts/".$post['img'];
+if (file_exists($img)) {?>
+<img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
+<?php } else { ?>
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
+<?php } ?>
 
  <div class="content">
  <div class="catnviews mt15">
