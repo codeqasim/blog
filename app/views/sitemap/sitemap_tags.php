@@ -5,6 +5,10 @@ echo'<?xml-stylesheet type="text/xsl" href="'.root.'app/views/sitemap/sitemap.xs
 
 if ($tags->num_rows > 0) {
 foreach($tags as $tag) {
+
+$d = $post['created_at'];
+$date = date('Y:m:d', strtotime($d));
+
 if(empty($tag['keywords'])) {
 // Do something for all those arrays that are not empty
 } else {
@@ -12,7 +16,7 @@ if(empty($tag['keywords'])) {
 echo '
 <sitemap>
 <loc>'.root."tags/".str_replace(' ', '-', $tag['keywords']).'</loc>
-<lastmod>'.$tag['created_at'].'</lastmod>
+<lastmod>'.$date.'</lastmod>
 </sitemap>
 '; }}}
 echo'</sitemapindex>'; ?>

@@ -4,10 +4,14 @@ echo'<?xml-stylesheet type="text/xsl" href="'.root.'app/views/sitemap/sitemap.xs
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
 if ($categories->num_rows > 0) { foreach($categories as $category) {
+
+$d = $post['created_at'];
+$date = date('Y:m:d', strtotime($d));
+
 echo '
 <sitemap>
 <loc>'.root.$category['slug'].'</loc>
-<lastmod>'.$category['created_at'].'</lastmod>
+<lastmod>'.$date.'</lastmod>
 </sitemap>
 '; }}
 
