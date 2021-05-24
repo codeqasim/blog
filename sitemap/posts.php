@@ -12,7 +12,7 @@ if ($posts->num_rows > 0) { foreach($posts as $post) {
 $d = $post['created_at'];
 $date = date('Y-m-d', strtotime($d));
 echo '<sitemap>
-<loc>'.$url.$post['slug'].'</loc>
+<loc>'.implode('/', $url)."/".$post['slug'].'</loc>
 <lastmod>'.$date.'</lastmod>
 </sitemap>'; }}
 echo'</sitemapindex>'; ?>
