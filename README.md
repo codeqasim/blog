@@ -10,11 +10,15 @@ Simplest PHP based blog fully optimized for search engines 100% opensource code 
 - Categories module 
 - Newsletter & subsribers 
 - SEO optimized 
+- Google AMP Optmized via url/amp
+- Multi users accounts
+- Built-it pages views analytics
+- Post draft feature
+- Base64 article optimized images
 - Auto Sitemap generation 
 - Beutify URLs
 - Social links and shares 
-- Page hits views counter
-- Lightweight total 3MB script  
+- Page hits views counter  
 
 #### Why PHP Blog Script
 Starting your own niche based blog is very challeging specially when it comes to selecting any of your CMS or blog script. speed, performance, optimization, SEO and user-friendly are the options you need to be very handy. fancy cms and blog scripts are no more easy to handle configure or install on your shared or dedicated servers anymore. PHP Blog Script makes life much easier to just add your db credentials and install the entire platform within 2 minutes. 
