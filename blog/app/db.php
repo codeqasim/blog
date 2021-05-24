@@ -4,9 +4,8 @@
 $mysqli = new mysqli(server, username, password, dbname);
 
 // database connection condition
-if ($mysqli -> connect_errno) {
-header("Location: install");
-//echo "Failed to connect to MySQL: " . $mysqli -> connect_error; exit();
+if ($mysqli -> connect_errno) { // header("Location: install");
+echo "Failed to connect to MySQL: " . $mysqli -> connect_error; exit();
 } else { }
 
 // main app credentials, can be called by $app->FIELD_NAME
