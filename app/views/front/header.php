@@ -103,7 +103,7 @@ echo '<meta property="article:tag" content="'.$key.'" />';
 
 <script>
 // ger users country
-var requestUrl = "http://ip-api.com/json";
+var requestUrl = "https://extreme-ip-lookup.com/json/";
 fetch(requestUrl)
 .then(function(response) { return response.json(); })
 .then(function(c) { var user_country = c['country']; console.log(user_country);
