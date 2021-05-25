@@ -339,7 +339,7 @@ slug = '$slug',
 img = '$img',
 content='$content',
 status = '$status',
-date_time = '$date_time',
+created_at = '$date_time',
 keywords = '$keywords'
 WHERE id='$post_id'";
 
