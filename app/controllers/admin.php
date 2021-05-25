@@ -334,7 +334,7 @@ $post_id = $_POST['post_id'];
 // sql query to update post
 $sql = "
 UPDATE posts SET
-user_id = $user_id,
+user_id = '$user_id',
 category_id = $category_id,
 title = $title',
 slug = $slug,
