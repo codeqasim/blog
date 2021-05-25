@@ -139,7 +139,7 @@ $xcrud->unset_edit();
 $xcrud->unset_add();
 $xcrud->unset_csv();
 $xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
-$xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'_blank'));
+$xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'_self'));
 $xcrud->columns('id,title,status,hits,created_at');
 $xcrud->unset_title();
 $title ="Draft";
