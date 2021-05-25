@@ -327,7 +327,7 @@ $status = $_POST['status'];
 $slug = $_POST['slug'];
 $title = $_POST['title'];
 $category_id = $_POST['category_id'];
-$user_id = $_POST['user_id'];
+$user_id = $_SESSION['user_id'];
 $date_time = $_POST['date_time'];
 $post_id = $_POST['post_id'];
 
