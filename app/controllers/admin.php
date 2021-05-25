@@ -331,12 +331,17 @@ $user_id = $_POST['user_id'];
 $date_time = $_POST['date_time'];
 $post_id = $_POST['post_id'];
 
+
+$sql = "UPDATE posts set user_id=".$user_id.", content=".$content." WHERE id=".$post_id."";
+
+
 // sql query to update post
+/*
 $sql = "
 UPDATE posts SET
 user_id = '$user_id',
 category_id = $category_id,
-title = $title',
+title = $title,
 slug = $slug,
 img = $img,
 content = $content,
@@ -344,6 +349,7 @@ status = $status,
 date_time = $date_time,
 keywords = $keywords
 WHERE id = $post_id";
+*/
 
 } else {
 
