@@ -323,20 +323,27 @@ if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']);
 if ($_POST['post_type'] == "update") {
 
 $content = $_POST['content'];
+$status = $_POST['status'];
+$slug = $_POST['slug'];
+$title = $_POST['title'];
+$category_id = $_POST['category_id'];
+$user_id = $_POST['user_id'];
+$date_time = $_POST['date_time'];
+$post_id = $_POST['post_id'];
 
 // sql query to update post
 $sql = "
 UPDATE posts SET
-user_id = '".$_SESSION['user_id']."',
-category_id = '".$_POST['category_id']."',
-title = '".$_POST['title']."',
-slug = '".$_POST['slug']."',
-img = '".$img."',
+user_id = $user_id',
+category_id = $category_id',
+title = $title',
+slug = $slug,
+img = $img,
 content = $content,
-status = '".$_POST['status']."',
-created_at = '".$_POST['date_time']."',
-keywords = '".$keywords."'
-WHERE id = '".$_POST['post_id']."'";
+status = $status,
+date_time = $date_time,
+keywords = $keywords
+WHERE id = $post_id";
 
 } else {
 
