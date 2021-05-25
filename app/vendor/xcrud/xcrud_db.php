@@ -1,8 +1,7 @@
 <?php
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST']; $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']); define('site_uri', $root);
 $site = preg_replace('{/$}', '', site_uri);
-$r = $site;
-$uri = (explode("/",$r));
+$uri = (explode("/",$site));
 $site_url = end($uri);
 $db = require_once $_SERVER['DOCUMENT_ROOT']."/".$site_url."/config.php";
 
