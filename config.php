@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 // database configuration
 define('server','localhost'); // mention your database server name normally its localhost

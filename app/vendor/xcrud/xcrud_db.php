@@ -1,4 +1,11 @@
 <?php
+$root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST']; $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']); define('site_uri', $root);
+$site = preg_replace('{/$}', '', site_uri);
+$r = $site;
+$uri = (explode("/",$r));
+$site_url = end($uri);
+$db = require_once $_SERVER['DOCUMENT_ROOT']."/".$site_url."/config.php";
+
 /** Database driver; f0ska xCRUD v.1.6.26; 03/2015 */
 class Xcrud_db
 {
@@ -27,10 +34,10 @@ class Xcrud_db
         {
             if (!is_array($params))
             {
-                $dbuser = Xcrud_config::$dbuser;
-                $dbpass = Xcrud_config::$dbpass;
-                $dbname = Xcrud_config::$dbname;
-                $dbhost = Xcrud_config::$dbhost;
+                $dbuser = username;
+                $dbpass = password;
+                $dbname = dbname;
+                $dbhost = server;
                 $dbencoding = Xcrud_config::$dbencoding;
             }
             self::$_instance[$instance_name] = new self($dbuser, $dbpass, $dbname, $dbhost, $dbencoding);
@@ -47,7 +54,9 @@ class Xcrud_db
             $this->connect = mysqli_connect($host, $dbuser, $dbpass, $dbname, $socks[1] ? $socks[1] : null, $socks[2] ? $socks[2] : null);
         }
         else
-            $this->connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+        $this->connect = mysqli_connect(server, username, password, dbname);
+
         if (!$this->connect)
             $this->error('Connection error. Can not connect to database');
         $this->connect->set_charset($dbencoding);

@@ -2,13 +2,14 @@
 
 class Xcrud_config
 {
-    // default connection
-    public static $dbname = "blog"; // Your database name
-    public static $dbuser = "root"; // Your database username
-    public static $dbpass = ""; // // Your database password
-    public static $dbhost = "localhost"; // Your database host, 'localhost' is default.
 
-    
+    // default connection
+    public static $dbname = ""; // Your database name
+    public static $dbuser = ""; // Your database username
+    public static $dbpass = ""; // // Your database password
+    public static $dbhost = ""; // Your database host, 'localhost' is default.
+
+
     // theme and language
     public static $theme = 'default'; // can be 'default', 'bootstrap', 'minimal' or your custom. Theme of xCRUD visual presentation. For using bootstrap you need to load it on your page.
     public static $language = 'en'; // sets default localization
