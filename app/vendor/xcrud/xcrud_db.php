@@ -1,9 +1,8 @@
 <?php
 
-$pathInPieces = explode('/', $_SERVER['REQUEST_URI']);
-$ba = $pathInPieces[1];
-
-require_once $_SERVER['DOCUMENT_ROOT'].'/'.$ba.'/config.php';
+$uri = explode('/', $_SERVER['REQUEST_URI']);
+$expo_uri = $uri[1];
+require_once $_SERVER['DOCUMENT_ROOT'].'/'.$expo_uri.'/config.php';
 
 /** Database driver; f0ska xCRUD v.1.6.26; 03/2015 */
 class Xcrud_db
