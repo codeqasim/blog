@@ -14,8 +14,8 @@ $meta_desc = $app->description;
 $meta_keywords = $app->keywords;
 $meta_url = root;
 $meta_img = root."uploads/global/media.jpg";
-$meta_time = "2021-05-09T16:46:15.000Z";
-$meta_writer = "Qasim Hussain";
+$meta_time = date('Y-m-d');
+$meta_writer = "";
 
 $title = $app->home_title;
 $body = views."home.php";

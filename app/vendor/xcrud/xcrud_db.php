@@ -1,17 +1,16 @@
 <?php
-$root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST']; $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']); define('site_uri', $root);
-$site = preg_replace('{/$}', '', site_uri);
-$uri = (explode("/",$site));
-$site_url = end($uri);
-$s = $_SERVER['DOCUMENT_ROOT']."/".$site_url."/config.php";
-require_once $s;
+
+$pathInPieces = explode('/', $_SERVER['REQUEST_URI']);
+$ba = $pathInPieces[1];
+
+require_once $_SERVER['DOCUMENT_ROOT'].'/'.$ba.'/config.php';
 
 /** Database driver; f0ska xCRUD v.1.6.26; 03/2015 */
 class Xcrud_db
 {
     private static $_instance = array();
     private $connect;
-    public $result;
+    public  $result;
     private $dbhost;
     private $dbuser;
     private $dbpass;
