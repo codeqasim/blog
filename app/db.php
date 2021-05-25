@@ -5,8 +5,8 @@ $mysqli = new mysqli(server, username, password, dbname);
 
 // database connection condition
 if ($mysqli -> connect_errno) {
-echo '<h2>Preparing Installation</h2>
-<script> location.replace("'.root.'install"); </script>';
+echo '<h2 style="color="#000 !important">Preparing Installation</h2>
+<style>body{color:#fff}</style?><script> location.replace("'.root.'install"); </script>';
 echo "Failed to connect to MySQL: " . $mysqli -> connect_error; exit();
 } else { }
 
