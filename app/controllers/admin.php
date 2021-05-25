@@ -322,6 +322,8 @@ if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']);
 // check type of post to run mysql query
 if ($_POST['post_type'] == "update") {
 
+$content = $_POST['content'];
+
 // sql query to update post
 $sql = "
 UPDATE posts SET
@@ -330,7 +332,7 @@ category_id = '".$_POST['category_id']."',
 title = '".$_POST['title']."',
 slug = '".$_POST['slug']."',
 img = '".$img."',
-content = ".$_POST['content'].",
+content = $content,
 status = '".$_POST['status']."',
 created_at = '".$_POST['date_time']."',
 keywords = '".$keywords."'
