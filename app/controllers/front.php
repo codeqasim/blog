@@ -59,6 +59,15 @@ $body = views."newsletters.php";
 include template;
 });
 
+// robots.txt page
+$router->get('robots.txt', function() {
+header("Content-Type: text/plain");
+echo  ("user-agent: *\n");
+echo  ("disallow: /app/\n");
+echo  ("disallow: /assets/\n");
+echo  ("disallow: /uploads/\n");
+});
+
 // main sitemap page
 $router->get('sitemap.xml', function() {
 header("Content-type: text/xml");
