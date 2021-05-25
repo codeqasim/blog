@@ -3,7 +3,8 @@ $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $site = preg_replace('{/$}', '', site_uri);
 $uri = (explode("/",$site));
 $site_url = end($uri);
-$db = require_once $_SERVER['DOCUMENT_ROOT']."/".$site_url."/config.php";
+$s = $_SERVER['DOCUMENT_ROOT']."/".$site_url."/config.php";
+require_once $s;
 
 /** Database driver; f0ska xCRUD v.1.6.26; 03/2015 */
 class Xcrud_db

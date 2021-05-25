@@ -13,7 +13,8 @@ img{width: 100%}
 header h2,header p { color: #000; }
 header nav { display: inline-block; width: 100%; /*box-shadow: 0 2px 2px -2px rgb(0 0 0 / 15%); border: 1px solid #e5e7eb;*/ background: #f8f9fa; height: 65px;}
 header nav li { float: left; padding: 20px 8px; font-size: .875rem; line-height: 1.25rem; font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;}
-header nav li a { padding-bottom: 1.5rem; padding-top: 1.5rem; font-weight: 500; }
+header nav li a { padding-bottom: 1.5rem; padding-top: 1.5rem; font-weight: 500;color: #000; }
+header nav li a:hover { color: var(--theme_color); }
 header nav li.brand img { width: unset; max-height: 24px }
 footer .social { display: flex; justify-content: center; align-items: center; width: 100%; }
 footer .social li { padding: 0px 6px 30px }
