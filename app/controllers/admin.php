@@ -64,7 +64,7 @@ $xcrud->unset_add();
 $xcrud->unset_csv();
 $xcrud->column_class('img', 'zoom_img');
 $xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
-$xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'_blank'));
+$xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'self'));
 
 // $xcrud->change_type('img', 'image', false, array( 'path' => '../uploads/gallery' ));
 
