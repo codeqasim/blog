@@ -331,9 +331,7 @@ $user_id = $_SESSION['user_id'];
 $date_time = $_POST['date_time'];
 $post_id = $_POST['post_id'];
 
-
-$sql = "UPDATE posts set user_id=".$user_id.", content=".$content." WHERE id=".$post_id."";
-
+$sql = "UPDATE posts set user_id=$user_id, content=$content WHERE id=$post_id";
 
 // sql query to update post
 /*
