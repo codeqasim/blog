@@ -63,14 +63,9 @@ $xcrud->unset_edit();
 $xcrud->unset_add();
 $xcrud->unset_csv();
 $xcrud->column_class('img', 'zoom_img');
-
 $xcrud->change_type('img', 'image', true, array('width' => 200, 'path' => '../../../uploads/posts/', 'thumbs' => array(array('height' => 150, 'width' => 120, 'crop' => true, 'marker' => ''))));
-
 $xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
 $xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'self'));
-
-// $xcrud->change_type('img', 'image', false, array( 'path' => '../uploads/gallery' ));
-
 $xcrud->columns('id,img,title,status,hits,created_at');
 $xcrud->unset_title();
 $title ="Blog Posts";
@@ -141,6 +136,8 @@ $xcrud->unset_view();
 $xcrud->unset_edit();
 $xcrud->unset_add();
 $xcrud->unset_csv();
+$xcrud->column_class('img', 'zoom_img');
+$xcrud->change_type('img', 'image', true, array('width' => 200, 'path' => '../../../uploads/posts/', 'thumbs' => array(array('height' => 150, 'width' => 120, 'crop' => true, 'marker' => ''))));
 $xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
 $xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'_self'));
 $xcrud->columns('id,title,status,hits,created_at');
