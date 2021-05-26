@@ -250,3 +250,4 @@ table thead .action { width: 280px }
 .add_post { display: inline-block !important; position: absolute; right: -10px; margin-top: -5px !important; z-index: 10; background: transparent !important; }
 .add_post_svg { width: 26px; background: #ffffff; padding: 5px; border-radius: 50%; }
 .add_post_svg:hover { background: #fff; border:1px solid #8b98b6; }
+

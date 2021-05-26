@@ -63,12 +63,15 @@ $xcrud->unset_edit();
 $xcrud->unset_add();
 $xcrud->unset_csv();
 $xcrud->column_class('img', 'zoom_img');
+
+$xcrud->change_type('img', 'image', true, array('width' => 200, 'path' => '../../../uploads/posts/', 'thumbs' => array(array('height' => 150, 'width' => 120, 'crop' => true, 'marker' => ''))));
+
 $xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
 $xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'self'));
 
 // $xcrud->change_type('img', 'image', false, array( 'path' => '../uploads/gallery' ));
 
-$xcrud->columns('id,title,status,hits,created_at');
+$xcrud->columns('id,img,title,status,hits,created_at');
 $xcrud->unset_title();
 $title ="Blog Posts";
 $body = admin_views."posts.php";
@@ -107,7 +110,7 @@ $users_nav = "active";
 include admin_template;
 });
 
-// draft pages
+// traffic pages
 $router->get(admin.'traffic', function() {
 include "app/db.php";
 include('app/vendor/xcrud/xcrud.php');
@@ -147,6 +150,7 @@ $body = admin_views."xcrud.php";
 $draft_nav = "active";
 include admin_template;
 });
+
 
 // pages
 $router->get(admin.'pages', function() {

@@ -9086,7 +9086,8 @@ class Xcrud
                 'primary' => $primary_val,
                 'key' => $this->key,
                 'task' => 'file',
-                'rand' => base_convert(sha1($this->instance_name . ($filename ? $filename : rand())), 10, 36)
+                /*'rand' => base_convert(sha1($this->instance_name . ($filename ? $filename : rand())), 10, 36)*/
+                'rand' => sha1($this->instance_name . ($filename ? $filename : rand())), 10, 36
                 ));
         if ($thumb !== false)
         {
