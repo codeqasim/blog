@@ -154,6 +154,7 @@ $('.status option[value=<?=$status?>]').attr('selected','selected');
 
 <script>
 ClassicEditor.create(document.querySelector(".editor"), {
+        config.entities = false;
         toolbar: {
             items: [
                 "heading",
