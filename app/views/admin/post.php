@@ -85,11 +85,10 @@ Page views &nbsp;
 <div class="thumb" style="height:400px">
 <?php
 
-if (isset($img)){
-if (getimagesize(root."uploads/posts/".$img) ) { ?>
+if (isset($img)){ ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
 <input style="display:none" name="img" value="<?=root?>uploads/posts/<?=$img?>" class="file" value="Add Image" />
-<?php } } else { ?>
+<?php } else { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
 <input style="display:none" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
 <?php } ?>
