@@ -13,7 +13,7 @@ $img = $d['img'];
 $content = $d['content'];
 $keywords = $d['keywords'];
 $user_id = $d['user_id'];
-$date = $d['created_at'];   
+$date = $d['created_at'];
 
 if (empty($d['status'])){$status=$d['status'];}else{$status="4343";}
 }}};
@@ -87,12 +87,11 @@ Page views &nbsp;
 if (isset($img)){
 if (getimagesize(root."uploads/posts/".$img) ) { ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
-<input style="display:none" name="img" value="<?=root?>uploads/posts/<?=$img?>" class="file" value="Add Image" />
 <?php } } else { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
 <?php } ?>
 
-<input style="display:none" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
+<input style="display:none" value="<?=root?>uploads/posts/<?=$img?>" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
 
 <div class="upload">
 <div class="file-upload-btn" onclick="document.getElementById('imgInp').click()">
