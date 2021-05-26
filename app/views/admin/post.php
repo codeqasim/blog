@@ -16,8 +16,6 @@ $user_id = $d['user_id'];
 $date = $d['created_at'];
 
 echo $img;
-die;
-
 
 if (empty($d['status'])){$status=$d['status'];}else{$status="4343";}
 }}};
@@ -84,7 +82,6 @@ Page views &nbsp;
 </div>
 
 <input type="hidden" name="date_time" value="<?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?>" />
-
 <div class="thumb" style="height:400px">
 <?php
 
