@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title><?=$title?> - <?=$app->app_name;?></title>
+<title><?php if (isset($title)){echo $title;}?> - <?=$app->app_name;?></title>
 <style> :root { --theme_color:<?=$app->theme_color?>; }</style>
 <meta name="theme-color" content="<?=$app->theme_color?>" />
 <link rel="shortcut icon" href="<?=root;?>uploads/global/favicon.png">
