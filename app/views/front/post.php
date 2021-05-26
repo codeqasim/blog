@@ -32,7 +32,10 @@ echo '<h4 class="tags">'.$key.'</h4>';
 <?=$d['content']?>
 </div>
 </div>
-<?php } } else { include "404.php"; } ?>
+<?php } } else {
+$title ="Page not Found";
+include "404.php";
+} ?>
 
 <section class="post_articles">
 <div class="articles contain">
