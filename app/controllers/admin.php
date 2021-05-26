@@ -316,7 +316,7 @@ $image=$_POST['img'];
 $img_emp = explode('/', $image);
 $img = end($img_emp);
 } else { $img = "default.jpg"; }
-
+    
 // array to sting for keywords
 if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']); } else { $keywords = ""; }
 

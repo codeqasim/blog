@@ -13,9 +13,7 @@ $img = $d['img'];
 $content = $d['content'];
 $keywords = $d['keywords'];
 $user_id = $d['user_id'];
-$date = $d['created_at'];
-
-echo $img;
+$date = $d['created_at'];   
 
 if (empty($d['status'])){$status=$d['status'];}else{$status="4343";}
 }}};
@@ -82,17 +80,19 @@ Page views &nbsp;
 </div>
 
 <input type="hidden" name="date_time" value="<?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?>" />
+
 <div class="thumb" style="height:400px">
 <?php
 
-if (isset($img)){ ?>
+if (isset($img)){
+if (getimagesize(root."uploads/posts/".$img) ) { ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
-<input style="display:none" name="file" accept="image/*" type='file' id="imgInp" class="center-block" value="<?root?>uploads/posts/<?=root?>uploads/posts/<?=$img?>" />
-<?php } else { ?>
+<input style="display:none" name="img" value="<?=root?>uploads/posts/<?=$img?>" class="file" value="Add Image" />
+<?php } } else { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
-<input style="display:none" name="img" accept="image/*" type='file' id="imgInp" class="center-block" />
 <?php } ?>
 
+<input style="display:none" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
 
 <div class="upload">
 <div class="file-upload-btn" onclick="document.getElementById('imgInp').click()">
