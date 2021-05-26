@@ -311,12 +311,12 @@ if(move_uploaded_file($temp_name, $target_path)) {
 //
 }else{ exit("Error While uploading image on the server"); } }
 
-if (isset($_POST['img'])) {
+/*if (isset($_POST['img'])) {
 $image=$_POST['img'];
 $img_emp = explode('/', $image);
 $img = end($img_emp);
-} else { $img = "default.jpg"; }
-    
+} else { $img = "default.jpg"; }*/
+
 // array to sting for keywords
 if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']); } else { $keywords = ""; }
 
