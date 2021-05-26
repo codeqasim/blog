@@ -87,8 +87,7 @@ Page views &nbsp;
 
 if (isset($img)){ ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
-<input style="display:none" name="img" accept="image/*" type='file' id="imgInp" class="center-block" />
-
+<input style="display:none" name="file" accept="image/*" type='file' id="imgInp" class="center-block" value="<?root?>uploads/posts/<?=root?>uploads/posts/<?=$img?>" />
 <?php } else { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
 <input style="display:none" name="img" accept="image/*" type='file' id="imgInp" class="center-block" />

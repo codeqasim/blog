@@ -298,10 +298,10 @@ $router->post(admin.'post/add', function() {
 include "app/db.php";
 
 // image upload function
-if (!empty($_FILES["img"]["name"])) {
-$file_name      = $_FILES["img"]["name"];
-$temp_name      = $_FILES["img"]["tmp_name"];
-$imgtype        = $_FILES["img"]["type"];
+if (!empty($_FILES["file"]["name"])) {
+$file_name      = $_FILES["file"]["name"];
+$temp_name      = $_FILES["file"]["tmp_name"];
+$imgtype        = $_FILES["file"]["type"];
 $ext            = pathinfo($file_name, PATHINFO_EXTENSION);
 $img            = date("d-m-Y") . "-" . time() . "." . $ext;
 $target_path    = "uploads/posts/".$img;
@@ -316,7 +316,6 @@ $image=$_POST['img'];
 $img_emp = explode('/', $image);
 $img = end($img_emp);
 } else { $img = "default.jpg"; }
-
 
 // array to sting for keywords
 if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']); } else { $keywords = ""; }
