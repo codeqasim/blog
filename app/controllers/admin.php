@@ -347,6 +347,8 @@ WHERE id='$post_id'";
 
 } else {
 
+$content = str_replace("'", '&#39;', $_POST['content']);
+
 // sql query to insert new post
 $sql = "
 INSERT INTO posts
@@ -366,7 +368,7 @@ VALUES (
 '".strtolower($_POST['slug'])."',
 '".$img."',
 '".$_POST['status']."',
-'".$_POST['content']."',
+'".$content."',
 '".$_POST['date_time']."',
 '".$keywords."')
 ";
