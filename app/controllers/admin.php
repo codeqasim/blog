@@ -317,7 +317,7 @@ $img_emp = explode('/', $image);
 $img = end($img_emp);
 } else { $img = "default.jpg"; }
 
-echo $image;
+echo $_POST['img'];
 die;
 
 // array to sting for keywords
