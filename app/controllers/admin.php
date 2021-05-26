@@ -322,7 +322,7 @@ if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']);
 // check type of post to run mysql query
 if ($_POST['post_type'] == "update") {
 
-$content = $_POST['content'];
+$clean = str_replace("'", '&#39;', $_POST['content']);
 $status = $_POST['status'];
 $slug = $_POST['slug'];
 $title = $_POST['title'];
