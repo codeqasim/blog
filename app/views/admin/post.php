@@ -15,6 +15,10 @@ $keywords = $d['keywords'];
 $user_id = $d['user_id'];
 $date = $d['created_at'];
 
+echo $img;
+die;
+
+
 if (empty($d['status'])){$status=$d['status'];}else{$status="4343";}
 }}};
 
