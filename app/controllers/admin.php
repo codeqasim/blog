@@ -74,7 +74,7 @@ $posts_nav = "active";
 include admin_template;
 });
 
-// pages
+// categorie pages
 $router->get(admin.'categories', function() {
 include "app/db.php";
 include('app/vendor/xcrud/xcrud.php');
@@ -82,6 +82,7 @@ $xcrud = Xcrud::get_instance();
 $xcrud->table('categories');
 $xcrud->order_by('id','desc');
 $xcrud->columns('id,title,slug');
+$xcrud->fields('id,statys,title,slug,description,keywords');
 $xcrud->unset_title();
 $title ="Categories";
 $body = admin_views."xcrud.php";
@@ -182,7 +183,7 @@ $newsletters_nav = "active";
 include admin_template;
 });
 
-// inputs page
+// settings page
 $router->get(admin.'settings', function() {
 include "app/db.php";
 $title ="Settings";
@@ -280,7 +281,6 @@ echo "<style>body{font-family:calibri}</style>Updating...";
 } else { echo "Error updating record: " . $mysqli->error; }
 });
 
-
 // add post page
 $router->get(admin.'post/add', function() {
 include "app/db.php";
@@ -338,7 +338,6 @@ keywords = '$keywords'
 WHERE id='$post_id'";
 
 // sql query to update post
-
 } else {
 
 $content = str_replace("'", '&#39;', $_POST['content']);
