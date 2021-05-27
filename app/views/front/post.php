@@ -37,7 +37,7 @@ $title ="Page not Found";
 include "404.php";
 } ?>
 
-<section class="post_articles" style="margin-top:100px 0">
+<section class="post_articles" style="margin:100px 0">
 <div class="articles contain">
 <div class="row">
 <?php include "app/views/front/partcials/post.php"?>
