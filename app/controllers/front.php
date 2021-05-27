@@ -239,7 +239,7 @@ include "app/db.php";
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url_end = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
 $data = $mysqli->query("SELECT * FROM `posts` WHERE `slug` LIKE '".$url_end."'");
-$posts = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 3 WHERE status = 1");
+$posts = $mysqli->query("SELECT * FROM posts ORDER BY id WHERE status = 1 DESC LIMIT 3");
 
 if ($data->num_rows > 0) { foreach($data as $post) {
 // meta information
