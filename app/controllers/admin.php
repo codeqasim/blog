@@ -174,7 +174,7 @@ $xcrud = Xcrud::get_instance();
 $xcrud->table('newsletters');
 $xcrud->order_by('id','desc');
 $xcrud->columns('id,name,email,created_ad');
-$xcrud->fields('id,name,email,content');
+$xcrud->fields('id,name,email,created_ad');
 $xcrud->unset_title();
 $title ="Newsletter";
 $body = admin_views."xcrud.php";
