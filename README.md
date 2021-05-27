@@ -32,4 +32,4 @@ Live [Demo](http://phpblogscript.com/blog)
 
 [MIT](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2021-present, Qasim Hussain
+Copyright (c) 2021-present, Founder Qasim Hussain
