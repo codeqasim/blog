@@ -254,8 +254,8 @@ $router->post('admin/users', function() {
 include "app/db.php";
 
 // logo upload function
-if (!empty($_FILES["user_img"]["name"])) {
-$logo_temp_name = $_FILES["user_img"]["tmp_name"];
+if (isset($_FILES["file"]["name"])) {
+$logo_temp_name = $_FILES["file"]["tmp_name"];
 $img            = $_SESSION['user_id'].".jpg";
 $target_path    = "uploads/users/".$img;
 if(move_uploaded_file($logo_temp_name, $target_path)) {};

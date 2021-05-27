@@ -22,7 +22,8 @@ if (@getimagesize($src)) { $img = root."uploads/users/".$user_id.".jpg";  } else
 
 <div class="row"><div class="c1"><label>Image</label></div><div class="c4">
 <img id="show" class="logo" src="<?=$img?>" alt="img" />
-<input id="img" name="user_img" type="file" placeholder="profile image" value="" /></div></div>
+<input id="img" name="file" type="file" placeholder="profile image" value="<?=$img?>" /></div>
+</div>
 
 <script>
 img.onchange = evt => {
