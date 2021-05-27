@@ -2,7 +2,6 @@
  <div class="c4 mb25">
  <div class="card">
  <a href="<?=root?><?=$post['slug']?>">
-
 <?php
 
 if (!empty(root."uploads/posts/".$post['img'])) {?>

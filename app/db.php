@@ -14,7 +14,7 @@ echo "Failed to connect to MySQL: " . $mysqli -> connect_error; exit();
 $app = $mysqli->query("SELECT * FROM settings WHERE id = 1")->fetch_object();
 
 // sql query for navigation of pages
-$pages = $mysqli->query("SELECT * FROM pages");
+$pages = $mysqli->query("SELECT * FROM pages WHERE status = 1");
 
 // sql query for categories
 $categories = $mysqli->query("SELECT * FROM categories WHERE status = 1");
