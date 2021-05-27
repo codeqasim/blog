@@ -17,7 +17,7 @@ Simplest PHP based blog fully optimized for search engines 100% opensource code 
 - 💿 Base64 article optimized images
 - 🔎 Auto Sitemap generation 
 - 📄 Beutify URLs
-- 📱 Social links and shares 
+- 📱 Social links and shares
 -⚠️ Page hits views counter  
 
 #### Why PHP Blog Script
