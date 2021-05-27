@@ -2,7 +2,7 @@
 <?php echo $xcrud->render(); ?>
 
 <script>
-ClassicEditor.create(document.querySelector(".editor"), {
+ClassicEditor.create(document.querySelector(".texteditor"), {
 toolbar: {
     items: [
         "heading",
