@@ -158,7 +158,7 @@ $xcrud->table('pages');
 $xcrud->order_by('id','desc');
 $xcrud->column_class('slug', 'slug');
 $xcrud->columns('id,title,status,created_at');
-$xcrud->fields('id,title,slug,content,status,created_at');
+$xcrud->fields('id,status,title,slug,content');
 $xcrud->unset_title();
 $title ="Pages";
 $body = admin_views."xcrud.php";
