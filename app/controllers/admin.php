@@ -82,7 +82,7 @@ $xcrud = Xcrud::get_instance();
 $xcrud->table('categories');
 $xcrud->order_by('id','desc');
 $xcrud->columns('id,title,slug');
-$xcrud->fields('id,statys,title,slug,description,keywords');
+$xcrud->fields('id,status,title,slug,description,keywords');
 $xcrud->unset_title();
 $title ="Categories";
 $body = admin_views."xcrud.php";
