@@ -156,7 +156,7 @@ include('app/vendor/xcrud/xcrud.php');
 $xcrud = Xcrud::get_instance();
 $xcrud->table('pages');
 $xcrud->order_by('id','desc');
-$xcrud->column_class('content', 'texteditor');
+$xcrud->column_class('content', 'editor-loaded');
 $xcrud->columns('id,title,status,created_at');
 $xcrud->unset_title();
 $title ="Pages";
