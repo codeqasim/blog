@@ -4,7 +4,7 @@
  <a href="<?=root?><?=$post['slug']?>">
 <?php
 
-if (!empty(root."uploads/posts/".$post['img'])) {?>
+if (getimagesize(root."uploads/posts/".$post['img'])) {?>
 <img src="<?=root?>uploads/posts/<?=$post['img']?>" class="img" alt="<?=$post['title']?>" />
 <?php } else { ?>
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
