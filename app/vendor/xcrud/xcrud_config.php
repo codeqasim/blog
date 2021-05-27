@@ -49,7 +49,7 @@ class Xcrud_config
     
     // editor
     //public static $editor_url = 'editors/tinymce/tinymce.min.js'; // URL path to editor script, if you want to use the visual editor.
-    public static $editor_url = '//cdn.ckeditor.com/4.16.1/standard/ckeditor.js';
+    public static $editor_url = 'https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js';
     public static $editor_init_url = ''; //  URL path to your custom initialization file for editor.
     public static $force_editor = false; // Forced initialization of editor, even if the path is not specified. Check this if you're already using editor on your page.
     public static $auto_editor_insertion = true; // inserts visual editor on textarea fields.
