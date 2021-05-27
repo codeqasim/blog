@@ -3,8 +3,8 @@
 
 <script>
 // categories slug
-$('.title').keyup(function () {
-title = $(this).val().split(',').slice(0, 1).join(' ').split(' ').join('-').replace('%40', '@').toLowerCase();
-document.getElementsByClassName("slug").value = title;
+$('.slug').keypress(function( e ) {
+    if(!/[0-9a-zA-Z-]/.test(String.fromCharCode(e.which)))
+        return false;
 });
 </script>
