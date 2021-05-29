@@ -317,9 +317,9 @@ if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']);
 if ($_POST['post_type'] == "update") {
 
 $content = str_replace("'", '&#39;', $_POST['content']);
+$title = str_replace("'", '&#39;', $_POST['title']);
 $status = $_POST['status'];
 $slug = $_POST['slug'];
-$title = $_POST['title'];
 $category_id = $_POST['category_id'];
 $user_id = $_SESSION['user_id'];
 $date_time = $_POST['date_time'];
@@ -341,6 +341,7 @@ WHERE id='$post_id'";
 } else {
 
 $content = str_replace("'", '&#39;', $_POST['content']);
+$title = str_replace("'", '&#39;', $_POST['title']);
 
 // sql query to insert new post
 $sql = "
@@ -357,7 +358,7 @@ keywords)
 VALUES (
 '".$_SESSION['user_id']."',
 '".$_POST['category_id']."',
-'".$_POST['title']."',
+'".$title."',
 '".strtolower($_POST['slug'])."',
 '".$img."',
 '".$_POST['status']."',
