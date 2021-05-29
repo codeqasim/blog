@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2021 at 02:23 AM
+-- Generation Time: May 29, 2021 at 11:56 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -84,7 +84,7 @@ CREATE TABLE `newsletters` (
 --
 
 INSERT INTO `newsletters` (`id`, `email`, `created_at`, `name`) VALUES
-(1, 'compoxition@gmail.com', '2021-05-22 16:58:08', 'qasim');
+(1, 'compoxition@gmail.com', '2021-05-22 16:58:08', 'qasims');
 
 -- --------------------------------------------------------
 
@@ -111,8 +111,8 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `description`, `keywords`, `slug`, `is_custom`, `content`, `parent_id`, `created_at`, `status`, `img`) VALUES
-(1, 'About', 'about', 'about', 'about-us', 0, 'about', 0, '2019-03-08 21:59:53', '1', NULL),
-(2, 'Contact', 'contact', 'contact', 'contact-us', 0, 'contact', 0, '2019-03-08 22:01:38', '1', NULL);
+(1, 'About', 'about', 'about', 'about', 0, '<p>Simplest PHP based blog fully optimized for search engines 100% opensource code and ready to extend the features. logically inspired by wordpress, medium, gitbook &amp; ghost cms.</p>\n\n<p>❤️&nbsp;Build with technologies : PHP MYSQL HTML CSS JS</p>\n\n<p><strong>Features</strong></p>\n\n<ul>\n	<li>100% opensource code</li>\n	<li>Categories module</li>\n	<li>Newsletter &amp; subscribers</li>\n	<li>SEO optimized</li>\n	<li>Google AMP Optmized via url/amp</li>\n	<li>Multi users accounts</li>\n	<li>Built-it pages views analytics</li>\n	<li>Post draft feature</li>\n	<li>Base64 article optimized images</li>\n	<li>Auto Sitemap generation</li>\n	<li>Beautify URLs</li>\n	<li>Social links and shares</li>\n	<li>Page hits views counter</li>\n</ul>\n\n<p><strong>Why PHP Blog Script</strong></p>\n\n<p>Starting your own niche based blog is very challenging specially when it comes to selecting any of your CMS or blog script. speed, performance, optimization, SEO and user-friendly are the options you need to be very handy. fancy cms and blog scripts are no more easy to handle configure or install on your shared or dedicated servers anymore. PHP Blog Script makes life much easier to just add your db credentials and install the entire platform within 2 minutes.</p>\n\n<p>No plugins no libraries and fancy themes to customize and waste your time simple elegant and useful blog platform is ready for you to install for free and start blogging without wasting your time on search other blogging scripts.</p>\n\n<p>Main&nbsp;<a href=\"http://phpblogscript.com/\">Website</a>&nbsp;Live&nbsp;<a href=\"http://phpblogscript.com/blog\">Demo</a></p>\n\n<h2>License</h2>\n\n<p><a href=\"https://opensource.org/licenses/MIT\">MIT</a></p>\n\n<p>Copyright (c) 2021-present, Founder Qasim Hussain</p>', 0, '2019-03-08 21:59:53', '1', NULL),
+(2, 'Contact', 'contact', 'contact', 'contact-us', 0, '<p>Contact us anytime and we will be happy to assist you.</p>\n\n<p><br />\nContact Information</p>\n\n<p><strong>HEAD OFFICE</strong><br />\n65 Commercial Cavalry Ground<br />\nLahore, Pakistan<br />\n<br />\n&nbsp;<strong>Email</strong><br />\ninfo@phpblogscript.com<br />\n<br />\n<strong>Whatsapp</strong><br />\n+923311442244</p>', 0, '2019-03-08 22:01:38', '1', NULL);
 
 -- --------------------------------------------------------
 
@@ -125,7 +125,7 @@ CREATE TABLE `posts` (
   `status` int(11) DEFAULT 1,
   `title` varchar(255) NOT NULL,
   `slug` varchar(100) DEFAULT NULL,
-  `content` longtext DEFAULT NULL,
+  `content` varchar(5000) DEFAULT NULL,
   `keywords` varchar(500) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
@@ -140,8 +140,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `status`, `title`, `slug`, `content`, `keywords`, `user_id`, `category_id`, `subcategory_id`, `img`, `hits`, `created_at`) VALUES
-(1, 1, 'PHP blog script about to release its first beta version v1', 'php-blog-script-about-to-release-its-first-beta-version-v1', '<p>PHP Blog script is about to release its first beta version this year 2021. the initial testing has been already completed and the development is about to clean up with production-based bugs.&nbsp;<br><br>At the initial stage, we are looking for more people to download and testing our beta version. so we can get more testing details from UI UX to backend functionality.&nbsp;<br><br>We hope everyone will contribute to this amazing opportunity. as working with PHP blog script we enjoyed a lot.&nbsp;<br><br>Just give it a try its very simple fast secure and super SEO friendly.&nbsp;</p>', 'beta version, php blog script, initial release, php blog system, php blog based script', 1, 1, NULL, '24-05-2021-1621849776.jpg', 22, '2021-05-24 06:41:42'),
-(2, 1, 'Whats new in PHP 8', 'whats-new-in-php-8', '<p>PHP 8 has been officially released to the General Availability on November 26, 2020!</p><p>&nbsp;</p><p><a href=\"https://demo.kinsta.com/register?utm_campaign=mykinsta%20demo&amp;utm_source=blog&amp;utm_medium=sidebar%20video%20button\"><strong>Try a free demo</strong></a></p><p>This new major update brings many optimizations and powerful features to the language. We’re excited to drive you through the most interesting changes that will allow us to write better code and build more robust applications.</p><p>&nbsp;</p>', 'php 8, new version', 1, 1, NULL, '24-05-2021-1621850033.jpg', 4, '2021-05-24 06:53:07');
+(1, 1, 'PHP blog script about to release its first beta version v1', 'php-blog-script-about-to-release-its-first-beta-version-v1', '<p>PHP Blog script is about to release its first beta version this year 2021. the initial testing has been already completed and the development is about to clean up with production-based bugs.&nbsp;<br><br>At the initial stage, we are looking for more people to download and testing our beta version. so we can get more testing details from UI UX to backend functionality.&nbsp;<br><br>We hope everyone will contribute to this amazing opportunity. as working with PHP blog script we enjoyed a lot.&nbsp;<br><br>Just give it a try its very simple fast secure and super SEO friendly.&nbsp;</p>', 'beta version, php blog script, initial release, php blog system, php blog based script', 1, 1, NULL, '28-05-2021-1622184016.jpg', 23, '2021-05-24 06:41:42'),
+(4, 1, 'More about the product', 'more-about-the-product', '<p>Simplest PHP based blog fully optimized for search engines 100% opensource code and ready to extend the features. logically inspired by wordpress, medium, gitbook &amp; ghost cms.<br>&nbsp;</p><h4><strong>❤️ Build with technologies : PHP MYSQL HTML CSS JS</strong></h4><h4><strong>? Features</strong></h4><ul><li>? 100% opensource code</li><li>? Categories module</li><li>? Newsletter &amp; subscribers</li><li>⏫ SEO optimized</li><li>⚡ Google AMP Optimized via url/amp</li><li>? Multi users accounts</li><li>? Built-it pages views analytics</li><li>? Post draft feature</li><li>? Base64 article optimized images</li><li>? Auto Sitemap generation</li><li>? Beautify URLs</li><li>? Social links and shares</li><li>⚠️ Page hits views counter<br>&nbsp;</li></ul><h4><strong>Why PHP Blog Script</strong></h4><p>Starting your own niche based blog is very challenging specially when it comes to selecting any of your CMS or blog script. speed, performance, optimization, SEO and user-friendly are the options you need to be very handy. fancy cms and blog scripts are no more easy to handle configure or install on your shared or dedicated servers anymore. PHP Blog Script makes life much easier to just add your db credentials and install the entire platform within 2 minutes.</p><p>No plugins no libraries and fancy themes to customize and waste your time simple elegant and useful blog platform is ready for you to install for free and start blogging without wasting your time on search other blogging scripts.</p><p>Main <a href=\"http://phpblogscript.com/\">Website</a> Live <a href=\"http://phpblogscript.com/blog\">Demo</a></p>', 'php blog script, simple blogging, php blog script features, easy blog, free blog', 1, 1, NULL, '28-05-2021-1622185005.jpg', 1, '2021-05-28 03:40:29');
 
 -- --------------------------------------------------------
 
@@ -179,7 +179,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `app_name`, `home_title`, `description`, `keywords`, `whatsapp_url`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `about_footer`, `contact_address`, `contact_email`, `contact_phone`, `copyright`, `cookies_warning`, `created_at`, `site_url`, `theme_color`, `header_code`, `footer_code`) VALUES
-(1, 'PHP Blog', 'PHP Blog Script', 'PHP blog script helping you to build your blog super fast within 5 minutes of installation and configuration. SEO optimized with backend admin panel', 'php blog script, best blogging platform, easy bloggin, wordpress alternative, opensource blogging script', 'https://whatsapp.com', 'https://facebook.com', 'https://twitter.com', 'https://instagram.com', 'https://pinterest.com', 'https://linkedin.com', '', '', '', '', '', 0, '2019-03-08 22:05:14', 'http://localhost/blog/blog/', '#4f00ff', '<!-- your html js or css can be here -->', '<!-- your html js or css can be here -->');
+(1, 'PHP Blog', 'PHP Blog Script', 'PHP blog script helping you to build your blog super fast within 5 minutes of installation and configuration. SEO optimized with backend admin panel', 'php blog script, best blogging platform, easy bloggin, wordpress alternative, opensource blogging script', 'https://wa.me/923311442244', 'https://www.facebook.com/phpblogscript/', 'https://twitter.com', 'https://instagram.com', '', '', '', '', '', '', '', 0, '2019-03-08 22:05:14', 'http://localhost/blog/blog/', '#4f00ff', '<!-- your html js or css can be here -->', '<!-- your html js or css can be here -->');
 
 -- --------------------------------------------------------
 
@@ -366,7 +366,7 @@ INSERT INTO `traffic` (`id`, `code`, `country`, `visits`) VALUES
 (165, 'MP', 'Northern Mariana Islands', ''),
 (166, 'NO', 'Norway', ''),
 (167, 'OM', 'Oman', ''),
-(168, 'PK', 'Pakistan', '138'),
+(168, 'PK', 'Pakistan', '173'),
 (169, 'PW', 'Palau', ''),
 (170, 'PS', 'Palestine', ''),
 (171, 'PA', 'Panama', ''),
@@ -430,7 +430,7 @@ INSERT INTO `traffic` (`id`, `code`, `country`, `visits`) VALUES
 (229, 'UA', 'Ukraine', ''),
 (230, 'AE', 'United Arab Emirates', ''),
 (231, 'GB', 'United Kingdom', ''),
-(232, 'US', 'United States', ''),
+(232, 'US', 'United States', '7'),
 (233, 'UM', 'United States minor outlying islands', ''),
 (234, 'UY', 'Uruguay', ''),
 (235, 'UZ', 'Uzbekistan', ''),
@@ -567,7 +567,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `settings`
