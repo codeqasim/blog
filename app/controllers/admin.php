@@ -305,7 +305,7 @@ $target_path    = "uploads/posts/".$img;
 
 // move file with rename to di
 if(move_uploaded_file($temp_name, $target_path)) {
-//
+
 }else{ exit("Error While uploading image on the server"); } }
 
 else { $img = "default.jpg"; }
@@ -326,16 +326,16 @@ $date_time = $_POST['date_time'];
 $post_id = $_POST['post_id'];
 
 $sql = "UPDATE posts SET
-user_id='$user_id',
-category_id = '$category_id',
-title = '$title',
-slug = '$slug',
-img = '$img',
-content='$content',
-status = '$status',
-created_at = '$date_time',
-keywords = '$keywords'
-WHERE id='$post_id'";
+user_id='".$user_id."',
+category_id = '".$category_id."',
+title = '".$title."',
+slug = '".$slug."',
+img = '".$img."',
+content='".$content."',
+status = '".$status."',
+created_at = '".$date_time."',
+keywords = '".$keywords."'
+WHERE id='".$post_id."'";
 
 // sql query to update post
 } else {
