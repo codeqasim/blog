@@ -27,16 +27,17 @@ $router->get('traffic', function(){
 include "app/db.php";
 // condition to check param from url
 if (isset($_GET['country'])) { $country = $_GET['country'];
-$sql = $mysqli->query('UPDATE traffic SET visits = visits+1 WHERE country="'.$country.'"');
+$mysqli->query('UPDATE traffic SET visits = visits+1 WHERE country="'.$country.'"');
 header("Content-Type: application/json");
 echo $country." added to traffic list";
+// print_r($mysqli);
 }
 });
 
 // newsletters subsriber page
 $router->post('newsletters', function() {
 include "app/db.php";
-$data = $mysqli->query("INSERT INTO `newsletters` (`id`, `name`, `email`, `created_at`) VALUES (NULL, '".$_POST['name']."', '".$_POST['email']."', current_timestamp())");
+$mysqli->query("INSERT INTO `newsletters` (`id`, `name`, `email`, `created_at`) VALUES (NULL, '".$_POST['name']."', '".$_POST['email']."', current_timestamp())");
 // redirect to success newsletters page
 header('Location: '.root.'newsletters/success');
 });
