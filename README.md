@@ -23,7 +23,7 @@ Simplest PHP based blog fully optimized for search engines 100% opensource code 
 #### Why PHP Blog Script
 Starting your own niche based blog is very challenging specially when it comes to selecting any of your CMS or blog script. speed, performance, optimization, SEO and user-friendly are the options you need to be very handy. fancy cms and blog scripts are no more easy to handle configure or install on your shared or dedicated servers anymore. PHP Blog Script makes life much easier to just add your db credentials and install the entire platform within 2 minutes.
 
-<img align="center" width="400" src="https://i.ibb.co/qCGs6QK/Page-Speed-Insights.png" alt="">
+<img align="center" width="100%" src="https://i.ibb.co/qCGs6QK/Page-Speed-Insights.png" alt="">
 
 No plugins no libraries and fancy themes to customize and waste your time simple elegant and useful blog platform is ready for you to install for free and start blogging without wasting your time on search other blogging scripts. 
 
