@@ -93,7 +93,7 @@ if (getimagesize(root."uploads/posts/".$img) ) { ?>
 
 
 <input value="<?php if (isset($img)){ echo $img; } ?>" name="img" type="text" />
-<input style="" value="<?=root?>uploads/posts/<?=$img?>" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
+<input style="display:none" value="<?=root?>uploads/posts/<?=$img?>" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
 
 
 <div class="upload">
