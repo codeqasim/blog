@@ -39,10 +39,6 @@ $indir = array_filter(scandir($controllers), function($item)use($controllers)
 foreach ($indir as $key=>$value){
 include $controllers.'/'.$value; }
 
-// ending routing
-/*$router->get('/page/(.*)', ['PageController', 'viewPage']);
-$router->route(['OPTION', 'PUT'], '/test', 'PageController::test');*/
-
 // include "app/vendor/benchmark.php";
 $router->dispatchGlobal();
 
