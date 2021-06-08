@@ -22,7 +22,7 @@ if (empty($d['status'])){$status=$d['status'];}else{$status="4343";}
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); $post_id = array_slice(explode('/', rtrim($uri, '/')), -1)[0];
 ?>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+<script src="<?=root?>assets/admin/js/ck.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
