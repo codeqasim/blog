@@ -2329,7 +2329,7 @@ class Xcrud
     {
         if (isset($_GET['xcrud'][$field]))
         {
-            if (get_magic_quotes_gpc())
+           // if (get_magic_quotes_gpc())
             {
                 if (is_array($_GET['xcrud'][$field]))
                 {
