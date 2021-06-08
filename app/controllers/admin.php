@@ -313,11 +313,11 @@ else { $img = "default.jpg"; }
 // array to sting for keywords
 if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']); } else { $keywords = ""; }
 
-// check type of post to run mysql query
-if ($_POST['post_type'] == "update") {
-
 $content = str_replace("'", '&#39;', $_POST['content']);
 $title = str_replace("'", '&#39;', $_POST['title']);
+
+// check type of post to run mysql query
+if ($_POST['post_type'] == "update") {
 
 $status = $_POST['status'];
 $slug = $_POST['slug'];
@@ -327,21 +327,19 @@ $date_time = $_POST['date_time'];
 $post_id = $_POST['post_id'];
 
 $sql = "UPDATE posts SET
-user_id='".$user_id."',
-category_id = '".$category_id."',
-title = '".$title."',
-slug = '".$slug."',
-img = '".$img."',
-status = '".$status."',
-created_at = '".$date_time."',
-keywords = '".$keywords."'
-WHERE id='".$post_id."'";
+user_id='$user_id',
+category_id = '$category_id',
+title = '$title',
+slug = '$slug',
+img = '$img',
+content='$content',
+status = '$status',
+created_at = '$date_time',
+keywords = '$keywords'
+WHERE id='$post_id'";
 
 // sql query to update post
 } else {
-
-$content = str_replace("'", '&#39;', $_POST['content']);
-$title = str_replace("'", '&#39;', $_POST['title']);
 
 // sql query to insert new post
 $sql = "
