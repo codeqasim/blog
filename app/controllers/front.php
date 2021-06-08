@@ -30,7 +30,7 @@ if (isset($_GET['country'])) { $country = $_GET['country'];
 $mysqli->query('UPDATE traffic SET visits = visits+1 WHERE country="'.$country.'"');
 //header("Content-Type: application/json");
 // echo $country." added to traffic list";
-print_r($mysqli);
+print_r($mysqli->affected_rows);
 }
 });
 
