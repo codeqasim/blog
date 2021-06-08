@@ -23,9 +23,8 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); $post_id = array_slice(
 ?>
 
 <script src="<?=root?>assets/admin/js/ck.js"></script>
-
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="<?=root?>assets/admin/css/select2.min.css" rel="stylesheet" />
+<script src="<?=root?>assets/admin/js/select2.min.js"></script>
 
 <form autocomplete="off" method="POST" action="<?=root?>admin/post/add" enctype="multipart/form-data">
 <h2 class="content_head ttc"><?php if ($post_id == "add"){echo "Add Post";}else {echo "Edit Post"." <span class='f400'>".$titles."</span>";}?> <button class="btn k fr c1" type="submit">Submit</button> </h2>
