@@ -308,7 +308,14 @@ if(move_uploaded_file($temp_name, $target_path)) {
 
 }else{ exit("Error While uploading image on the server"); } }
 
-else { $img = "default.jpg"; }
+else {
+
+// get image from updated post
+if (getimagesize(root."uploads/posts/".$_POST['img'])) {
+    $img = $_POST['img'];
+} else { $img = "default.jpg"; }
+
+}
 
 // array to sting for keywords
 if (isset($_POST['keywords'])) { $keywords = implode (", ", $_POST['keywords']); } else { $keywords = ""; }

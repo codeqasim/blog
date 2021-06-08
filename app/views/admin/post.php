@@ -80,18 +80,21 @@ Page views &nbsp;
 </div>
 
 <input type="hidden" name="date_time" value="<?php if (empty($date)) { $post_date = date("Y-m-d")." ".date("H:i:s"); echo $post_date; } else { echo $date; } ?>" />
-
 <div class="thumb" style="height:400px">
 <?php
 
 if (isset($img)){
 if (getimagesize(root."uploads/posts/".$img) ) { ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
+
 <?php } } else { ?>
 <img id="show" src="<?=root?>assets/admin/img/upload.png" class="img" alt="upload">
 <?php } ?>
 
-<input style="display:none" value="<?=root?>uploads/posts/<?=$img?>" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
+
+<input value="<?php if (isset($img)){ echo $img; } ?>" name="img" type="text" />
+<input style="" value="<?=root?>uploads/posts/<?=$img?>" name="file" accept="image/*" type='file' id="imgInp" class="center-block" />
+
 
 <div class="upload">
 <div class="file-upload-btn" onclick="document.getElementById('imgInp').click()">
