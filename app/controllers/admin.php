@@ -318,6 +318,7 @@ if ($_POST['post_type'] == "update") {
 
 $content = str_replace("'", '&#39;', $_POST['content']);
 $title = str_replace("'", '&#39;', $_POST['title']);
+
 $status = $_POST['status'];
 $slug = $_POST['slug'];
 $category_id = $_POST['category_id'];
@@ -331,7 +332,6 @@ category_id = '".$category_id."',
 title = '".$title."',
 slug = '".$slug."',
 img = '".$img."',
-content='".$content."',
 status = '".$status."',
 created_at = '".$date_time."',
 keywords = '".$keywords."'
