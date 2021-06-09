@@ -1,3 +1,9 @@
+<?php if ($data->num_rows > 0) { foreach($data as $d) { ?>
+<?php if (getimagesize(root."uploads/posts/".$d['img']) !== false) {
+$img = root."uploads/posts/".$d['img']; } else { $img = root."assets/admin/img/no_img.png";}
+$meta_desc = substr(strip_tags($d['content']), 0, 160);
+?>
+
 
 <!DOCTYPE html>
 <html ?>
@@ -5,34 +11,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
-    <title>Eid has been confirmed in pakistan 13 may 2021</title>
+    <title><?=$meta_title?></title>
 
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://technewspakistan.com/eid-has-been-confirmed-in-pakistan-2021/" />
+    <link rel="icon" href="<?=root;?>uploads/global/favicon.png" type="image/png" />
+    <link rel="canonical" href="<?=$meta_url?>" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
-    <meta property="og:site_name" content="Tech News Pakistan" />
+    <meta property="og:site_name" content="<?=$app->app_name?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Eid has been confirmed in pakistan 13 may 2021" />
-    <meta property="og:description" content="IT has been confirmed and announced today at 13 may 2021 Eid has been officially declared by the government of Pakistan.   Therefore we wish you and your family happy and blessed Eid. please stay at home and celebrate with your family.  Team  Tech News Pakistan" />
-    <meta property="og:url" content="https://technewspakistan.com/eid-has-been-confirmed-in-pakistan-2021/" />
-    <meta property="og:image" content="https://technewspakistan.com/content/images/2021/05/15.png" />
-    <meta property="article:published_time" content="2021-05-12T19:37:10.000Z" />
-    <meta property="article:modified_time" content="2021-05-12T19:37:10.000Z" />
-    <meta property="article:tag" content="eid mubarak" />
+    <meta property="og:title" content="<?=$d['title']?>" />
+    <meta property="og:description" content="<?=$meta_desc?>" />
+    <meta property="og:url" content="<?=$meta_url?>" />
+    <meta property="og:image" content="<?=$img?>" />
+    <meta property="article:published_time" content="<?=$meta_time?>" />
+    <meta property="article:modified_time" content="<?=$meta_time?>" />
+    <meta property="article:tag" content="<?=$meta_keywords?>" />
 
     <meta property="article:publisher" content="https://www.facebook.com/technewspakistan.official" />
     <meta property="article:author" content="https://www.facebook.com/qasimofficials" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Eid has been confirmed in pakistan 13 may 2021" />
-    <meta name="twitter:description" content="IT has been confirmed and announced today at 13 may 2021 Eid has been officially declared by the government of Pakistan.   Therefore we wish you and your family happy and blessed Eid. please stay at home and celebrate with your family.  Team  Tech News Pakistan" />
-    <meta name="twitter:url" content="https://technewspakistan.com/eid-has-been-confirmed-in-pakistan-2021/" />
-    <meta name="twitter:image" content="https://technewspakistan.com/content/images/2021/05/15.png" />
+    <meta name="twitter:title" content="<?=$d['title']?>" />
+    <meta name="twitter:description" content="<?=$meta_desc?>" />
+    <meta name="twitter:url" content="<?=$meta_url?>" />
+    <meta name="twitter:image" content="<?=$img?>" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Qasim Hussain" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="eid mubarak" />
-    <meta name="twitter:site" content="@ghost" />
+    <meta name="twitter:data2" content="<?=$meta_keywords?>" />
+    <meta name="twitter:site" content="@phpblogscript" />
     <meta property="og:image:width" content="1640" />
     <meta property="og:image:height" content="924" />
 
@@ -42,11 +48,11 @@
     "@type": "Article",
     "publisher": {
         "@type": "Organization",
-        "name": "Tech News Pakistan",
-        "url": "https://technewspakistan.com/",
+        "name": "<?=$app->app_name?>",
+        "url": "<?=root?>",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://technewspakistan.com/favicon.png",
+            "url": "<?=$img?>,
             "width": 60,
             "height": 60
         }
@@ -56,37 +62,37 @@
         "name": "Qasim Hussain",
         "image": {
             "@type": "ImageObject",
-            "url": "https://technewspakistan.com/content/images/2021/05/22.jpg",
+            "url": "<?=$img?>",
             "width": 708,
             "height": 888
         },
-        "url": "https://technewspakistan.com/author/qasim/",
+        "url": "<?=root?>author/qasim/",
         "sameAs": [
             "https://www.qasimhussain.com",
             "https://www.facebook.com/qasimofficials"
         ]
     },
-    "headline": "Eid has been confirmed in pakistan 13 may 2021",
-    "url": "https://technewspakistan.com/eid-has-been-confirmed-in-pakistan-2021/",
-    "datePublished": "2021-05-12T19:37:10.000Z",
-    "dateModified": "2021-05-12T19:37:10.000Z",
+    "headline": "<?=$d['title']?>",
+    "url": "<?=$meta_url?>",
+    "datePublished": "<?=$meta_time?>",
+    "dateModified": "<?=$meta_time?>",
     "image": {
         "@type": "ImageObject",
-        "url": "https://technewspakistan.com/content/images/2021/05/15.png",
+        "url": "<?=$img?>",
         "width": 1640,
         "height": 924
     },
-    "keywords": "eid mubarak",
-    "description": "IT has been confirmed and announced today at 13 may 2021 Eid has been officially\ndeclared by the government of Pakistan. \n\nTherefore we wish you and your family happy and blessed Eid. please stay at home\nand celebrate with your family. \n\nTeam \nTech News Pakistan",
+    "keywords": "<?=$meta_keywords?>",
+    "description": "<?=$meta_desc?>",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://technewspakistan.com/"
+        "@id": "<?=root?>"
     }
 }
     </script>
 
-    <meta name="generator" content="Ghost 4.4" />
-    <link rel="alternate" type="application/rss+xml" title="Tech News Pakistan" href="<?=root?>sitemap.xml" />
+    <meta name="generator" content="php blog script v1.0" />
+    <link rel="alternate" type="application/rss+xml" title="<?=$app->app_name?>" href="<?=root?>sitemap.xml" />
 
     <style amp-custom>
     *,
@@ -533,7 +539,7 @@
     }
 
     .kg-bookmark-publisher::before {
-        content: "•";
+        content: "ï¿½";
         margin: 0 .5em;
     }
 
@@ -662,7 +668,7 @@
           <amp-img class="site-icon" src="<?=root?>uploads/global/favicon.png" width="50" height="50" layout="fixed"></amp-img>
         </a>
     </header>
-    <?php if ($data->num_rows > 0) { foreach($data as $d) { ?>
+
     <main class="content" role="main">
         <article class="post">
             <header class="post-header">
@@ -673,12 +679,7 @@
                 </section>
             </header>
             <figure class="post-image">
-            <?php if (getimagesize(root."uploads/posts/".$d['img']) !== false) {?>
-            <amp-img src="<?=root?>uploads/posts/<?=$d['img']?>" width="600" height="340" layout="responsive"></amp-img>
-            <?php } else { ?>
-            <amp-img src="<?=root?>assets/admin/img/no_img.png" width="600" height="340" layout="responsive"></amp-img>
-            <?php } ?>
-
+            <amp-img src="<?=$img?>" width="600" height="340" layout="responsive"></amp-img>
             </figure>
             <section class="post-content">
              <?=$d['content']?>
