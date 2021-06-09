@@ -4,9 +4,8 @@ $img = root."uploads/posts/".$d['img']; } else { $img = root."assets/admin/img/n
 $meta_desc = substr(strip_tags($d['content']), 0, 160);
 ?>
 
-
 <!DOCTYPE html>
-<html>
+<html amp>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
