@@ -67,7 +67,7 @@ $xcrud->change_type('img', 'image', true, array('width' => 200, 'path' => '../..
 $xcrud->button(root.'post/{slug}','view','icon-search','',array('target'=>'_blank'));
 $xcrud->button(root.'admin/post/{id}','edit','icon-pencil','',array('target'=>'self'));
 $xcrud->relation('category_id','categories','id','title');
-$xcrud->label('category_id','Category');  
+$xcrud->label('category_id','Category');
 $xcrud->columns('id,img,title,category_id,status,hits,created_at');
 $xcrud->unset_title();
 $title ="Blog Posts";
@@ -219,6 +219,7 @@ $sql = "
 UPDATE settings SET
 site_url = '".$_POST['site_url']."',
 app_name = '".$_POST['app_name']."',
+home_title = '".$_POST['home_title']."',
 description = '".$_POST['description']."',
 keywords = '".$_POST['keywords']."',
 facebook_url = '".$_POST['facebook_url']."',
