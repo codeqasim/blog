@@ -31,6 +31,9 @@ No plugins no libraries and fancy themes to customize and waste your time simple
 #### Demo homepage
 <img align="center" width="100%" src="https://i.ibb.co/yRV05RG/web.png" alt="">
 
+#### Demo backend
+<img align="center" width="100%" src="https://i.ibb.co/1b3t6Ng/Dashboard-1.png" alt="">
+
 Main [Website](http://phpblogscript.com/)
 Live [Demo](http://phpblogscript.com/blog)
 
