@@ -1,5 +1,5 @@
 *{box-sizing:border-box}
-:root { --theme_color: #4f00ff; }
+/*:root { --theme_color: #4f00ff; }*/
 html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 body { color:#000000;margin: 0; list-style: none; font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Droid Sans,Helvetica Neue,sans-serif; font-size: 14px; font-weight: 300;}
 
