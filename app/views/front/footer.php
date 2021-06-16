@@ -93,7 +93,7 @@ Waves.init();
 // Waves.attach('a');
 Waves.attach('.brand');
 Waves.attach('button');
-Waves.attach('.menu');
+Waves.attach('');
 Waves.attach('nav a');
 </script>
 </body>
