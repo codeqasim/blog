@@ -1,3 +1,5 @@
+<main>
+
 <?php if ($data->num_rows > 0) { foreach($data as $d) { ?>
 <div class="post">
 <div class="catnviews">
@@ -45,11 +47,21 @@ include "404.php";
 </div>
 </section>
 
+</main>
+
 <script>
 // open all links in new tab
 var linkList = document.querySelectorAll('#target a');
 for(var i in linkList){ linkList[i].setAttribute('target', '_blank'); }
 </script>
+
+<style>
+html,body{margin:0}header{position:fixed;top:0;height:60px;width:100%;background:#fff;z-index:1}
+main{margin-top:70px}
+@supports (height:100vh){body{background:linear-gradient(to right top,<?=$app->theme_color?> 50%,#DDD 50%);background-size:100% calc(100% - 100vh + 68px);background-repeat:no-repeat}
+body:before{content:'';position:fixed;top:68px;bottom:0;width:100%;z-index:-1;background:#fff}}
+main,header{box-sizing:border-box}
+</style>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50bcada124277092"></script>

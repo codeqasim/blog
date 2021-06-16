@@ -9,7 +9,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
+<!--<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />-->
 <link rel="stylesheet" href="<?=root?>assets/front/css/style.css" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
