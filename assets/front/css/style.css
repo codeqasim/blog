@@ -148,6 +148,7 @@ footer .c6 {width: 50%}
 /*.post .content { display: grid; grid-template-columns: [full-start] minmax(4vmin,auto) [wide-start] minmax(auto,240px) [main-start] min(720px,calc(100% - 8vw)) [main-end] minmax(auto,240px) [wide-end] minmax(4vmin,auto) [full-end]; }*/
 .post .content, .post .content span  { font-family: fell, Georgia, Cambria, "Times New Roman", Times, serif;  font-weight: 400; font-size: 1.5rem !important; line-height: 1.6em; }
 .post .content>* { grid-column: main-start/main-end; }
+.post .content figure,.post .content img  { margin: 0px; border-radius: 15px; }
 .post .content blockquote { border-left: 4px solid var(--theme_color); padding-left: 22px; font-size: 20px; }
 
 /* footer */
