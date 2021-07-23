@@ -22,7 +22,7 @@ Page views &nbsp;
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
 <?php } ?>
 
-<div class"post_tags">
+<div style"display: flex; align-items: center; justify-content: space-between; margin-bottom:15px">
 <?php if (!empty($meta_keywords)){
 $array = explode(', ',$meta_keywords);
 foreach ( $array as $key ){
