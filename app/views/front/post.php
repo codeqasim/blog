@@ -22,7 +22,7 @@ Page views &nbsp;
 <img src="<?=root?>assets/admin/img/no_img.png" class="img" alt="no image" />
 <?php } ?>
 
-<div>
+<div class"post_tags">
 <?php if (!empty($meta_keywords)){
 $array = explode(', ',$meta_keywords);
 foreach ( $array as $key ){

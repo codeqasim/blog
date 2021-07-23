@@ -155,10 +155,11 @@ footer .c6 {width: 50%}
 .post .content h3,
 .post .content h4,
 .post .content h5,
-.post .content h6 { margin:0px !important }
+.post .content h6 { margin:0px !important; line-height: 38px; }
 .post .content { margin-top: 25px; }
-.post .content figure,.post .content img  { margin: 0px; border-radius: 15px; }
+.post .content figure,.post .content img  { margin: 8px 0; border-radius: 15px; }
 .post .content blockquote { border-left: 4px solid var(--theme_color); padding-left: 22px; font-size: 20px; }
+.post .content .post_tags { margin-bottom: 15px; }
 
 /* footer */
 footer { background:#ececeee6; padding: 40px 0; margin-top: 50px; }
