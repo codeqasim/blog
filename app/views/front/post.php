@@ -56,7 +56,7 @@ for(var i in linkList){ linkList[i].setAttribute('target', '_blank'); }
 </script>
 
 <style>
-html,body{margin:0}header{position:fixed;top:0;height:60px;width:100%;background:#fff;z-index:1}
+html,body{margin:0}header{position:fixed;top:0;height:60px;width:100%;z-index:1}
 main{margin-top:70px}
 @supports (height:100vh){body{background:linear-gradient(to right top,<?=$app->theme_color?> 50%,#DDD 50%);background-size:100% calc(100% - 100vh + 68px);background-repeat:no-repeat}
 body:before{content:'';position:fixed;top:68px;bottom:0;width:100%;z-index:-1;background:#fff}}
