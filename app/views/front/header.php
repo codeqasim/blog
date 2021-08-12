@@ -103,7 +103,7 @@ echo '<meta property="article:tag" content="'.$key.'" />';
 
 <script>
 // ger users country
-var requestUrl = "https://extreme-ip-lookup.com/json/";
+var requestUrl = "https://ipwhois.app/json/";
 fetch(requestUrl)
 .then(function(response) { return response.json(); })
 .then(function(c) { var user_country = c['country']; console.log(user_country);
