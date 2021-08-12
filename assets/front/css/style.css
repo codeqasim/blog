@@ -127,7 +127,7 @@ footer .c6 {width: 50%}
 .featured .author .date_time { display: block; width: 100%; padding-left: 40px; margin-top: -20px; font-size: 0.8em; color: #90a2aa; }
 
 /* homepage articles */
-.articles .img { position: relative; display: block; overflow: hidden; border-radius: 3px; width: 100%; height: 200px; background: #c5d2d9; -o-object-fit: cover; object-fit: cover; }
+.articles .img { position: relative; display: block; overflow: hidden; border-radius: 10px; width: 100%; height: 200px; background: #c5d2d9; -o-object-fit: cover; object-fit: cover; }
 .articles .tag { text-transform: uppercase; color: var(--theme_color);margin: 0; font-size: 0.8rem; font-weight: 500; padding-top: 24px; }
 .articles h2 { margin-top: 6px; color: #15171a; height: 50px; display: flex; justify-content: flex-start; align-items: center;display: -webkit-box; overflow-y: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: break-word; }
 .articles p { margin-bottom: 1em; display: -webkit-box; overflow-y: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: break-word; line-height: 24px; font-size: 1.2em; color: #60757e; }
@@ -252,4 +252,4 @@ select:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0
 .waves-circle{text-align:center;width:2.5em;height:2.5em;line-height:2.5em;border-radius:50%}
 .waves-float{-webkit-mask-image:none;-webkit-box-shadow:0 1px 1.5px 1px rgba(0,0,0,.12);box-shadow:0 1px 1.5px 1px rgba(0,0,0,.12);-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;transition:all .3s}
 .waves-float:active{-webkit-box-shadow:0 8px 20px 1px rgba(0,0,0,.3);box-shadow:0 8px 20px 1px rgba(0,0,0,.3)}
-.waves-block{display:block}
+.waves-block{display:block}130
