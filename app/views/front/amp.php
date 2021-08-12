@@ -151,6 +151,7 @@ $meta_desc = substr(strip_tags($d['content']), 0, 160);
     img {
         display: block;
         max-width: 100%;
+        border-radius: 10px;
     }
 
     input,
