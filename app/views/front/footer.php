@@ -87,14 +87,9 @@ body.addEventListener('mousedown',showEffect,!1)};Waves.attach=function(elements
 classes=classes?' '+classes:'';var element,tagName;for(var i=0,len=elements.length;i<len;i++){element=elements[i];tagName=element.tagName.toLowerCase();if(['input','img'].indexOf(tagName)!==-1){TagWrapper[tagName](element);element=element.parentElement}
 if(element.className.indexOf('waves-effect')===-1){element.className+=' waves-effect'+classes}}};Waves.ripple=function(elements,options){elements=getWavesElements(elements);var elementsLen=elements.length;options=options||{};options.wait=options.wait||0;options.position=options.position||null;if(elementsLen){var element,pos,off,centre={},i=0;var mousedown={type:'mousedown',button:1};var hideRipple=function(mouseup,element){return function(){Effect.hide(mouseup,element)}};for(;i<elementsLen;i++){element=elements[i];pos=options.position||{x:element.clientWidth/2,y:element.clientHeight/2};off=offset(element);centre.x=off.left+pos.x;centre.y=off.top+pos.y;mousedown.pageX=centre.x;mousedown.pageY=centre.y;Effect.show(mousedown,element);if(options.wait>=0&&options.wait!==null){var mouseup={type:'mouseup',button:1};setTimeout(hideRipple(mouseup,element),options.wait)}}}};Waves.calm=function(elements){elements=getWavesElements(elements);var mouseup={type:'mouseup',button:1};for(var i=0,len=elements.length;i<len;i++){Effect.hide(mouseup,elements[i])}};Waves.displayEffect=function(options){console.error('Waves.displayEffect() has been deprecated and will be removed in future version. Please use Waves.init() to initialize Waves effect');Waves.init(options)};return Waves})
 
-// This is ok.
 Waves.init();
-// Waves.attach('', ['waves-button', 'waves-float']);
-// Waves.attach('a');
-Waves.attach('.brand');
-Waves.attach('button');
-Waves.attach('');
-Waves.attach('nav a');
+Waves.attach('.brand', ['waves-button']);
+Waves.attach('nav li', ['waves-button']);
 </script>
 </body>
 </html>
