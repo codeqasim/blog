@@ -118,7 +118,7 @@ footer .c6 {width: 50%}
 .hero p { z-index: 10; max-width: 600px; margin: 20px auto; line-height: 1.2em; opacity: .8; }
 
 /* featured content */
-.featured .img { position: relative; display: block; overflow: hidden; border-radius: 3px; width: 100%; background: #c5d2d9; -o-object-fit: cover; object-fit: cover; }
+.featured .img { position: relative; display: block; overflow: hidden; border-radius: 10px; width: 100%; background: #c5d2d9; -o-object-fit: cover; object-fit: cover; }
 .featured .tag { text-transform: uppercase; color: var(--theme_color);margin: 0; font-size: 1rem; font-weight: 500; }
 .featured h2 { color: #000; font-size: 2em; margin: 0px; }
 .featured p { color:#60757e; margin-bottom: 1.5em; font-size: 1.2rem; line-height: 1.50em; -webkit-line-clamp: 8; display: -webkit-box; overflow-y: hidden; -webkit-box-orient: vertical; word-break: break-word; }
