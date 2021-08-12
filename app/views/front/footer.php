@@ -90,6 +90,7 @@ if(element.className.indexOf('waves-effect')===-1){element.className+=' waves-ef
 Waves.init();
 Waves.attach('.brand', ['waves-button']);
 Waves.attach('nav li', ['waves-button']);
+Waves.attach('.card', ['waves-button']);
 </script>
 </body>
 </html>
