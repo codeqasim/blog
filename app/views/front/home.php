@@ -19,6 +19,7 @@
 </section>
 
 <style>
+/* .select2-result-repository__meta{margin-left:70px} */
 .select2-container{width:100% !important}
 .select2-dropdown{top:-45px}
 .select2-container--default .select2-selection--single .select2-selection__arrow { height: 46px; position: absolute; top: 1px; right: 12px; width: 20px; }
@@ -26,9 +27,8 @@
 .select2-container--default .select2-selection--single .select2-selection__rendered { color: #000; line-height: 28px; height: 50px; display: flex; justify-content: center; align-items: center; font-weight: bold; text-transform: uppercase; }
 .select2-container--default .select2-selection--single { height:50px; }
 .select2-result-repository{padding-top:4px;padding-bottom:3px}
-.select2-result-repository__avatar{float:left;width:60px;margin-right:10px}
+.select2-result-repository__avatar{float:left;width:100px;margin-right:10px}
 .select2-result-repository__avatar img{width:100%;height:auto;border-radius:2px}
-.select2-result-repository__meta{margin-left:70px}
 .select2-result-repository__title{color:black;font-weight:700;word-wrap:break-word;line-height:1.1;margin-bottom:4px}
 .select2-result-repository__forks,.select2-result-repository__stargazers{margin-right:1em}
 .select2-result-repository__forks,.select2-result-repository__stargazers,.select2-result-repository__watchers{display:inline-block;color:#aaa;font-size:11px}
@@ -38,6 +38,7 @@
 .select2-results__option{padding:6px;user-select:none;-webkit-user-select:none}
 .select2-results__option--selectable{cursor:pointer}
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{background-color:#5897fb;color:white}
+.select2-dropdown .select2-results__option { position: relative;}
 </style>
 
 <script type="text/javascript">
@@ -96,8 +97,8 @@ function formatRepo (repo) {
   }
 
   var $container = $(
-    "<div class='select2-result-repository clearfix'>" +
-    "<a target='_self' href='<?=root?>"+repo.slug+"'>" +
+    "<div class='select2-result-repository clearfix'> " +
+    "<a target='_self' style='display: flex; align-items: center;' href='<?=root?>"+repo.slug+"'>" +
       "<div class='select2-result-repository__avatar'><img src='" + repo.img + "' /></div>" +
       "<div class='select2-result-repository__meta'>" +
         "<div class='select2-result-repository__title'></div>" +

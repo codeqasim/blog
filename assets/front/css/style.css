@@ -1,7 +1,7 @@
 *{box-sizing:border-box}
 /*:root { --theme_color: #4f00ff; }*/
 html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
-body { color:#000000;margin: 0; list-style: none; font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Droid Sans,Helvetica Neue,sans-serif; font-size: 14px; font-weight: 300;}
+body { overflow-x: hidden;color:#000000;margin: 0; list-style: none; font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Droid Sans,Helvetica Neue,sans-serif; font-size: 14px; font-weight: 300;}
 
 a{text-decoration:none;outline:0;box-shadow:none;text-decoration:none;color: var(--theme_color)}
 a:hover{text-decoration:none;outline:0;box-shadow:none;color: #000;}
@@ -252,4 +252,6 @@ select:focus { outline: 0; border-color: #0473fc !important; box-shadow: inset 0
 .waves-circle{text-align:center;width:2.5em;height:2.5em;line-height:2.5em;border-radius:50%}
 .waves-float{-webkit-mask-image:none;-webkit-box-shadow:0 1px 1.5px 1px rgba(0,0,0,.12);box-shadow:0 1px 1.5px 1px rgba(0,0,0,.12);-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;transition:all .3s}
 .waves-float:active{-webkit-box-shadow:0 8px 20px 1px rgba(0,0,0,.3);box-shadow:0 8px 20px 1px rgba(0,0,0,.3)}
-.waves-block{display:block}130
+.waves-block{display:block}
+
+.select2-dropdown .select2-results__option:hover {background-color: #eee;}
