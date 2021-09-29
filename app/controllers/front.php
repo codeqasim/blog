@@ -13,14 +13,18 @@ function REST(){
 // SEARCH
 $router->get('search', function() {
   include "app/db.php";
+  
+  // print_r($_GET);
+  // die;
 
-  $featured = $mysqli->query("SELECT * FROM posts WHERE status = 1 ORDER BY id DESC LIMIT 30");
+  $data = "%".$_GET['q']."%";
+  $search = $mysqli->query("SELECT * FROM posts WHERE title LIKE '".$data."' ORDER BY id DESC LIMIT 30");
 
-  if ($featured->num_rows > 0) { 
+  if ($search->num_rows > 0) { 
 
   $ii = [];
 
-  foreach($featured as $i) {
+  foreach($search as $i) {
     
     $content = $i['content'];
     $content_ = substr($content, 0, 35);
@@ -30,6 +34,7 @@ $router->get('search', function() {
     "desc"=>strip_tags($content_), 
     "img"=>root."uploads/posts/".$i['img'], 
     "hits"=>$i['hits'],
+    "slug"=>$i['slug'],
     "date"=>$i['created_at']
     );
   

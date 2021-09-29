@@ -44,9 +44,16 @@
 
 $(document).on('select2:open', () => {
  document.querySelector('.select2-search__field').focus();
+
+ var $e = $(e);
+  $e.select2({
+    dropdownParent: $e.parent()
+  });
+
 });
 
 $(".select").select2({
+    
   ajax: {
     // url: "https://api.github.com/search/repositories",
     url: "<?=root?>search",
@@ -80,7 +87,7 @@ $(".select").select2({
   minimumInputLength: 3,
   templateResult: formatRepo,
   templateSelection: formatRepoSelection,
-
+  allowClear: true
 });
 
 function formatRepo (repo) {
@@ -90,6 +97,7 @@ function formatRepo (repo) {
 
   var $container = $(
     "<div class='select2-result-repository clearfix'>" +
+    "<a target='_self' href='<?=root?>"+repo.slug+"'>" +
       "<div class='select2-result-repository__avatar'><img src='" + repo.img + "' /></div>" +
       "<div class='select2-result-repository__meta'>" +
         "<div class='select2-result-repository__title'></div>" +
@@ -100,6 +108,7 @@ function formatRepo (repo) {
           "<div class='select2-result-repository__watchers'><i class='fa fa-eye'></i> </div>" +
         "</div>" +
       "</div>" +
+      "</a>" +
     "</div>"
   );
 
@@ -113,8 +122,15 @@ function formatRepo (repo) {
 }
 
 function formatRepoSelection (repo) {
-  return repo.full_name || repo.text;
+  return repo.title || repo.text;
 }
+
+var select2Instance = $(selectNode).data('select2');
+select2Instance.on('results:message', function(params){
+  this.dropdown._resizeDropdown();
+  this.dropdown._positionDropdown();
+});
+
 </script>
 
 <?php if ($featured->num_rows > 0) { foreach($featured as $post) { ?>
