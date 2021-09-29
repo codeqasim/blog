@@ -45,10 +45,10 @@
 $(document).on('select2:open', () => {
  document.querySelector('.select2-search__field').focus();
 
- var $e = $(e);
-  $e.select2({
-    dropdownParent: $e.parent()
-  });
+//  var $e = $(e);
+//   $e.select2({
+//     dropdownParent: $e.parent()
+//   });
 
 });
 
@@ -125,11 +125,11 @@ function formatRepoSelection (repo) {
   return repo.title || repo.text;
 }
 
-var select2Instance = $(selectNode).data('select2');
-select2Instance.on('results:message', function(params){
-  this.dropdown._resizeDropdown();
-  this.dropdown._positionDropdown();
-});
+// var select2Instance = $(selectNode).data('select2');
+// select2Instance.on('results:message', function(params){
+//   this.dropdown._resizeDropdown();
+//   this.dropdown._positionDropdown();
+// });
 
 </script>
 
