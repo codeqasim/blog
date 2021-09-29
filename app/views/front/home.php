@@ -48,7 +48,8 @@ $(document).on('select2:open', () => {
 
 $(".select").select2({
   ajax: {
-    url: "https://api.github.com/search/repositories",
+    // url: "https://api.github.com/search/repositories",
+    url: "<?=root?>search",
     dataType: 'json',
     delay: 250,
     data: function (params) {
@@ -64,8 +65,10 @@ $(".select").select2({
       // scrolling can be used
       params.page = params.page || 1;
 
+      console.log(data)
+
       return {
-        results: data.items,
+        results: data,
         pagination: {
           more: (params.page * 30) < data.total_count
         }
@@ -76,7 +79,8 @@ $(".select").select2({
   placeholder: 'Search by Name',
   minimumInputLength: 3,
   templateResult: formatRepo,
-  templateSelection: formatRepoSelection
+  templateSelection: formatRepoSelection,
+
 });
 
 function formatRepo (repo) {
@@ -86,7 +90,7 @@ function formatRepo (repo) {
 
   var $container = $(
     "<div class='select2-result-repository clearfix'>" +
-      "<div class='select2-result-repository__avatar'><img src='" + repo.owner.avatar_url + "' /></div>" +
+      "<div class='select2-result-repository__avatar'><img src='" + repo.img + "' /></div>" +
       "<div class='select2-result-repository__meta'>" +
         "<div class='select2-result-repository__title'></div>" +
         "<div class='select2-result-repository__description'></div>" +
@@ -99,11 +103,11 @@ function formatRepo (repo) {
     "</div>"
   );
 
-  $container.find(".select2-result-repository__title").text(repo.full_name);
-  $container.find(".select2-result-repository__description").text(repo.description);
-  $container.find(".select2-result-repository__forks").append(repo.forks_count + " Forks");
-  $container.find(".select2-result-repository__stargazers").append(repo.stargazers_count + " Stars");
-  $container.find(".select2-result-repository__watchers").append(repo.watchers_count + " Watchers");
+  $container.find(".select2-result-repository__title").text(repo.title);
+  $container.find(".select2-result-repository__description").text(repo.desc);
+  $container.find(".select2-result-repository__forks").append(repo.hits + " Views");
+  $container.find(".select2-result-repository__stargazers").append(repo.date + " Date");
+  // $container.find(".select2-result-repository__watchers").append(repo.watchers_count + " Watchers");
 
   return $container;
 }
@@ -112,7 +116,6 @@ function formatRepoSelection (repo) {
   return repo.full_name || repo.text;
 }
 </script>
-
 
 <?php if ($featured->num_rows > 0) { foreach($featured as $post) { ?>
 <section class="contain ptb25 featured">

@@ -2,6 +2,48 @@
 
 include "app/db.php";
 
+function REST(){
+  header("Access-Control-Allow-Origin: *");
+  header("Access-Control-Allow-Headers: access");
+  header("Access-Control-Allow-Methods: POST");
+  header("Content-Type: application/json; charset=UTF-8");
+  header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+  }
+
+// SEARCH
+$router->get('search', function() {
+  include "app/db.php";
+
+  $featured = $mysqli->query("SELECT * FROM posts WHERE status = 1 ORDER BY id DESC LIMIT 30");
+
+  if ($featured->num_rows > 0) { 
+
+  $ii = [];
+
+  foreach($featured as $i) {
+    
+    $content = $i['content'];
+    $content_ = substr($content, 0, 35);
+
+    $ii[] = array(
+    "title"=>$i['title'], 
+    "desc"=>strip_tags($content_), 
+    "img"=>root."uploads/posts/".$i['img'], 
+    "hits"=>$i['hits'],
+    "date"=>$i['created_at']
+    );
+  
+  } 
+
+  header('Content-Type: application/json');
+  echo json_encode($ii, JSON_PRETTY_PRINT);
+
+  }   
+
+  });
+
+
+
 // main homepage
 $router->get('/', function() {
 include "app/db.php";
