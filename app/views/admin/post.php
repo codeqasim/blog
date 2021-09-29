@@ -83,7 +83,7 @@ Page views &nbsp;
 <?php
 
 if (isset($img)){
-if (getimagesize(root."uploads/posts/".$img) ) { ?>
+if (!file_exists(root."uploads/posts/".$img) ) { ?>
 <img id="show" src="<?=root?>uploads/posts/<?=$img?>" class="img" alt="upload">
 
 <?php } } else { ?>
