@@ -13,7 +13,7 @@ Page views &nbsp;
 <strong>&nbsp;<?=$d['hits']?></strong>
 </p>
 </div>
-<h1 class="title"><?=$d['title']?></h1>
+<h1 class="title" style="text-align:center"><?=$d['title']?></h1>
 <?php include "app/views/front/partcials/author.php"?>
 
 <?php if (!file_exists(root."uploads/posts/".$d['img']) ) {?>
